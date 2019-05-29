@@ -1,0 +1,31 @@
+$bg-color:#fffac8;
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: $bg-color;
+	/* background-color: #cccccc; */
+}
+
+/* .xp-region, .xp-layout, .xp-part {
+	padding: 6px;
+} */
+
+.xp-page.colorize {
+	/*background-color: */
+	border: 5px solid #e9d2d2; /* red */
+}
+
+.colorize .xp-region {
+	border: 5px solid #d9d2e9; /* purple */
+}
+
+.colorize .xp-layout {
+	border: 5px solid #cfe2f3; /* blue */
+	overflow: hidden;
+}
+
+.colorize .xp-part {
+	border: 5px solid #b6d7a8; /* green */
+}

@@ -1,0 +1,10 @@
+<part>
+	<display-name>Banner</display-name>
+	<description>This is a test part that will become something bigger later</description>
+	<form>
+		<input name="someText" type="TextLine">
+			<label>Some Text</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+	</form>
+</part>

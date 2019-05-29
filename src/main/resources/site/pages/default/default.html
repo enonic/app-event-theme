@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>app-event-theme</title>
+        <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=styles/bundle.css'})}" href="/assets/styles/bundle.css"/>
+    </head>
+    <body class="xp-page" data-th-classappend="${colorize}">
+        <header>
+            <h1 data-th-text="${siteName}">app-event-theme</h1>
+        </header>
+
+
+
+        <main data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
+            <div data-th-if="${mainRegion}" data-th-remove="tag">
+                <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+                    <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+                </div>
+            </div>
+        </main>
+        
+        <!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
+        <main data-th-if="${isFragment}" data-th-remove="tag">
+            <div data-portal-component="fragment" data-th-remove="tag"/>
+        </main>
+
+        
+        
+        <!-- FOOTER  -->
+        <footer class="footer-main">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-12">
+                    <div class="block text-center">
+                        <div class="footer-logo">
+                            <img data-th-src="${portal.assetUrl({'_path=images/footer-logo.png'})}" alt="logo" class="img-fluid">
+                        </div>
+                        <ul class="social-links-footer list-inline">
+                            <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                            <a href="#"><i class="fa fa-vimeo"></i></a>
+                            </li>
+                        </ul>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </footer>       
+    </body>
+</html>
