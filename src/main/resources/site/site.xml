@@ -8,9 +8,66 @@
 		  <default>false</default>
 		  <help-text>Adds a colored border to all XP components so it is easier to overview what is what.</help-text>
 	  </input>
+    <input type="HtmlArea" name="licence">
+      <label>Licence</label>
+      <default><p><a>Eventre</a> © 2017 All Right Reserved</p></default>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <!--  -->
+    <input type="ImageSelector" name="headerLogo">
+      <label>Logo in header (on light background)</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="ImageSelector" name="footerLogo">
+      <label>Logo in footer (on dark background)</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <!--  -->
+    <input type="TextLine" name="facebookUrl">
+      <label>Facebook URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="twitterUrl">
+      <label>Twitter URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="instagramUrl">
+      <label>Instagram URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="rssUrl">
+      <label>RSS URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="vimeoUrl">
+      <label>Vimeo URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <!--  -->
+    <input type="TextLine" name="ticketUrl">
+      <label>Ticket URL</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="ticketText">
+      <label>Ticket Text</label>
+      <default>BUY TICKET</default>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="CheckBox" name="breadcrumbsShowBanner">
+      <label>(Optional) Would you like to show the breadcrumb banner?</label>
+      <default>checked</default> 
+      <config>
+        <alignment>right</alignment> 
+      </config>
+    </input>
+    <input type="ImageSelector" name="breadcrumbsBackground">
+      <label>(Optional) Background image in breadcrumbs</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
 	  <!-- Mixin of the type "inline" goes here -->
   </form>
-  <!-- Mixin of the type "x-data" goes here -->
+  <!-- Mixin of the type "x-data" goes here -->  
+  <x-data name="menu-item"/>
   <!-- Used for Fragments to work in XP Content Studio preview -->
   <mappings>
     <mapping controller="/site/pages/default/default.js">
