@@ -163,13 +163,24 @@
                       <img data-th-src="${portal.imageUrl({'_id=' + footerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
                     </div>
                     <ul class="social-links-footer list-inline">
-                      <li data-th-each="media: ${socialProfilesUrls}" class="list-inline-item">
-                        <a data-th-href="@{${media.url.url}}">
-                          <i data-th-class="'fa fa-' + ${media.name}"></i>
-                        </a>                        
+                      <li data-th-if="${facebookUrl}" class="list-inline-item">
+                        <a data-th-href="${facebookUrl}"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li data-th-if="${twitterUrl}" class="list-inline-item">
+                        <a data-th-href="${twitterUrl}"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li data-th-if="${instagramUrl}" class="list-inline-item">
+                        <a data-th-href="${instagramUrl}"><i class="fa fa-instagram"></i></a>
+                      </li>
+                      <li data-th-if="${rssUrl}" class="list-inline-item">
+                        <a data-th-href="${rssUrl}"><i class="fa fa-rss"></i></a>
+                      </li>
+                      <li data-th-if="${vimeoUrl}" class="list-inline-item">
+                        <a data-th-href="${vimeoUrl}"><i class="fa fa-vimeo"></i></a>
                       </li>
                     </ul>
-                  </div>                  
+                  </div>
+                  
                 </div>
               </div>
             </div>
