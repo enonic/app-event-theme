@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+  <display-name>Speaker</display-name>
+  <super-type>base:structured</super-type>
+  <form>
+    <field-set name="basic">
+      <label>Speaker</label>
+      <items>
+      
+        <input type="TextLine" name="name">
+          <label>Name</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <input type="ImageSelector" name="image">
+          <label>Profile image</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <input type="TextLine" name="title">
+          <label>Title</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <input type="HtmlArea" name="description">
+          <label>Description</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <option-set name="socialProfiles">
+          <label i18n="socialProfiles.label">Social Profiles</label>
+          <expanded>true</expanded> 
+          <occurrences minimum="1" maximum="1"/> 
+          <help-text>All options may be selected</help-text>
+          <options minimum="0" maximum="5">            
+            <option name="twitter">
+              <label>Twitter</label>
+              <help-text>A Twitter Url may be specified here</help-text>
+              <items>
+                <input type="TextLine" name="long">
+                  <label>Twitter</label>
+                  <indexed>true</indexed>
+                  <occurrences minimum="1" maximum="1"/>
+                </input>
+              </items>
+            </option>
+            <option name="linkedin">
+              <label>LinkedIn</label>
+              <help-text>A LinkedIn Url may be specified here</help-text>
+              <items>
+                <input type="TextLine" name="linkedin">
+                  <label>LinkedIn</label>
+                  <indexed>true</indexed>
+                  <occurrences minimum="1" maximum="1"/>
+                </input>
+              </items>
+            </option>
+            <option name="facebook">
+              <label>Facebook</label>
+              <help-text>A Facebook Url may be specified here</help-text>
+              <items>  
+                <input type="TextLine" name="facebook">
+                  <label>Facebook</label>
+                  <indexed>true</indexed>
+                  <occurrences minimum="1" maximum="1"/>
+                </input>
+              </items>
+            </option>
+            <option name="skype">
+              <label>Skype</label>
+              <help-text>A Skype Url may be specified here</help-text>
+              <items>            
+                <input type="TextLine" name="skype">
+                  <label>Skype</label>
+                  <indexed>true</indexed>
+                  <occurrences minimum="1" maximum="1"/>
+                </input>
+              </items>
+            </option>
+            <option name="pinterest">
+              <label>Pinterest</label>
+              <help-text>A Pinterest Url may be specified here</help-text>
+              <items>
+                <input type="TextLine" name="pinterest">
+                  <label>Pinterest</label>
+                  <indexed>true</indexed>
+                  <occurrences minimum="1" maximum="1"/>
+                </input>
+              </items>
+            </option>
+          </options>
+        </option-set>
+
+        <input type="HtmlArea" name="personalInformation">
+          <label>Personal Information</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+
+        <item-set name="personalSkills"> 
+          <label i18n="personalSkills.label">a personal skill</label> 
+          <occurrences minimum="0" maximum="4"/>
+          <help-text>Upto 4 personal skills may be specified here</help-text> 
+          <items>
+            <input type="TextLine" name="skill">
+              <label>Skill</label>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+            <input type="Long" name="proficiency">
+              <label>Percent Proficiency (0% - 100%)</label>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </item-set>
+
+      </items>
+    </field-set>
+  </form>
+</content-type>
