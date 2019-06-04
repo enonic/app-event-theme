@@ -23,7 +23,7 @@
       <occurrences minimum="1" maximum="1"/>
     </input>
     <!--  -->
-    <input type="TextLine" name="facebookUrl">
+    <!-- <input type="TextLine" name="facebookUrl">
       <label>Facebook URL</label>
       <occurrences minimum="0" maximum="1"/>
     </input>
@@ -42,7 +42,75 @@
     <input type="TextLine" name="vimeoUrl">
       <label>Vimeo URL</label>
       <occurrences minimum="0" maximum="1"/>
-    </input>
+    </input> -->
+    <!--  -->
+
+
+    <option-set name="socialProfiles">
+      <label i18n="socialProfiles.label">Social Profiles</label>
+      <expanded>true</expanded> 
+      <occurrences minimum="1" maximum="1"/> 
+      <help-text>All options may be selected</help-text>
+      <options minimum="0" maximum="5">            
+        <option name="twitter">
+          <label>Twitter URL</label>
+          <help-text>A Twitter Url may be specified here</help-text>
+          <items>
+            <input type="TextLine" name="url">
+              <label>Twitter</label>
+              <indexed>true</indexed>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </option>
+        <option name="linkedin">
+          <label>LinkedIn URL</label>
+          <help-text>A LinkedIn Url may be specified here</help-text>
+          <items>
+            <input type="TextLine" name="url">
+              <label>LinkedIn URL</label>
+              <indexed>true</indexed>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </option>
+        <option name="facebook">
+          <label>Facebook</label>
+          <help-text>A Facebook Url may be specified here</help-text>
+          <items>  
+            <input type="TextLine" name="url">
+              <label>Facebook</label>
+              <indexed>true</indexed>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </option>
+        <option name="vimeo">
+          <label>Vimeo</label>
+          <help-text>A Vimeo Url may be specified here</help-text>
+          <items>            
+            <input type="TextLine" name="url">
+              <label>Vimeo</label>
+              <indexed>true</indexed>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </option>
+        <option name="RSS">
+          <label>RSS</label>
+          <help-text>A RSS Url may be specified here</help-text>
+          <items>
+            <input type="TextLine" name="url">
+              <label>RSS</label>
+              <indexed>true</indexed>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+          </items>
+        </option>
+      </options>
+    </option-set>
+
+
     <!--  -->
     <input type="TextLine" name="ticketUrl">
       <label>Ticket URL</label>

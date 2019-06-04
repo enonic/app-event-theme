@@ -1,6 +1,8 @@
 var libPortal = require('/lib/xp/portal'); // Import the portal functions
 var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
+
 var libMenu = require('/lib/menu.js');
+var libUtil = require('/lib/util')
 
 var viewFile = resolve('default.html');
 
@@ -24,11 +26,24 @@ exports.get = function(req) {
     var headerLogo = config.headerLogo;
     var footerLogo = config.footerLogo;
 
-    var facebookUrl = config.facebookUrl;
-    var twitterUrl = config.twitterUrl;
-    var instagramUrl = config.instagramUrl;
-    var rssUrl = config.rssUrl;
-    var vimeoUrl = config.vimeoUrl;
+    var socialProfilesUrls = []
+    socialProfilesUrls = libUtil.data.forceArray(socialProfilesUrls);
+    socialProfilesUrls = libUtil.data.trimArray(socialProfilesUrls);
+
+    log.info('default.js JSON %s', JSON.stringify(config.socialProfiles, null, 4));
+    log.info('default.js JSON %s', JSON.stringify(config.socialProfiles._selected.length, null, 4));
+
+    for (var key in config.socialProfiles) {
+        for (var i = 0; i < config.socialProfiles._selected.length; i++) {
+            if (key === config.socialProfiles._selected[i]) {
+                socialProfilesUrls.push({
+                    'name': key.toLowerCase(),
+                    'url': config.socialProfiles[key]
+                });
+                break;
+            }
+        }
+    }
 
     var ticketUrl = config.ticketUrl;
     var ticketText = config.ticketText || 'BUY TICKET';
@@ -36,8 +51,6 @@ exports.get = function(req) {
     var breadcrumbItems = libMenu.getBreadcrumbMenu({}); // Get a breadcrumb menu for current content.
     var breadcrumbsBackground = config.breadcrumbsBackground;
     var breadcrumbsShowBanner = config.breadcrumbsShowBanner;
-
-    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbItems, null, 4)); */
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -48,16 +61,12 @@ exports.get = function(req) {
         licence: licence,
         headerLogo: headerLogo,
         footerLogo: footerLogo,
-        facebookUrl: facebookUrl,
-        twitterUrl: twitterUrl,
-        instagramUrl: instagramUrl,
-        rssUrl: rssUrl,
-        vimeoUrl: vimeoUrl,
         ticketUrl: ticketUrl,
         ticketText: ticketText,
         breadcrumbs: breadcrumbItems,
         breadcrumbsBackground: breadcrumbsBackground,
-        breadcrumbsShowBanner: breadcrumbsShowBanner
+        breadcrumbsShowBanner: breadcrumbsShowBanner,
+        socialProfilesUrls: socialProfilesUrls
     };
 
 
