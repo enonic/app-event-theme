@@ -11,16 +11,16 @@
     <input type="HtmlArea" name="licence">
       <label>Licence</label>
       <default><p><a>Eventre</a> © 2017 All Right Reserved</p></default>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="1" maximum="1"/>
     </input>
     <!--  -->
     <input type="ImageSelector" name="headerLogo">
       <label>Logo in header (on light background)</label>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="1" maximum="1"/>
     </input>
     <input type="ImageSelector" name="footerLogo">
       <label>Logo in footer (on dark background)</label>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="1" maximum="1"/>
     </input>
     <!--  -->
     <input type="TextLine" name="facebookUrl">
@@ -46,7 +46,7 @@
     <!--  -->
     <input type="TextLine" name="ticketUrl">
       <label>Ticket URL</label>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="1" maximum="1"/>
     </input>
     <input type="TextLine" name="ticketText">
       <label>Ticket Text</label>

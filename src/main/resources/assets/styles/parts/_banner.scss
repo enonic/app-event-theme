@@ -1,0 +1,39 @@
+.banner {
+    background-size: cover;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.bannerText{
+    text-transform: uppercase;
+    font-size: 4.625rem;
+    font-weight: 400;
+    text-shadow: 3.5px 6.062px 0px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+
+.info > .left { 
+    float: left;
+    color: white;
+    overflow: inherit;
+}
+
+.info > .right { 
+    padding-left:10px; 
+    color: white;
+}
+
+.bannerTitle > h2 { color: #ff6600; }
+.bannerTitle > h3 { color: #fff; }
+
+.bannerTitle > h2, h3, h4, h5, h6 { 
+    font-size: 4.625rem; 
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    right: 10px;
+}

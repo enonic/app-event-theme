@@ -1,4 +1,18 @@
-<div class="xp-part">
-	<p>A test part!</p>
-	<p data-th-text="${someText}"></p>
+<div 
+	class="xp-part banner"
+	data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1280)', '_format=jpeg'})} + ');'"
+>
+	<div class="bannerText">
+		<p>The countdown is finished!</p>
+		<div
+			data-th-utext="${title}"
+			class="bannerTitle"
+		></div>
+		<div class="info">
+			<p class="left" data-th-text="${date}"></p>
+			<p class="right" data-th-text="${location}"></p>
+		</div>
+		<a data-th-href="${ticketUrl}" class="btn btn-white-md">get ticket now</a>
+	</div>
+		
 </div>

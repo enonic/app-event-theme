@@ -2,9 +2,32 @@
 	<display-name>Banner</display-name>
 	<description>This is a test part that will become something bigger later</description>
 	<form>
-		<input name="someText" type="TextLine">
-			<label>Some Text</label>
+		<input type="CheckBox" name="haveCountDown">
+			<label>(Optional) Count-down?</label>
+			<config>
+				<alignment>right</alignment> 
+			</config>
+		</input>
+		<input type="HtmlArea" name="title">
+			<label>Title</label>
+			<default><p>BUSINESS CONFERENCE 2019</p></default>
+			<occurrences minimum="1" maximum="1"/>
+		</input>
+		<input type="Date" name="date">
+			<label>Date</label>
+			<occurrences minimum="1" maximum="1"/>
+		</input>
+		<input type="TextLine" name="location">
+			<label>(Optional) Location</label>
 			<occurrences minimum="0" maximum="1"/>
+		</input>
+		<input type="TextLine" name="ticketUrl">
+			<label>(Optional) Ticket URL</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+		<input type="ImageSelector" name="backgroundImage">
+			<label>Background Image</label>
+			<occurrences minimum="1" maximum="1"/>
 		</input>
 	</form>
 </part>
