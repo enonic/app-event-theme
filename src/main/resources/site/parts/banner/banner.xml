@@ -3,27 +3,34 @@
 	<description>This is a test part that will become something bigger later</description>
 	<form>
 		<input type="CheckBox" name="haveCountDown">
-			<label>(Optional) Count-down?</label>
+			<label>Count-down?</label>
 			<config>
 				<alignment>right</alignment> 
 			</config>
 		</input>
 		<input type="HtmlArea" name="title">
 			<label>Title</label>
-			<default><p>BUSINESS CONFERENCE 2019</p></default>
+			<default><h2>BUSINESS</h2><h3>CONFERENCE</h3></default>
 			<occurrences minimum="1" maximum="1"/>
 		</input>
-		<input type="Date" name="date">
-			<label>Date</label>
+		<input type="Date" name="fromDate">
+			<label>From</label>
+			<occurrences minimum="1" maximum="1"/>
+		</input>
+		<input type="Date" name="toDate">
+			<label>To</label>
 			<occurrences minimum="1" maximum="1"/>
 		</input>
 		<input type="TextLine" name="location">
-			<label>(Optional) Location</label>
+			<label>Location</label>
 			<occurrences minimum="0" maximum="1"/>
 		</input>
 		<input type="TextLine" name="ticketUrl">
-			<label>(Optional) Ticket URL</label>
+			<label>Ticket URL</label>
 			<occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
 		</input>
 		<input type="ImageSelector" name="backgroundImage">
 			<label>Background Image</label>

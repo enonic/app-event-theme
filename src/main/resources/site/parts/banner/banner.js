@@ -11,15 +11,27 @@ exports.get = function(req) {
 	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     var config = component.config;
 
+	
 	/* ### Manipulate ### */
     var haveCountDown = config.haveCountDown;
-    var title = config.title;
-    var date = config.date;
+	var title = config.title;
+
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var dateLabel = "";
+	var fromDate = new Date(config.fromDate);
+
+	if (config.fromDate && config.toDate) {
+		dateLabel += fromDate.getDay();
+		var toDate = new Date(config.toDate);
+		dateLabel += "-" + toDate.getDay() + " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear();
+	}
+	
+    /* log.info('banner.js JSON %s', JSON.stringify(fulldate, null, 4)); */
+	
     var location = config.location;
     var ticketUrl = config.ticketUrl;
     var backgroundImage = config.backgroundImage;	
 
-    /* log.info('banner.js JSON %s', JSON.stringify(config, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
@@ -27,7 +39,7 @@ exports.get = function(req) {
 		component: component,
 		haveCountDown: haveCountDown,
 		title: title,
-		date: date,
+		dateLabel: dateLabel,
 		location: location,
 		ticketUrl: ticketUrl,
 		backgroundImage: backgroundImage
@@ -37,5 +49,4 @@ exports.get = function(req) {
 	return {
 		body: libThymeleaf.render(viewFile, model)
 	};
-
 };

@@ -17,23 +17,35 @@
     text-align: left;
 }
 
-.info > .left { 
-    float: left;
+.info {
+    display: inline-flex;
+}
+
+.banner-btn {
+    margin-top: -65px;
+}
+
+.info > .left {
     color: white;
     overflow: inherit;
 }
 
 .info > .right { 
-    padding-left:10px; 
+    padding-left: 5px; 
     color: white;
+    overflow: inherit;
 }
 
-.bannerTitle > h2 { color: #ff6600; }
-.bannerTitle > h3 { color: #fff; }
+.bannerTitle > h1 { color: #ff6600; }
+.bannerTitle > h2 { color: #fff; }
 
-.bannerTitle > h2, h3, h4, h5, h6 { 
+.bannerTitle > h1, h2 { 
     font-size: 4.625rem; 
     font-family: "Montserrat", sans-serif;
     position: relative;
     right: 10px;
+}
+
+.bannerTitle {    
+    margin-bottom: -65px;
 }

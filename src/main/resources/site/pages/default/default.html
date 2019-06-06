@@ -30,74 +30,74 @@
         =            Navigation Section            =
         =========================================-->
         <nav class="navbar main-nav border-less navbar-expand-lg p-0"> <!-- TODO: This is a removed class name: fixed-top -->
-            <div class="container-fluid p-0">
-                <!-- logo -->
-                <a class="navbar-brand" href="#">
-                    <img data-th-src="${portal.imageUrl({'_id=' + headerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- navigation menu -->
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item dropdown active dropdown-slide">
-                        <a class="nav-link" data-toggle="dropdown">Home
-                            <span>/</span>
-                        </a>
-                        <!-- Dropdown list -->
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item">Homepage</a>
-                        <a class="dropdown-item">Homepage 2</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Speakers
-                            <span>/</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-slide">
-                        <a class="nav-link" data-toggle="dropdown">Pages<span>/</span></a>
-                        <!-- Dropdown list -->
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" About Us></a>
-                            <a class="dropdown-item" Single Speaker></a>
-                            <a class="dropdown-item" Gallery></a>
-                            <a class="dropdown-item" Gallery-02></a>
-                            <a class="dropdown-item" Testimonial></a>
-                            <a class="dropdown-item" Pricing></a>
-                            <a class="dropdown-item" FAQ></a>
-                            <a class="dropdown-item" 404></a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Schedule<span>/</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Sponsors<span>/</span></a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-slide">
-                        <a class="nav-link" data-toggle="dropdown">News
-                        <span>/</span>
-                        </a>
-                        <!-- Dropdown list -->
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item">News without sidebar</a>
-                        <a class="dropdown-item">News with right sidebar</a>
-                        <a class="dropdown-item">News with left sidebar</a>
-                        <a class="dropdown-item">News Single</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                <a class="ticket" data-th-href=${ticketUrl}>
-                  <img data-th-src="${portal.assetUrl({'_path=images/icon/ticket.png'})}" alt="ticket">
-                  <span data-th-text="${ticketText}">Buy Ticket</span>
-                </a>
-                </div>
-            </div>
+          <div class="container-fluid p-0">
+              <!-- logo -->
+              <a class="navbar-brand" href="#">
+                  <img data-th-if="${headerLogo}" data-th-src="${portal.imageUrl({'_id=' + headerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="fa fa-bars"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+              <!-- navigation menu -->
+              <ul class="navbar-nav mx-auto">
+                  <li class="nav-item dropdown active dropdown-slide">
+                      <a class="nav-link" data-toggle="dropdown">Home
+                          <span>/</span>
+                      </a>
+                      <!-- Dropdown list -->
+                      <div class="dropdown-menu">
+                      <a class="dropdown-item">Homepage</a>
+                      <a class="dropdown-item">Homepage 2</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link">Speakers
+                          <span>/</span>
+                      </a>
+                  </li>
+                  <li class="nav-item dropdown dropdown-slide">
+                      <a class="nav-link" data-toggle="dropdown">Pages<span>/</span></a>
+                      <!-- Dropdown list -->
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" About Us></a>
+                          <a class="dropdown-item" Single Speaker></a>
+                          <a class="dropdown-item" Gallery></a>
+                          <a class="dropdown-item" Gallery-02></a>
+                          <a class="dropdown-item" Testimonial></a>
+                          <a class="dropdown-item" Pricing></a>
+                          <a class="dropdown-item" FAQ></a>
+                          <a class="dropdown-item" 404></a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link">Schedule<span>/</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link">Sponsors<span>/</span></a>
+                  </li>
+                  <li class="nav-item dropdown dropdown-slide">
+                      <a class="nav-link" data-toggle="dropdown">News
+                      <span>/</span>
+                      </a>
+                      <!-- Dropdown list -->
+                      <div class="dropdown-menu">
+                      <a class="dropdown-item">News without sidebar</a>
+                      <a class="dropdown-item">News with right sidebar</a>
+                      <a class="dropdown-item">News with left sidebar</a>
+                      <a class="dropdown-item">News Single</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link">Contact</a>
+                  </li>
+              </ul>
+              <a data-th-if="${ticketUrl}" class="ticket" data-th-href=${ticketUrl}>
+                <img data-th-src="${portal.assetUrl({'_path=images/icon/ticket.png'})}" alt="ticket">
+                <span data-th-text="${ticketText}">Buy Ticket</span>
+              </a>
+              </div>
+          </div>
         </nav>        
         <!--====  End of Navigation Section  ====-->
 
@@ -105,31 +105,30 @@
         <!--========================================
         =            Breadcrumbs Section           =
         =========================================-->
-        <!-- <div
-          class="breadcrumbs"
-          data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + breadcrumbsBackground, '_scale=max(1280)', '_format=jpeg'})} + ');'"
-        >
-          <div data-th-replace="/site/views/fragments/enonic-lib-menu/breadcrumb :: breadcrumb"></div>
-        </div> -->
-        <nav 
+        <section 
+          class="page-title bg-title overlay-dark breadcrumbs"
           data-th-if="${breadcrumbs} and ${breadcrumbsShowBanner}"
           role="navigation"
-          class="breadcrumbs"
           data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + breadcrumbsBackground, '_scale=max(1280)', '_format=jpeg'})} + ');'"
         >
-            <ol class="breadcrumb-menu">
-               <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="
-                  ${item.active ? 'active' : ''} +
-                  ${iterStat.first ? ' first' : ''} +
-                  ${iterStat.last ? ' last' : ''}
-               ">
-                  <a class="breadcrumbsLink" href="/" data-th-if="${item.url}" data-th-href="${item.url}" data-th-text="${item.text}">Home</a>
-                  <span data-th-unless="${item.url}" data-th-text="${item.text}" data-th-remove="tag">Home</span>
-                  <div data-th-remove="tag" data-th-if="${breadcrumbs.divider} and !${iterStat.last}" data-th-utext="${breadcrumbs.divider}"></div>
-                  <div class="breadcrumbOverlay"></div>
-               </li>
-            </ol>
-          </nav>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center breadcrumbsAlignment">
+                <div class="title">
+                  <h3 data-th-text="${templateName}"></h3>
+                </div>
+                <ol class="breadcrumb p-0 m-0">
+                  <li 
+                    class="breadcrumb-item"
+                  >
+                    <a data-th-if="${homeUrl}" data-th-href="${homeUrl}">HOME</a>
+                  </li>
+                  <li data-th-text="${templateName}" class="breadcrumb-item active"></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
         <!--====  End of Breadcrumbs Section  ====-->
         
 
@@ -154,36 +153,35 @@
         <!--============================
         =            Footer            =
         =============================-->
-         <footer class="footer-main">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="block text-center">
-                    <div class="footer-logo">
-                      <img data-th-src="${portal.imageUrl({'_id=' + footerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
-                    </div>
-                    <ul class="social-links-footer list-inline">
-                      <li data-th-if="${facebookUrl}" class="list-inline-item">
-                        <a data-th-href="${facebookUrl}"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li data-th-if="${twitterUrl}" class="list-inline-item">
-                        <a data-th-href="${twitterUrl}"><i class="fa fa-twitter"></i></a>
-                      </li>
-                      <li data-th-if="${instagramUrl}" class="list-inline-item">
-                        <a data-th-href="${instagramUrl}"><i class="fa fa-instagram"></i></a>
-                      </li>
-                      <li data-th-if="${rssUrl}" class="list-inline-item">
-                        <a data-th-href="${rssUrl}"><i class="fa fa-rss"></i></a>
-                      </li>
-                      <li data-th-if="${vimeoUrl}" class="list-inline-item">
-                        <a data-th-href="${vimeoUrl}"><i class="fa fa-vimeo"></i></a>
-                      </li>
-                    </ul>
+        <footer class="footer-main">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="block text-center">
+                  <div class="footer-logo">
+                    <img data-th-if="${footerLogo}" data-th-src="${portal.imageUrl({'_id=' + footerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
                   </div>
-                  
-                </div>
+                  <ul class="social-links-footer list-inline">
+                    <li data-th-if="${facebookUrl}" class="list-inline-item">
+                      <a data-th-href="${facebookUrl}"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li data-th-if="${twitterUrl}" class="list-inline-item">
+                      <a data-th-href="${twitterUrl}"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li data-th-if="${instagramUrl}" class="list-inline-item">
+                      <a data-th-href="${instagramUrl}"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li data-th-if="${rssUrl}" class="list-inline-item">
+                      <a data-th-href="${rssUrl}"><i class="fa fa-rss"></i></a>
+                    </li>
+                    <li data-th-if="${vimeoUrl}" class="list-inline-item">
+                      <a data-th-href="${vimeoUrl}"><i class="fa fa-vimeo"></i></a>
+                    </li>
+                  </ul>
+                </div>                  
               </div>
             </div>
+          </div>
         </footer>
         <!-- Subfooter -->
         <footer class="subfooter">
@@ -195,7 +193,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                  <a class="to-top"><i class="fa fa-angle-up"></i></a>
+                <a class="to-top"><i class="fa fa-angle-up"></i></a>
               </div>
             </div>
           </div>

@@ -29,10 +29,13 @@
 	}
 	
 	.breadcrumbs {
-		text-align: center;
-		position: relative;
 		background-size: cover;
-		height: 200px;
+		padding-top: 70px;
+	}
+
+	.breadcrumb-title {
+		position: relative;
+    padding: 70px 0 65px;
 	}
 
 	.breadcrumbsLink {
@@ -61,7 +64,7 @@
 	.breadcrumb-menu {
 		list-style:none;
 	}
-  
+
   h1, h2, h3, h4, h5, h6 {
 	font-family: "Montserrat", sans-serif;
 	color: #222222;
@@ -125,11 +128,7 @@
   .shadow, .speakers.white .speaker-item:hover, .schedule.two .schedule-contents, .sponsors .block .image-block:hover, ul.pagination li a:hover, ul.pagination li a:focus, ul.pagination .active a, .news-hr .news-post-hr:hover, .testimonial .testimonial-item .comment:hover {
 	box-shadow: 0px 0px 30px 0px rgba(11, 29, 66, 0.15);
   }
-  
-  .border-bottom {
-	border-bottom: 1px solid #e5e5e5;
-  }
-  
+    
  /*  .overlay:before {
 	content: '';
 	background: url(../images/background/objects.png) no-repeat;
@@ -779,8 +778,8 @@
   }
   
   .page-title {
-	position: relative;
-	padding: 165px 0 65px;
+		position: relative;
+		padding: 70px 0 65px;
   }
   
   .page-title h3, .page-title li, .page-title a {
@@ -2404,13 +2403,12 @@
   }
   
   .single-speaker .block {
-	padding-bottom: 70px;
-	border-bottom: 1px solid #e5e5e5;
+	/* padding-bottom: 70px;
+	border-bottom: 1px solid #e5e5e5; */ /* Removed because it messes up the single-speaker */
   }
   
   .single-speaker .block .image-block {
 	background: #fff;
-	border: 1px solid #e5e5e5;
 	padding: 6px;
   }
   
@@ -2509,7 +2507,7 @@
 	content: "\f10c";
 	font-family: FontAwesome;
 	color: #ff6600;
-  }
+	}
   
   .single-speaker .block-2 .skills .skill-bar {
 	margin-bottom: 20px;

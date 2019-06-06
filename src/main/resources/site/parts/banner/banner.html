@@ -4,15 +4,13 @@
 >
 	<div class="bannerText">
 		<p>The countdown is finished!</p>
-		<div
-			data-th-utext="${title}"
-			class="bannerTitle"
-		></div>
+		<div data-th-utext="${title}" class="bannerTitle"></div>
 		<div class="info">
-			<p class="left" data-th-text="${date}"></p>
-			<p class="right" data-th-text="${location}"></p>
+			<p class="left" data-th-if="${dateLabel}" data-th-text="${dateLabel}"></p>
+			<p class="right" data-th-if="${location}" data-th-text="${location}"></p>
 		</div>
-		<a data-th-href="${ticketUrl}" class="btn btn-white-md">get ticket now</a>
-	</div>
-		
+		<div>
+			<a data-th-if="${ticketUrl}" data-th-href="${ticketUrl}" class="banner-btn btn btn-white-md">get ticket now</a>
+		</div>
+	</div>		
 </div>

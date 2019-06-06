@@ -6,11 +6,6 @@
     <field-set name="basic">
       <label>Speaker</label>
       <items>
-      
-        <input type="TextLine" name="name">
-          <label>Name</label>
-          <occurrences minimum="1" maximum="1"/>
-        </input>
 
         <input type="ImageSelector" name="image">
           <label>Profile image</label>
@@ -27,91 +22,78 @@
           <occurrences minimum="1" maximum="1"/>
         </input>
 
-        <option-set name="socialProfiles">
-          <label i18n="socialProfiles.label">Social Profiles</label>
-          <expanded>true</expanded> 
-          <occurrences minimum="1" maximum="1"/> 
-          <help-text>All options may be selected</help-text>
-          <options minimum="0" maximum="5">            
-            <option name="twitter">
-              <label>Twitter</label>
-              <help-text>A Twitter Url may be specified here</help-text>
-              <items>
-                <input type="TextLine" name="long">
-                  <label>Twitter</label>
-                  <indexed>true</indexed>
-                  <occurrences minimum="1" maximum="1"/>
-                </input>
-              </items>
-            </option>
-            <option name="linkedin">
-              <label>LinkedIn</label>
-              <help-text>A LinkedIn Url may be specified here</help-text>
-              <items>
-                <input type="TextLine" name="linkedin">
-                  <label>LinkedIn</label>
-                  <indexed>true</indexed>
-                  <occurrences minimum="1" maximum="1"/>
-                </input>
-              </items>
-            </option>
-            <option name="facebook">
-              <label>Facebook</label>
-              <help-text>A Facebook Url may be specified here</help-text>
-              <items>  
-                <input type="TextLine" name="facebook">
-                  <label>Facebook</label>
-                  <indexed>true</indexed>
-                  <occurrences minimum="1" maximum="1"/>
-                </input>
-              </items>
-            </option>
-            <option name="skype">
-              <label>Skype</label>
-              <help-text>A Skype Url may be specified here</help-text>
-              <items>            
-                <input type="TextLine" name="skype">
-                  <label>Skype</label>
-                  <indexed>true</indexed>
-                  <occurrences minimum="1" maximum="1"/>
-                </input>
-              </items>
-            </option>
-            <option name="pinterest">
-              <label>Pinterest</label>
-              <help-text>A Pinterest Url may be specified here</help-text>
-              <items>
-                <input type="TextLine" name="pinterest">
-                  <label>Pinterest</label>
-                  <indexed>true</indexed>
-                  <occurrences minimum="1" maximum="1"/>
-                </input>
-              </items>
-            </option>
-          </options>
-        </option-set>
-
         <input type="HtmlArea" name="personalInformation">
           <label>Personal Information</label>
           <occurrences minimum="1" maximum="1"/>
         </input>
 
+        <!--  -->
+        <input type="TextLine" name="linkedinUrl">
+          <label>Linkedin URL</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
+        </input>
+        <input type="TextLine" name="twitterUrl">
+          <label>Twitter URL</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
+        </input>
+        <input type="TextLine" name="skypeUrl">
+          <label>Skype URL</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
+        </input>
+        <input type="TextLine" name="pintrestUrl">
+          <label>Pintrest URL</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
+        </input>
+        <input type="TextLine" name="facebookUrl">
+          <label>Facebook URL</label>
+          <occurrences minimum="0" maximum="1"/>
+          <config>            
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          </config>
+        </input>
+        <!--  -->
+
+        
+
+      </items>
+    </field-set>
+    <field-set>
+      <label>Personal Skills</label>
+      <items>
         <item-set name="personalSkills"> 
-          <label i18n="personalSkills.label">a personal skill</label> 
-          <occurrences minimum="0" maximum="4"/>
-          <help-text>Upto 4 personal skills may be specified here</help-text> 
+          <label>a personal skill</label> 
+          <occurrences minimum="0" maximum="0"/>
+          <help-text>Personal skills may be specified here.</help-text> 
           <items>
             <input type="TextLine" name="skill">
               <label>Skill</label>
               <occurrences minimum="1" maximum="1"/>
+              <config>
+                <max-length>20</max-length>
+              </config>
             </input>
             <input type="Long" name="proficiency">
-              <label>Percent Proficiency (0% - 100%)</label>
+              <label>Proficiency (0-100)</label>              
+              <config>
+                <min>0</min> 
+                <max>100</max> 
+              </config>
               <occurrences minimum="1" maximum="1"/>
             </input>
           </items>
         </item-set>
-
       </items>
     </field-set>
   </form>

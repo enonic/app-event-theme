@@ -1,6 +1,7 @@
 var libPortal = require('/lib/xp/portal'); // Import the portal functions
 var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 var libMenu = require('/lib/menu.js');
+var libContent = require('/lib/xp/content');
 
 var viewFile = resolve('default.html');
 
@@ -19,7 +20,7 @@ exports.get = function(req) {
     var isFragment = content.type === 'portal:fragment';
     var mainRegion = isFragment ? null : content.page.regions.main;
     
-    var licence = config.licence || '<p><a>Eventre</a> © 2017 All Right Reserved</p>';
+    var licence = config.licence || '<p>Copyright &#169; Enonic AS. All Rights Reserved. <a href="https://enonic.com/privacy-policy">Privacy Policy</a>. <a href="https://enonic.com/cookie-policy">Cookie Policy</a>. </p>';
 
     var headerLogo = config.headerLogo;
     var footerLogo = config.footerLogo;
@@ -35,9 +36,20 @@ exports.get = function(req) {
 
     var breadcrumbItems = libMenu.getBreadcrumbMenu({}); // Get a breadcrumb menu for current content.
     var breadcrumbsBackground = config.breadcrumbsBackground;
+    
     var breadcrumbsShowBanner = config.breadcrumbsShowBanner;
+    if (!breadcrumbsShowBanner)
+        breadcrumbsShowBanner = false;
 
-    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbItems, null, 4)); */
+    var templateName = '';
+    if (content.page.template)
+        templateName = libContent.get({ key: content.page.template }).displayName;
+    else
+        breadcrumbItems = false;
+
+    var homeUrl = libPortal.url({path: site._path});
+
+    log.info('default.js JSON %s', JSON.stringify(breadcrumbsShowBanner), null, 4);
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -57,9 +69,10 @@ exports.get = function(req) {
         ticketText: ticketText,
         breadcrumbs: breadcrumbItems,
         breadcrumbsBackground: breadcrumbsBackground,
-        breadcrumbsShowBanner: breadcrumbsShowBanner
+        breadcrumbsShowBanner: breadcrumbsShowBanner,
+        templateName: templateName,
+        homeUrl: homeUrl,
     };
-
 
     // Return a response from the server to the client
     return {
