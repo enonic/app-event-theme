@@ -37,9 +37,12 @@ exports.get = function(req) {
     var breadcrumbItems = libMenu.getBreadcrumbMenu({}); // Get a breadcrumb menu for current content.
     var breadcrumbsBackground = config.breadcrumbsBackground;
     
-    var breadcrumbsShowBanner = config.breadcrumbsShowBanner;
-    if (!breadcrumbsShowBanner)
-        breadcrumbsShowBanner = false;
+    var breadcrumbsHideBanner = false;
+    if (config.breadcrumbsHideBanner) {
+        breadcrumbsHideBanner = true;
+    }
+    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbsHideBanner), null, 4); */
+
 
     var templateName = '';
     if (content.page.template)
@@ -49,7 +52,6 @@ exports.get = function(req) {
 
     var homeUrl = libPortal.url({path: site._path});
 
-    log.info('default.js JSON %s', JSON.stringify(breadcrumbsShowBanner), null, 4);
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -69,7 +71,7 @@ exports.get = function(req) {
         ticketText: ticketText,
         breadcrumbs: breadcrumbItems,
         breadcrumbsBackground: breadcrumbsBackground,
-        breadcrumbsShowBanner: breadcrumbsShowBanner,
+        breadcrumbsHideBanner: breadcrumbsHideBanner,
         templateName: templateName,
         homeUrl: homeUrl,
     };

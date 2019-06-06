@@ -67,9 +67,8 @@
       <default>BUY TICKET</default>
       <occurrences minimum="0" maximum="1"/>
     </input>
-    <input type="CheckBox" name="breadcrumbsShowBanner">
-      <label>Would you like to show the breadcrumb banner?</label>
-      <default>checked</default> 
+    <input type="CheckBox" name="breadcrumbsHideBanner">
+      <label>Would you like to hide the breadcrumb banner?</label>
       <config>
         <alignment>right</alignment> 
       </config>

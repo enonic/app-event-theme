@@ -107,7 +107,7 @@
         =========================================-->
         <section 
           class="page-title bg-title overlay-dark breadcrumbs"
-          data-th-if="${breadcrumbs} and ${breadcrumbsShowBanner}"
+          data-th-if="${breadcrumbs} and not ${breadcrumbsHideBanner}"
           role="navigation"
           data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + breadcrumbsBackground, '_scale=max(1280)', '_format=jpeg'})} + ');'"
         >
