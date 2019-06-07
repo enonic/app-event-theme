@@ -12,68 +12,52 @@ exports.get = function(req) {
     var content = libPortal.getContent();
     var site = libPortal.getSite();
     var config = libPortal.getSiteConfig();
-
     
     // Fragment handling (single fragments should use this page controller automatically to render itself)
-    var colorize = config.colorize ? "colorize" : "";
-    var siteName = site.displayName;
     var isFragment = content.type === 'portal:fragment';
-    var mainRegion = isFragment ? null : content.page.regions.main;
-    
+    var mainRegion = isFragment ? null : content.page.regions.main;    
     var licence = config.licence || '<p>Copyright &#169; Enonic AS. All Rights Reserved. <a href="https://enonic.com/privacy-policy">Privacy Policy</a>. <a href="https://enonic.com/cookie-policy">Cookie Policy</a>. </p>';
-
-    var headerLogo = config.headerLogo;
-    var footerLogo = config.footerLogo;
-
-    var facebookUrl = config.facebookUrl;
-    var twitterUrl = config.twitterUrl;
-    var instagramUrl = config.instagramUrl;
-    var rssUrl = config.rssUrl;
-    var vimeoUrl = config.vimeoUrl;
-
-    var ticketUrl = config.ticketUrl;
     var ticketText = config.ticketText || 'BUY TICKET';
 
-    var breadcrumbItems = libMenu.getBreadcrumbMenu({}); // Get a breadcrumb menu for current content.
-    var breadcrumbsBackground = config.breadcrumbsBackground;
+    // Get a breadcrumb menu for current content.
+    var breadcrumbItems = libMenu.getBreadcrumbMenu({
+        params: {
+            showHomepage: true
+        }
+    });
     
     var breadcrumbsHideBanner = false;
     if (config.breadcrumbsHideBanner) {
         breadcrumbsHideBanner = true;
     }
-    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbsHideBanner), null, 4); */
-
-
+    
+    
     var templateName = '';
-    if (content.page.template)
-        templateName = libContent.get({ key: content.page.template }).displayName;
-    else
-        breadcrumbItems = false;
+    if (content.page.template) { templateName = libContent.get({ key: content.page.template }).displayName; }
+    else { breadcrumbItems = false; }
 
-    var homeUrl = libPortal.url({path: site._path});
-
-
+    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbsHideBanner), null, 4); */
+    
 	// Prepare the model that will be passed to the view
     var model = {
-        siteName: siteName,
-        colorize: colorize,
+        siteName: site.displayName,
         isFragment: isFragment,
         mainRegion: mainRegion,
         licence: licence,
-        headerLogo: headerLogo,
-        footerLogo: footerLogo,
-        facebookUrl: facebookUrl,
-        twitterUrl: twitterUrl,
-        instagramUrl: instagramUrl,
-        rssUrl: rssUrl,
-        vimeoUrl: vimeoUrl,
-        ticketUrl: ticketUrl,
+        headerLogo: config.headerLogo,
+        footerLogo: config.footerLogo,
+        facebookUrl: config.facebookUrl,
+        twitterUrl: config.twitterUrl,
+        instagramUrl: config.instagramUrl,
+        rssUrl: config.rssUrl,
+        vimeoUrl: config.ticketUrl,
+        ticketUrl: config.ticketUrl,
         ticketText: ticketText,
         breadcrumbs: breadcrumbItems,
-        breadcrumbsBackground: breadcrumbsBackground,
+        breadcrumbsBackground: config.breadcrumbsBackground,
         breadcrumbsHideBanner: breadcrumbsHideBanner,
         templateName: templateName,
-        homeUrl: homeUrl,
+        homeUrl: libPortal.url({path: site._path}),
     };
 
     // Return a response from the server to the client

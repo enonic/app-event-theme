@@ -68,7 +68,7 @@
       <occurrences minimum="0" maximum="1"/>
     </input>
     <input type="CheckBox" name="breadcrumbsHideBanner">
-      <label>Would you like to hide the breadcrumb banner?</label>
+      <label>Hide breadcrumb banner</label>
       <config>
         <alignment>right</alignment> 
       </config>
