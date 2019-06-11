@@ -13,9 +13,6 @@ exports.get = function(req) {
 
 	
 	/* ### Manipulate ### */
-    var haveCountDown = config.haveCountDown;
-	var title = config.title;
-
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var dateLabel = "";
 	var fromDate = new Date(config.fromDate);
@@ -27,22 +24,17 @@ exports.get = function(req) {
 	}
 	
     /* log.info('banner.js JSON %s', JSON.stringify(fulldate, null, 4)); */
-	
-    var location = config.location;
-    var ticketUrl = config.ticketUrl;
-    var backgroundImage = config.backgroundImage;	
-
 
 	/* ### Prepare ### */
 	var model = {
 		content: content,
 		component: component,
-		haveCountDown: haveCountDown,
-		title: title,
+		haveCountDown: config.haveCountDown,
+		title: config.title,
 		dateLabel: dateLabel,
-		location: location,
-		ticketUrl: ticketUrl,
-		backgroundImage: backgroundImage
+		location: config.location,
+		ticketUrl: config.ticketUrl,
+		backgroundImage: config.backgroundImage,
 	};
 
 	/* ### Return ### */
