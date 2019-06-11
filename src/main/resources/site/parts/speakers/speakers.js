@@ -26,7 +26,7 @@ exports.get = function(req) {
     speakers.forEach(element => {   /* Filter out the details we want from each speaker */
         var image = libPortal.imageUrl({    /* We want their image */
             id: element.data.image,
-            scale: 'square(240)'
+            scale: 'block(241, 254)'
         });
 
         speakersDetails.push({

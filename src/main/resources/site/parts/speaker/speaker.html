@@ -1,80 +1,78 @@
-<div>
-    <section class="section single-speaker">
-        <div class="container">
-            <div class="block">
-                <div class="row horizontal-line">
-                    <div class="col-lg-5 col-md-6 align-self-md-center">
-                        <div class="image-block">
-                            <img
-                                class="profile-image"
-                                data-th-if="${speaker.data.image}"
-                                data-th-src="${portal.imageUrl({'_id=' + speaker.data.image, '_scale=width(430)', '_format=jpeg'})}"
-                                data-th-alt="${speaker.data.name}"
-                            />
-                        </div>
+<section class="section single-speaker">
+    <div class="container">
+        <div class="block">
+            <div class="row horizontal-line">
+                <div class="col-lg-5 col-md-6">
+                    <div class="image-block">
+                        <img
+                            class="img-fluid"
+                            data-th-if="${speaker.data.image}"
+                            data-th-src="${portal.imageUrl({'_id=' + speaker.data.image, '_scale=block(431, 453)', '_format=jpeg'})}"
+                            data-th-alt="${speaker.data.name}"
+                        />
                     </div>
-                    <div class="col-lg-7 col-md-6 align-self-center">
-                        <div class="content-block">
-                            <div class="name">
-                                <h3 data-th-text="${speaker.displayName}"></h3>
-                            </div>
-                            <div class="profession">
-                                <p data-th-text="${speaker.data.title}"></p>
-                            </div>
-                            <div class="details">
-                                <div class="details" data-th-utext="${speaker.data.description}">
-                            </div>
-                            <div class="social-profiles">
-                                <h5>Social Profiles</h5>
-                                <ul class="list-inline social-list">
-                                    <li data-th-if="${speaker.data.twitterUrl}" class="list-inline-item">
-                                        <a data-th-href="${speaker.data.twitterUrl}"><i class="fa fa-twitter"></i></a>
-                                    </li>
-                                    <li data-th-if="${speaker.data.linkedinUrl}" class="list-inline-item">
-                                        <a data-th-href="${speaker.data.linkedinUrl}"><i class="fa fa-linkedin"></i></a>
-                                    </li>
-                                    <li data-th-if="${speaker.data.facebookUrl}" class="list-inline-item">
-                                        <a data-th-href="${speaker.data.facebookUrl}"><i class="fa fa-facebook"></i></a>
-                                    </li>
-                                    <li data-th-if="${speaker.data.skypeUrl}" class="list-inline-item">
-                                        <a data-th-href="${speaker.data.skypeUrl}"><i class="fa fa-skype"></i></a>
-                                    </li>
-                                    <li data-th-if="${speaker.data.pintrestUrl}" class="list-inline-item">
-                                        <a data-th-href="${speaker.data.pintrestUrl}"><i class="fa fa-pinterest-p"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                </div>
+                <div class="col-lg-7 col-md-6 align-self-center">
+                    <div class="content-block">
+                        <div class="name">
+                            <h3 data-th-text="${speaker.displayName}"></h3>
+                        </div>
+                        <div class="profession">
+                            <p data-th-text="${speaker.data.title}"></p>
+                        </div>
+                        <div class="details">
+                            <div class="details" data-th-utext="${speaker.data.description}">
+                        </div>
+                        <div class="social-profiles">
+                            <h5>Social Profiles</h5>
+                            <ul class="list-inline social-list">
+                                <li data-th-if="${speaker.data.twitterUrl}" class="list-inline-item">
+                                    <a data-th-href="${speaker.data.twitterUrl}"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li data-th-if="${speaker.data.linkedinUrl}" class="list-inline-item">
+                                    <a data-th-href="${speaker.data.linkedinUrl}"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li data-th-if="${speaker.data.facebookUrl}" class="list-inline-item">
+                                    <a data-th-href="${speaker.data.facebookUrl}"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li data-th-if="${speaker.data.skypeUrl}" class="list-inline-item">
+                                    <a data-th-href="${speaker.data.skypeUrl}"><i class="fa fa-skype"></i></a>
+                                </li>
+                                <li data-th-if="${speaker.data.pintrestUrl}" class="list-inline-item">
+                                    <a data-th-href="${speaker.data.pintrestUrl}"><i class="fa fa-pinterest-p"></i></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="block-2">
-                <div class="row">
-                    <div class="col-md-6">
-                    <div class="personal-info">
-                        <h5>Personal Information</h5>                            
-                        <div class="details">
-                            <div class="details" data-th-utext="${speaker.data.personalInformation}"></div>
-                        </div>
+        </div>
+        <div class="block-2">
+            <div class="row">
+                <div class="col-md-6">
+                <div class="personal-info">
+                    <h5>Personal Information</h5>                            
+                    <div class="details">
+                        <div class="details" data-th-utext="${speaker.data.personalInformation}"></div>
                     </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="skills">
-                            <h5>Personal Skills</h5>
-                            <div class="skill-bars" data-th-each="skill : ${speaker.data.personalSkills}">
-                                <!-- SkillBar -->
-                                <div class="skill-bar">
-                                    <!-- Title -->
-                                    <p data-th-text="${skill.skill}"></p>
-                                    <!-- Progress Bar -->
-                                    <div class="progress">
-                                        <div 
-                                            class="progress-bar" 
-                                            role="progressbar" 
-                                            data-th-style="'width:'+${skill.proficiency}+'%;'"
-                                        >
-                                    <span class="proficiencyPercent" data-th-text="${skill.proficiency}+'%'"></span></div>
-                                    </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skills">
+                        <h5>Personal Skills</h5> <!-- {skill=Java, proficiency=89} -->
+                        <div class="skill-bars" data-th-each="skill : ${speaker.data.personalSkills}">
+                            <!-- SkillBar -->
+                            <div class="skill-bar">
+                                <!-- Title -->
+                                <p data-th-text="${skill.skill}"></p>
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                    <div 
+                                        class="progress-bar" 
+                                        role="progressbar" 
+                                        data-th-style="'width:'+${skill.proficiency}+'%;'"
+                                    >
+                                <span class="proficiencyPercent" data-th-text="${skill.proficiency}+'%'"></span></div>
                                 </div>
                             </div>
                         </div>
@@ -82,5 +80,5 @@
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>
