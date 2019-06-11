@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout>
+    <display-name>1 column - for narrow and big text</display-name>
+    <form>
+		<input type="ImageSelector" name="backgroundImage">
+			<label>Background Image</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+    </form>
+    <regions>
+        <region name="main"/>
+    </regions>
+</layout>
