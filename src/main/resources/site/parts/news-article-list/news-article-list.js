@@ -3,7 +3,6 @@ var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
 var libUtil = require('/lib/util');
 
-
 var viewFile = resolve('news-article-list.html');
 
 exports.get = function(req) {
@@ -48,7 +47,10 @@ exports.get = function(req) {
             title: element.displayName, /* We want the title */
             image: image,
             published: published,
-            author: element.owner
+            author: element.owner,
+            url: libPortal.pageUrl({
+                id: element._id
+            })
         });
     });
 

@@ -15,7 +15,7 @@
             >
                 <div class="blog-post">
                     <div class="post-thumb">
-                        <a href="#"> <!-- TODO: Link should go to the news article -->
+                        <a data-th-href="${news.url}">
                             <img 
                                 data-th-src="${news.image}"
                                 alt="post-image" 
@@ -29,7 +29,7 @@
                             <span class="date-format" data-th-text="${news.published.month} + ' ' + ${news.published.year}"></span>
                         </div>
                         <div class="post-title">
-                            <h2 class="news-title"><a href="#" data-th-text="${news.title}"></a></h2>
+                            <h2 class="news-title"><a data-th-href="${news.url}" data-th-text="${news.title}"></a></h2>
                         </div>
                         <div class="post-meta">
                             <ul class="list-inline">
