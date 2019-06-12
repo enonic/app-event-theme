@@ -1,6 +1,7 @@
 var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
+var libUtil = require('/lib/util');
 
 var viewFile = resolve('speakers.html');
 
@@ -12,33 +13,24 @@ exports.get = function(req) {
     var config = component.config;
 
     /* ### Manipulate ### */
-    var speakers = [];
+    var speakersDetails = [];
+        
+    if (config.speakers !== null && config.speakers !== undefined) {
+        libUtil.data.forceArray(config.speakers).forEach(element => { // Retrieve all speakers with all of their details            
+            var speaker = libContent.get({ key: element });
 
-    config.speakers.forEach(element => { /* Retrieve all speakers with all of their details */
-        speakers.push(
-            libContent.get({
-                key: element
-            })
-        );
-    });
-
-    var speakersDetails = []
-    speakers.forEach(element => {   /* Filter out the details we want from each speaker */
-        var image = libPortal.imageUrl({    /* We want their image */
-            id: element.data.image,
-            scale: 'block(241, 254)'
+            speakersDetails.push({
+                name: speaker.displayName,
+                title: speaker.data.title,
+                image: libPortal.imageUrl({ id: speaker.data.image, scale: 'block(241, 254)' }), // hard coded image dimensions relative to template site
+                url: libPortal.pageUrl({ id: speaker._id }),
+                linkedinUrl: speaker.data.linkedinUrl,
+                twitterUrl: speaker.data.twitterUrl,
+                pintrestUrl: speaker.data.pintrestUrl,
+                facebookUrl: speaker.data.facebookUrl,
+            });
         });
-
-        speakersDetails.push({
-            name: element.displayName,  /* We want their name */
-            title: element.data.title,  /* We want their title */
-            image: image,
-            linkedinUrl: element.data.linkedinUrl,
-            twitterUrl: element.data.twitterUrl,
-            pintrestUrl: element.data.pintrestUrl,
-            facebookUrl: element.data.facebookUrl,
-        });
-    });
+    }
 
     /* log.info('speakers.js JSON %s', JSON.stringify(speakersDetails, null, 4)); */
 
