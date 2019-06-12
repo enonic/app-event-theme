@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part>
+    <display-name>News Article List</display-name>
+    <form>
+        <input type="ContentSelector" name="newsArticles">
+            <label>News Article</label>
+            <occurrences minimum="0" maximum="0"/>
+            <config>
+                <allowContentType>news-article</allowContentType>
+            </config>
+        </input>
+		<input type="TextLine" name="description">
+			<label>Description</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+    </form>
+</part>

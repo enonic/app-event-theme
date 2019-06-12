@@ -1,0 +1,55 @@
+<section class="news section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>These are our <span class="alternate">News</span></h3>
+                    <p data-th-text="${description}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div
+                class="col-lg-4 col-md-6 col-sm-8 col-10 m-auto"
+                data-th-each="news: ${newsList}"
+            >
+                <div class="blog-post">
+                    <div class="post-thumb">
+                        <a href="#"> <!-- TODO: Link should go to the news article -->
+                            <img 
+                                data-th-src="${news.image}"
+                                alt="post-image" 
+                                class="img-fluid"
+                            >
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="date date-format">
+                            <h4 data-th-text="${news.published.day}"></h4>
+                            <span class="date-format" data-th-text="${news.published.month} + ' ' + ${news.published.year}"></span>
+                        </div>
+                        <div class="post-title">
+                            <h2 class="news-title"><a href="#" data-th-text="${news.title}"></a></h2>
+                        </div>
+                        <div class="post-meta">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <i class="fa fa-user-o"></i>
+                                    <a href="#" data-th-text="${news.author}"></a>
+                                </li>
+                                <!-- <li class="list-inline-item">
+                                    <i class="fa fa-heart-o"></i>
+                                    <a href="#">350</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <i class="fa fa-comments-o"></i>
+                                    <a href="#">30</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
