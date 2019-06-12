@@ -1,0 +1,84 @@
+<section class="news section">
+	<div class="container">
+		<div class="row mt-30">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<div class="block">
+					<article class="blog-post single">
+						<div class="post-thumb">                            
+                            <img
+                                class="img-fluid"
+                                data-th-if="${newsArticle.data.image}"
+                                data-th-src="${portal.imageUrl({'_id=' + newsArticle.data.image, '_scale=block(730, 465)', '_format=jpeg'})}"
+                                data-th-alt="${newsArticle.data.name}"
+                            />                            
+						</div>
+						<div class="post-content">
+							<div class="date date-format">
+								<h4 data-th-text="${published.day}"></h4>
+                                <span class="date-format" data-th-text="${published.month} + ' ' + ${published.year}"></span>
+                                <!-- <h4>
+                                    20
+                                    <span>
+                                        May
+                                    </span>
+                                </h4> -->
+							</div>
+							<div class="post-title">
+								<h3 data-th-text="${newsArticle.data.title}"></h3>
+							</div>
+							<div class="post-meta">
+								<ul class="list-inline">
+									<li class="list-inline-item">
+										<i class="fa fa-user-o"></i>
+										<a href="#" data-th-text="${newsArticle.owner}"></a>
+									</li>
+									<!-- <li class="list-inline-item">
+										<i class="fa fa-heart-o"></i>
+										<a href="#">350</a>
+									</li>
+									<li class="list-inline-item">
+										<i class="fa fa-comments-o"></i>
+										<a href="#">30</a>
+									</li> -->
+								</ul>
+							</div>
+							<div class="post-details">
+                                <div data-th-utext="${newsArticle.data.description}"></div>
+								<div class="share-block">
+									<div class="tag">
+										<p>Tags:</p>
+										<ul class="list-inline">
+											<li class="list-inline-item" data-th-each="tag: ${newsArticle.data.tag}">
+												<a href="#" data-th-text="${tag}"></a> <!-- TODO: Want to link to tag relevant News Articles -->
+											</li>
+										</ul>
+									</div>
+									<div class="share">
+										<p>Share:</p>
+										<ul class="social-links-share list-inline">
+							              <li class="list-inline-item">
+							                <a href="#"><i class="fa fa-facebook"></i></a>
+							              </li>
+							              <li class="list-inline-item">
+							                <a href="#"><i class="fa fa-twitter"></i></a>
+							              </li>
+							              <li class="list-inline-item">
+							                <a href="#"><i class="fa fa-instagram"></i></a>
+							              </li>
+							              <li class="list-inline-item">
+							                <a href="#"><i class="fa fa-rss"></i></a>
+							              </li>
+							              <li class="list-inline-item">
+							                <a href="#"><i class="fa fa-vimeo"></i></a>
+							              </li>
+							            </ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

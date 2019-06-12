@@ -2853,13 +2853,15 @@
 	position: absolute;
 	top: -32px;
 	left: 30px;
-	width: 65px;
-	height: 65px;
+	/* width: 65px; */
+	/* height: 65px; */
+	padding: 5px; /* added */
 	text-align: center;
 	background: #ff6600;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
+	/* display: flex; */
+	display: inline-block; /* added */
 	-webkit-box-align: center;
 		-ms-flex-align: center;
 			align-items: center;
