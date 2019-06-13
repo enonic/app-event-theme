@@ -15,12 +15,25 @@ exports.get = function(req) {
 	/* ### Manipulate ### */
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var dateLabel = "";
-	var fromDate = new Date(config.fromDate);
-
+	
 	if (config.fromDate && config.toDate) {
-		dateLabel += fromDate.getDay();
+		var fromDate = new Date(config.fromDate);
 		var toDate = new Date(config.toDate);
-		dateLabel += "-" + toDate.getDay() + " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear();
+
+		dateLabel += fromDate.getDate();
+		 if (fromDate.getFullYear() === toDate.getFullYear()) {
+			log.info('banner.js JSON %s', JSON.stringify("if", null, 4));
+			if (months[fromDate.getMonth()] === months[toDate.getMonth()]) {
+				log.info('banner.js JSON %s', JSON.stringify("if if", null, 4));
+				dateLabel += "-" + toDate.getDate() + " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear();
+			} else {
+				log.info('banner.js JSON %s', JSON.stringify("if else", null, 4));
+				dateLabel += " " + months[fromDate.getMonth()] + " - " + toDate.getDate() + " " + months[toDate.getMonth()] + " " + fromDate.getFullYear();
+			} 
+		} else {
+			log.info('banner.js JSON %s', JSON.stringify("else", null, 4));
+			dateLabel += " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear() + " - " + toDate.getDate() + " " + months[toDate.getMonth()] + " " + toDate.getFullYear();
+		}
 	}
 	
     /* log.info('banner.js JSON %s', JSON.stringify(fulldate, null, 4)); */
