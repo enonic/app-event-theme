@@ -13,47 +13,35 @@ exports.get = function(req) {
     var config = component.config;
 
     /* ### Manipulate ### */
-    var news = [];
-
-    libUtil.data.forceArray(config.newsArticles).forEach(element => { /* Retrieve all news articles with all of their details */
-        news.push(
-            libContent.get({
-                key: element
-            })
-        );
-    });
-    
-    /* log.info('news-articles-list.js JSON %s', JSON.stringify(news, null, 4)); */
-
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	
     var newsDetails = []
-    news.forEach(element => {   /* Filter out the details we want from each news article */
-        var image = libPortal.imageUrl({    /* We want the image */
-            id: element.data.image,
-            scale: 'block(350, 222)'
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    if (config.newsArticles !== null && config.newsArticles !== undefined) {
+        libUtil.data.forceArray(config.newsArticles).forEach(element => { /* Retrieve all news articles with all of their details */
+            var news = libContent.get({ key: element });
+
+            var newsImage = libPortal.imageUrl({    /* We want the image */
+                id: news.data.image,
+                scale: 'block(350, 222)'
+            });
+
+            var date = new Date(news.createdTime.split('T')[0]);        
+            var newsPublished = {
+                day: date.getDay() | 0, // trick to force number to have no digits
+                month: months[date.getMonth()],
+                year: date.getFullYear() | 0    // trick to force number to have no digits
+            };
+
+            newsDetails.push({
+                title: news.displayName,
+                image: newsImage,
+                published: newsPublished,
+                author: news.owner,
+                url: libPortal.pageUrl({ id: news._id })
+            });
         });
-
-        var published = {};
-        var date = new Date(element.createdTime.split('T')[0]);
-
-        if (element.createdTime) {
-            published.day = date.getDay() | 0;
-            published.month = months[date.getMonth()]
-            published.year = date.getFullYear() | 0;
-        }
-
-        newsDetails.push({
-            title: element.displayName, /* We want the title */
-            image: image,
-            published: published,
-            author: element.owner,
-            url: libPortal.pageUrl({
-                id: element._id
-            })
-        });
-    });
-
+    }
+    
     /* log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4)); */
 
 	/* ### Prepare ### */
