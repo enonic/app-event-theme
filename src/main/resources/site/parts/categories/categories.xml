@@ -1,0 +1,25 @@
+<part>
+	<display-name>Categories</display-name>
+	<description>Lists defined categories</description>
+	<form>
+        <field-set>
+        <label>Categories</label>
+        <items>
+            <item-set name="categories"> 
+            <label>a category</label> 
+            <occurrences minimum="0" maximum="0"/>
+            <help-text>Categories may be specified here.</help-text> 
+            <items>
+                <input type="TextLine" name="category">
+                <label>Category</label>
+                <occurrences minimum="1" maximum="1"/>
+                <config>
+                    <max-length>20</max-length>
+                </config>
+                </input>
+            </items>
+            </item-set>
+        </items>
+        </field-set>
+	</form>
+</part>

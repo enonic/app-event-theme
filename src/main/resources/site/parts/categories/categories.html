@@ -1,0 +1,11 @@
+<div class="widget category">
+    <!-- Widget Header -->
+    <h5 class="widget-header">Categories</h5>
+    <ul class="category-list m-0 p-0">
+        <li data-th-each="category, iterStat: ${categories}">
+            <a href="" data-th-text="${category.category}"> <!-- TODO: Want link to go to list of similar article news -->
+                <span class="float-right">(6)</span>
+            </a>
+        </li>
+    </ul>
+</div>
