@@ -1,12 +1,12 @@
-<section class="news section">
+<section class="news"> <!-- section -->
 	<div class="container">
-		<div class="row mt-30">
-			<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="row"> <!-- mt-30 -->
+			<div class="mx-auto"> <!-- col-lg-8 col-md-10 -->
 				<div class="block">
 					<article class="blog-post single">
 						<div class="post-thumb">                            
                             <img
-                                class="img-fluid"
+                                class="img-fluid img-fit"
                                 data-th-if="${newsArticle.data.image}"
                                 data-th-src="${portal.imageUrl({'_id=' + newsArticle.data.image, '_scale=block(730, 465)', '_format=jpeg'})}"
                                 data-th-alt="${newsArticle.data.name}"
@@ -43,7 +43,7 @@
 								</ul>
 							</div>
 							<div class="post-details">
-                                <div data-th-utext="${newsArticle.data.description}"></div>
+                                <div class="description-details" data-th-utext="${newsArticle.data.description}"></div>
 								<div class="share-block">
 									<div class="tag">
 										<p>Tags:</p>

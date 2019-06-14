@@ -2,3 +2,11 @@
     color: white;
     margin-bottom: 0px;
 }
+
+.img-fit {
+    width: inherit;
+}
+
+.description-details > figure > img {
+    max-width: 670px;
+}

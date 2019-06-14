@@ -1,6 +1,13 @@
 /*=== MEDIA QUERY ===*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700");
 
+.xp-layout {
+	max-width: 1280px;
+	margin: auto;
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
 .xp-page.colorize {
 	/*background-color: */
 	border: 5px solid #e9d2d2; /* red */
@@ -2832,7 +2839,7 @@
   
   .news .blog-post {
 	transition: .2s ease;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
   }
   
   @media (max-width: 767px) {
@@ -2847,6 +2854,7 @@
 	border-width: 0 1px 1px 1px;
 	border-style: solid;
 	border-color: #e5e5e5;
+	max-width: 730px;
   }
   
   .news .blog-post .post-content .date {
@@ -2919,7 +2927,7 @@
   }
   
   .news .blog-post.single {
-	margin-bottom: 100px;
+	/* margin-bottom: 100px; */
   }
   
   .news .blog-post.single .post-title {
