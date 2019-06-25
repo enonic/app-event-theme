@@ -63,8 +63,8 @@ processResources {
     exclude '**/.gitkeep'
     exclude 'assets/js/**/*.js'
     include 'assets/js/bundle.js'
-    exclude 'assets/styles/**/*.sass'
-    exclude 'assets/styles/**/*.sass'
+    //exclude 'assets/styles/**/*.sass'
+    //exclude 'assets/styles/**/*.sass'
     includeEmptyDirs false
 }
 

@@ -22,16 +22,12 @@ exports.get = function(req) {
 
 		dateLabel += fromDate.getDate();
 		 if (fromDate.getFullYear() === toDate.getFullYear()) {
-			log.info('banner.js JSON %s', JSON.stringify("if", null, 4));
 			if (months[fromDate.getMonth()] === months[toDate.getMonth()]) {
-				log.info('banner.js JSON %s', JSON.stringify("if if", null, 4));
 				dateLabel += "-" + toDate.getDate() + " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear();
 			} else {
-				log.info('banner.js JSON %s', JSON.stringify("if else", null, 4));
 				dateLabel += " " + months[fromDate.getMonth()] + " - " + toDate.getDate() + " " + months[toDate.getMonth()] + " " + fromDate.getFullYear();
 			} 
 		} else {
-			log.info('banner.js JSON %s', JSON.stringify("else", null, 4));
 			dateLabel += " " + months[fromDate.getMonth()] + " " + fromDate.getFullYear() + " - " + toDate.getDate() + " " + months[toDate.getMonth()] + " " + toDate.getFullYear();
 		}
 	}

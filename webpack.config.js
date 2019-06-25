@@ -16,7 +16,7 @@ module.exports = {
         filename: './js/[name].js',
     },
     resolve: {
-        extensions: ['.js', '.less', '.sass', '.css'],
+        extensions: ['.js', '.less', '.sass', '.css', '.scss'],
     },
     module: {
         rules: [
