@@ -2,7 +2,7 @@
     &show {
         display: flex;
         height: auto;
-        max-height: 5000px;
+        max-height: 1000px;
         transition: max-height .15s ease-in; /* https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css?page=2&tab=votes#tab-top */
     }
     
