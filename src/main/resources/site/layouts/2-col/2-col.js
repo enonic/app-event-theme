@@ -24,7 +24,8 @@ exports.get = function(req) {
 		leftRegion: component.regions["left"],
         rightRegion: component.regions["right"],
         leftConfig: leftConfig,
-        rightConfig: rightConfig
+        rightConfig: rightConfig,
+        backgroundImage: config.backgroundImage,
 	};
 
 	/* ### Return ### */
