@@ -1,6 +1,13 @@
 /*=== MEDIA QUERY ===*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700");
 
+.background-images {
+    background-size: cover;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
 .xp-layout {
 	max-width: 1280px;
 	margin: auto;
