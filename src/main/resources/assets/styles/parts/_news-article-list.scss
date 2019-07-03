@@ -1,3 +1,13 @@
 .news-title {
-    line-height: 45px;
+    line-height:0px;
+    min-height: 130px;
+}
+
+.blog-post {
+    margin: 15px 0px;
+
+    a {
+        position: relative;
+        z-index: 1;
+    }
 }

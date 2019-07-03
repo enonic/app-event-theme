@@ -6,10 +6,6 @@
     <field-set name="basic">
       <label>News Article</label>
       <items>
-        <input type="TextLine" name="title">
-          <label>Title</label>
-          <occurrences minimum="1" maximum="1"/>
-        </input>
         <input type="ImageSelector" name="image">
           <label>Image</label>
           <occurrences minimum="1" maximum="1"/>
