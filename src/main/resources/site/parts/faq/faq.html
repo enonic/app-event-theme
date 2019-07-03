@@ -12,13 +12,13 @@
             <div class="col-md-6"> <!-- 1st column -->
                 <div class="accordion-block">
                     <div id="accordion">
-                        <div class="card" data-th-each="faq, iterstat : ${faq}" data-th-if="${iterstat.index %2 == 0}"> <!-- evens -->
+                        <div class="card" data-th-each="faq, iterstat : ${faqs}" data-th-if="${iterstat.index %2 == 0}"> <!-- evens -->
                             <!-- Question Box -->
                             <div class="card-header">
                                 <h5 class="mb-0">
                                     <a data-toggle="false" data-th-attr="data-index=|${iterstat.index}|" class="faq-toggle-view-more">
                                         <div><span class="fa fa-plus-circle"></span></div>
-                                        <div><span data-th-text="${faq.question}" data-th-remove="tag"></span></div>
+                                        <div><span data-th-if=${faq.question} data-th-text="${faq.question}" data-th-remove="tag"></span></div>
                                     </a>
                                 </h5>
                             </div>
@@ -33,7 +33,7 @@
 			<div class="col-md-6"> <!-- 2nd column -->
                 <div class="accordion-block">
                     <div id="accordionTwo">
-                        <div class="card" data-th-each="faq, iterstat : ${faq}" data-th-if="${iterstat.index %2 == 1}"> <!-- odds -->
+                        <div class="card" data-th-each="faq, iterstat : ${faqs}" data-th-if="${iterstat.index %2 == 1}"> <!-- odds -->
                             <!-- Question Box -->
                             <div class="card-header">
                                 <h5 class="mb-0">

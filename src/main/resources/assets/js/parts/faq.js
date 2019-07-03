@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => { // activate the script after everything has loaded
+    // actions
     function toggleShowMore(event) {
         let questionElement = this;
         let answerElement = document.getElementById('faq-'+questionElement.dataset.index);
@@ -17,9 +18,12 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
         
         event.preventDefault();
     };
-    
-    for (let i = 0; i < document.getElementsByClassName('faq-toggle-view-more').length; i++) { // for all question boxes
-        let element = document.getElementsByClassName('faq-toggle-view-more')[i];
-        element.addEventListener('click', toggleShowMore);        
-    }
+
+    // listeners
+    try {
+        for (let i = 0; i < document.getElementsByClassName('faq-toggle-view-more').length; i++) { // for all question boxes
+            let element = document.getElementsByClassName('faq-toggle-view-more')[i];
+            element.addEventListener('click', toggleShowMore);        
+        }
+    } catch(err) {}
 });

@@ -1,6 +1,7 @@
 var libPortal = require('/lib/xp/portal');
 /* var libContent = require('/lib/xp/content'); */
 var libThymeleaf = require('/lib/thymeleaf');
+var libUtil = require('/lib/util');
 
 var viewFile = resolve('faq.html');
 
@@ -21,7 +22,7 @@ exports.get = function(req) {
 		content: content,
         component: component,
         description: config.description,
-        faq: config.questions
+		faqs: libUtil.data.forceArray(config.questions)
 	};
 
 	var scriptUrl = libPortal.assetUrl({
