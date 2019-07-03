@@ -10,3 +10,4 @@ example();
  */
 
 require('./parts/faq.js')
+require('./parts/search.js')
