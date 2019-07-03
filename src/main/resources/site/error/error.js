@@ -18,7 +18,7 @@ function getSiteConfig() {
 }
 
 exports.handle404 = function (err) {
-    log.info('error.js %s', err.request.url + ", status: " + err.status + ", " + err.message);
+    /* log.info('error.js %s', err.request.url + ", status: " + err.status + ", " + err.message); */
     var params = {
         home: getHomeUrl(),
         config: getSiteConfig()
@@ -31,7 +31,7 @@ exports.handle404 = function (err) {
 };
 
 exports.handleError = function (err) {
-    log.info('error.js %s', err.request.url + ", status: " + err.status + ", " + err.message);
+    /* log.info('error.js %s', err.request.url + ", status: " + err.status + ", " + err.message); */
     var debugMode = err.request.params.debug === 'true';
     if (debugMode && err.request.mode === 'preview') {
         return;
