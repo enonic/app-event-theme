@@ -15,9 +15,11 @@ exports.get = function(req) {
         id: libPortal.getSite()._id
 	});
 	
-	let searchWord = decodeURI(req.url.substring(req.url.search('=') + 1, req.url.length));
-
-	/* log.info('search.js JSON %s', JSON.stringify(config.width || false, null, 4)); */
+	let searchWord = '';
+	let queryString = 'search=';
+	if (req.url.search(queryString) !== -1) {
+		searchWord = decodeURI(req.url.substring(req.url.search(queryString) + queryString.length, req.url.length)); // offsetting by queryString.length
+	}
 
 	/* ### Prepare ### */
 	var model = {
