@@ -1,6 +1,6 @@
 <div class="widget search p-0">
     <div class="input-group" data-th-classappend="${width} ? search-width : s">
-        <input type="text" class="form-control main m-0" id="search-input" placeholder="Search..." data-th-attr="data-home=|${siteUrl}">
+        <input data-th-value="${searchWord}" type="text" class="form-control main m-0" id="search-input" placeholder="Search..." data-th-attr="data-home=|${siteUrl}">
         <span class="input-group-addon" id="search-icon"><i class="fa fa-search"></i></span>
     </div>
 </div>

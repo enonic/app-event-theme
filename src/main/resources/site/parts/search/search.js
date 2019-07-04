@@ -15,6 +15,8 @@ exports.get = function(req) {
         id: libPortal.getSite()._id
 	});
 	
+	let searchWord = decodeURI(req.url.substring(req.url.search('=') + 1, req.url.length));
+
 	/* log.info('search.js JSON %s', JSON.stringify(config.width || false, null, 4)); */
 
 	/* ### Prepare ### */
@@ -22,7 +24,8 @@ exports.get = function(req) {
 		content: content,
 		component: component,
 		siteUrl: siteUrl,
-		width: config.width || false
+		width: config.width || false,
+		searchWord: searchWord
 	};
 
 	var scriptUrl = libPortal.assetUrl({
