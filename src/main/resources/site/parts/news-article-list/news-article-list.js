@@ -2,6 +2,7 @@ var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
 var libUtil = require('/lib/util');
+var libAuth = require('/lib/xp/auth');
 
 var viewFile = resolve('news-article-list.html');
 
@@ -11,6 +12,7 @@ exports.get = function(req) {
 	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     var config = component.config;
+var libAuth = require('/lib/xp/auth');
 
     /* ### Manipulate ### */
     var newsDetails = []
@@ -36,7 +38,7 @@ exports.get = function(req) {
                 title: news.displayName,
                 image: newsImage,
                 published: newsPublished,
-                author: news.owner,
+                author: libAuth.getPrincipal(news.owner).displayName,
                 url: libPortal.pageUrl({ id: news._id })
             });
         });
