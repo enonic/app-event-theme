@@ -12,7 +12,6 @@ exports.get = function(req) {
 	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     var config = component.config;
-var libAuth = require('/lib/xp/auth');
 
     /* ### Manipulate ### */
     var newsDetails = []
