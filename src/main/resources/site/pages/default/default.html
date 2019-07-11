@@ -41,57 +41,27 @@
               <div class="collapse navbar-collapse" id="navbarNav">
               <!-- navigation menu -->
               <ul class="navbar-nav mx-auto">
-                  <li class="nav-item dropdown active dropdown-slide">
-                      <a class="nav-link" data-toggle="dropdown">Home
-                          <span>/</span>
-                      </a>
-                      <!-- Dropdown list -->
-                      <div class="dropdown-menu">
-                      <a class="dropdown-item">Homepage</a>
-                      <a class="dropdown-item">Homepage 2</a>
-                      </div>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link">Speakers
-                          <span>/</span>
-                      </a>
-                  </li>
-                  <li class="nav-item dropdown dropdown-slide">
-                      <a class="nav-link" data-toggle="dropdown">Pages<span>/</span></a>
-                      <!-- Dropdown list -->
-                      <div class="dropdown-menu">
-                          <a class="dropdown-item" About Us></a>
-                          <a class="dropdown-item" Single Speaker></a>
-                          <a class="dropdown-item" Gallery></a>
-                          <a class="dropdown-item" Gallery-02></a>
-                          <a class="dropdown-item" Testimonial></a>
-                          <a class="dropdown-item" Pricing></a>
-                          <a class="dropdown-item" FAQ></a>
-                          <a class="dropdown-item" 404></a>
-                      </div>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link">Schedule<span>/</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link">Sponsors<span>/</span></a>
-                  </li>
-                  <li class="nav-item dropdown dropdown-slide">
-                      <a class="nav-link" data-toggle="dropdown">News
-                      <span>/</span>
-                      </a>
-                      <!-- Dropdown list -->
-                      <div class="dropdown-menu">
-                      <a class="dropdown-item">News without sidebar</a>
-                      <a class="dropdown-item">News with right sidebar</a>
-                      <a class="dropdown-item">News with left sidebar</a>
-                      <a class="dropdown-item">News Single</a>
-                      </div>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link">Contact</a>
-                  </li>
+                <li class="nav-item active">
+                  <a class="nav-link" data-th-href="${homeUrl}">Home
+                    <span>/</span>
+                  </a>
+                </li>
+                <li data-th-each="item, iterStat : ${menuItems}" class="nav-item dropdown dropdown-slide">
+                  <a class="nav-link" data-th-href="${item.url}">
+                    <span data-th-text="${item.displayName}"></span>
+                    <span data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
+                  </a>
+                  <div data-th-if="${item.hasChildren}" class="dropdown-menu">
+                    <a 
+                      class="dropdown-item"
+                      data-th-each="child : ${item.children}"
+                      data-th-href="${child.url}"
+                      data-th-text="${child.displayName}"
+                    ></a>
+                  </div>
+                </li>
               </ul>
+              <!-- ticket -->
               <a data-th-if="${ticketUrl}" class="ticket" data-th-href=${ticketUrl}>
                 <img data-th-src="${portal.assetUrl({'_path=images/icon/ticket.png'})}" alt="ticket">
                 <span data-th-text="${ticketText}">Buy Ticket</span>

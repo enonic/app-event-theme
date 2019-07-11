@@ -29,15 +29,25 @@ exports.get = function(req) {
     var breadcrumbsHideBanner = false;
     if (config.breadcrumbsHideBanner) {
         breadcrumbsHideBanner = true;
-    }
-    
+    }    
     
     var templateName = '';
     if (content.page.template) { templateName = libContent.get({ key: content.page.template }).displayName; }
     else { breadcrumbItems = false; }
 
-    /* log.info('default.js JSON %s', JSON.stringify(breadcrumbsHideBanner), null, 4); */
-    
+    let menuItems = libMenu.getMenuTree(2); // Get 2 levels of menu based on content setting 'Show in menu'.
+    menuItems.forEach(element => {
+        element.url = libPortal.pageUrl({ id: element.id });
+
+        if (element.hasChildren) {
+            element.children.forEach(subElement => {
+                subElement.url = libPortal.pageUrl({ id: subElement.id});
+            });
+        }
+    });
+
+    /* log.info('default.js JSON %s', JSON.stringify(menuItems), null, 4); */
+
 	// Prepare the model that will be passed to the view
     var model = {
         siteName: site.displayName,
@@ -58,6 +68,8 @@ exports.get = function(req) {
         breadcrumbsHideBanner: breadcrumbsHideBanner,
         templateName: templateName,
         homeUrl: libPortal.url({path: site._path}),
+        menuItems: menuItems,
+        homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id })
     };
 
     // Return a response from the server to the client
