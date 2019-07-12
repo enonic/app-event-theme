@@ -1,6 +1,7 @@
-// Pages
+// pages
 @import 'pages/_default.scss';
 
+// parts
 @import 'parts/_banner.scss';
 @import 'parts/_speakers.scss';
 @import 'parts/_news-article.scss';
@@ -9,6 +10,11 @@
 @import 'parts/_search-results.scss';
 @import 'parts/_search.scss';
 
+// content types
 @import 'content-types/_speaker.scss';
 
+// layouts
 @import 'layouts/_2-col.scss';
+
+// macros
+@import 'macros/_speakers.scss'
