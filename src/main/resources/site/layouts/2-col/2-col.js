@@ -11,9 +11,17 @@ exports.get = function(req) {
     var config = component.config;
 
     /* ### Manipulate ### */
-    var columnConfig = config.columnConfig.split("-");
-    var leftConfig = "layout-2-col-" + columnConfig[0];
-    var rightConfig = "layout-2-col-" + columnConfig[1];
+	var columnConfig = config.columnConfig.split("-");
+	var leftConfig = '';
+	var rightConfig = '';
+	var haveFullSpace = config.haveFullSpace
+	if (haveFullSpace) {
+		leftConfig = "layout-2-col-full-" + columnConfig[0];
+		rightConfig = "layout-2-col-full-" + columnConfig[1];
+	} else {
+		leftConfig = "layout-2-col-" + columnConfig[0];
+		rightConfig = "layout-2-col-" + columnConfig[1];
+	}
 
     /* log.info('speakers.js JSON %s', JSON.stringify(columnConfig, null, 4)); */
 
@@ -24,7 +32,8 @@ exports.get = function(req) {
 		leftRegion: component.regions["left"],
         rightRegion: component.regions["right"],
         leftConfig: leftConfig,
-        rightConfig: rightConfig,
+		rightConfig: rightConfig,
+		haveFullSpace: haveFullSpace,
         backgroundImage: config.backgroundImage,
 	};
 
