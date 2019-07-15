@@ -1,0 +1,43 @@
+<section class="registration">
+    <div class="container-fuild p-0">
+        <div class="row">
+            <div
+                class="col-md-12 p-0 background-images"
+                data-th-style=" ${backgroundImage} ? 'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1280)', '_format=jpeg'})} + ');' :	''"
+            >
+                <div class="service-block bg-service overlay-primary text-center">
+                    <div class="row no-gutters">
+                        <div class="col-6">
+                            <!-- Service item -->
+                            <div class="service-item">
+                                <i class="fa fa-microphone"></i>
+                                <h5 data-th-text="${speakers} + ' SPEAKERS'"></h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Service item -->
+                            <div class="service-item">
+                                <i class="fa fa-flag"></i>
+                                <h5 data-th-text="${seats} + ' + SEATS'"></h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Service item -->
+                            <div class="service-item">
+                                <i class="fa fa-ticket"></i>
+                                <h5 data-th-text="${tickets} + ' TICKETS'"></h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Service item -->
+                            <div class="service-item">
+                                <i class="fa fa-calendar"></i>
+                                <h5 data-th-text="${days} + ' DAYS EVENT'"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

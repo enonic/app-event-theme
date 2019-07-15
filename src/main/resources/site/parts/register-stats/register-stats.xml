@@ -1,0 +1,38 @@
+<part>
+	<display-name>Register Stats</display-name>
+	<description>Register event information</description>
+	<form>
+		<input type="TextLine" name="speakers">
+			<label>Speakers</label>
+			<occurrences minimum="1" maximum="1"/>
+            <config>
+                <regexp>^[0-9]*$</regexp>
+            </config>
+		</input>
+		<input type="TextLine" name="seats">
+			<label>Seats</label>
+			<occurrences minimum="1" maximum="1"/>
+            <config>
+                <regexp>^[0-9]*$</regexp>
+            </config>
+		</input>
+		<input type="TextLine" name="tickets">
+			<label>Tickets</label>
+			<occurrences minimum="1" maximum="1"/>
+            <config>
+                <regexp>^[0-9]*$</regexp>
+            </config>
+		</input>
+		<input type="TextLine" name="days">
+			<label>Days</label>
+			<occurrences minimum="1" maximum="1"/>
+            <config>
+                <regexp>^[0-9]*$</regexp>
+            </config>
+		</input>
+		<input type="ImageSelector" name="backgroundImage">
+			<label>Background Image</label>
+			<occurrences minimum="1" maximum="1"/>
+		</input>
+	</form>
+</part>
