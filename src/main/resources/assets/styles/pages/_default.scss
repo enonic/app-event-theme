@@ -1896,11 +1896,6 @@
 	overflow: hidden;
   }
   
-  .registration .service-block {
-	position: relative;
-	padding: 120px 10%;
-  }
-  
   .registration .service-block [class*=col-]:first-child {
 	border-right: 1px solid #f69351;
 	border-bottom: 1px solid #f69351;
@@ -1933,10 +1928,17 @@
 	font-weight: 400;
 	text-transform: uppercase;
   }
+
+  .service-block {
+	position: relative;
+	height: 550px;
+	padding: 102.5px 10%;
+  }
   
-  .registration .registration-block {
+  .registration-block {
 	position: relative;
 	height: 100%;
+	height: 550px;
 	padding: 120px 10%;
   }
   

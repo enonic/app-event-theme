@@ -11,6 +11,7 @@ module.exports = {
     entry: {
         bundle: './js/main.js',
     },
+    devtool: 'inline-source-map',
     output: {
         path: path.join(__dirname, '/build/resources/main/assets'),
         filename: './js/[name].js',

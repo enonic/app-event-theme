@@ -1,8 +1,12 @@
 {
-  "name": "starter-webpack",
+  "name": "app-event-theme",
   "version": "1.0.0",
-  "description": "Webpack starter",
-  "license": "Apache 2.0",
+  "description": "A template based event information webpage. Create a homepage for any event.",
+  "license": "Creative Common Attribution 3.0 License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enonic/app-event-theme"
+  },
   "scripts": {
     "build": "webpack --hide-modules",
     "dist": "cross-env NODE_ENV=production webpack --hide-modules"

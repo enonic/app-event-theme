@@ -1,0 +1,43 @@
+<section class="registration">
+    <div class="container-fuild p-0">
+        <div class="row">
+            <div
+                class="col-md-12 p-0 background-images"
+                data-th-style=" ${backgroundImage} ? 'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1280)', '_format=jpeg'})} + ');' :	''"
+            >
+                <div class="registration-block bg-registration overlay-dark">
+                    <div class="block">
+                        <div class="title text-left">
+                            <h3>Register to <span class="alternate" data-th-text="${heading}"></span></h3>
+                            <p data-th-text="${description}"></p>
+                        </div>
+                        <form action="#" class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control main" placeholder="Your Name" id="registerName">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control main" placeholder="Email" id="registerEmail">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control main" placeholder="Phone" id="registerPhone">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control main" id="select-ticket">
+                                        <option
+                                            data-th-each="ticketType : ${ticketTypes}"
+                                            data-th-text="${ticketType.ticketType}"
+                                        ></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" data-th-attr="data-url=|${url}|" class="btn btn-white-md" id="register-button">Register Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

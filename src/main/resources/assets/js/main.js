@@ -9,5 +9,8 @@ import example from './example';
 example();
  */
 
-require('./parts/faq.js')
-require('./parts/search.js')
+var $ = require('./jquery.min.js');
+window.$ = $;
+require('./parts/faq.js');
+require('./parts/search.js');
+require('./parts/register-to.js');
