@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<content-type>
+<content-type xmlns="urn:enonic:xp:model:1.0">
   <display-name>Speaker</display-name>
   <super-type>base:structured</super-type>
   <form>
     <field-set name="basic">
       <label>Speaker</label>
       <items>
-
         <input type="ImageSelector" name="image">
           <label>Profile image</label>
           <occurrences minimum="1" maximum="1"/>
