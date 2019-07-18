@@ -1,172 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- SITE TITTLE -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>app-event-theme</title>
+  <head>
+      <!-- SITE TITTLE -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>app-event-theme</title>
 
-        <!-- PLUGINS CSS STYLE -->
-        <!-- Bootstrap -->
-        <link data-th-href="${portal.assetUrl({'_path=plugins/bootstrap/css/bootstrap.min.css'})}" rel="stylesheet">
-        <!-- Themefisher Font -->  
-        <!-- <link data-th-href="${portal.assetUrl({'_path=plugins/themefisher-font/style.css'})}" rel="stylesheet"> -->
-        <!-- Font Awesome -->
-        <link data-th-href="${portal.assetUrl({'_path=plugins/font-awsome/css/font-awesome.min.css'})}" rel="stylesheet">
-        <!-- Magnific Popup -->
-        <link data-th-href="${portal.assetUrl({'_path=plugins/magnific-popup/magnific-popup.css'})}" rel="stylesheet">
-        <!-- Slick Carousel -->
-        <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick.css'})}" rel="stylesheet">
-        <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick-theme.css'})}" rel="stylesheet">
-        <!-- CUSTOM CSS -->
-        <link data-th-href="${portal.assetUrl({'_path=styles/bundle.css'})}" rel="stylesheet"/>
+      <!-- PLUGINS CSS STYLE -->
+      <!-- Bootstrap -->
+      <link data-th-href="${portal.assetUrl({'_path=plugins/bootstrap/css/bootstrap.min.css'})}" rel="stylesheet">
+      <!-- Themefisher Font -->  
+      <!-- <link data-th-href="${portal.assetUrl({'_path=plugins/themefisher-font/style.css'})}" rel="stylesheet"> -->
+      <!-- Font Awesome -->
+      <link data-th-href="${portal.assetUrl({'_path=plugins/font-awsome/css/font-awesome.min.css'})}" rel="stylesheet">
+      <!-- Magnific Popup -->
+      <link data-th-href="${portal.assetUrl({'_path=plugins/magnific-popup/magnific-popup.css'})}" rel="stylesheet">
+      <!-- Slick Carousel -->
+      <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick.css'})}" rel="stylesheet">
+      <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick-theme.css'})}" rel="stylesheet">
+      <!-- CUSTOM CSS -->
+      <link data-th-href="${portal.assetUrl({'_path=styles/bundle.css'})}" rel="stylesheet"/>
 
-        <!-- FAVICON -->
-        <link data-th-href="${portal.assetUrl({'_path=images/favicon.png'})}" rel="shortcut icon">
-    </head>
-    <body class="xp-page" data-th-classappend="${colorize}">
-        <!--========================================
-        =            Navigation Section            =
-        =========================================-->
-        <nav class="navbar main-nav border-less navbar-expand-lg p-0"> <!-- TODO: This is a removed class name: fixed-top -->
-          <div class="container-fluid p-0">
-              <!-- logo -->
-              <a class="navbar-brand" href="#">
-                  <img data-th-if="${headerLogo}" data-th-src="${portal.imageUrl({'_id=' + headerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
+      <!-- FAVICON -->
+      <link data-th-href="${portal.assetUrl({'_path=images/favicon.png'})}" rel="shortcut icon">
+  </head>
+  <body class="xp-page" data-th-classappend="${colorize}">
+    <!--========================================
+    =            Navigation Section            =
+    =========================================-->
+    <nav class="navbar main-nav border-less navbar-expand-lg p-0">
+      <div class="container-fluid p-0">
+          <!-- logo -->
+          <a class="navbar-brand" href="#">
+              <img data-th-if="${settings.headerLogo}" data-th-src="${portal.imageUrl({'_id=' + settings.headerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- navigation menu -->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link" data-th-href="${homeUrl}">Home
+                <span>/</span>
               </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="fa fa-bars"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-              <!-- navigation menu -->
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" data-th-href="${homeUrl}">Home
-                    <span>/</span>
-                  </a>
+            </li>
+            <li data-th-each="item, iterStat : ${menuItems}" class="nav-item dropdown dropdown-slide">
+              <a class="nav-link" data-th-href="${item.url}">
+                <span data-th-text="${item.displayName}"></span>
+                <span data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
+              </a>
+              <div data-th-if="${item.hasChildren}" class="dropdown-menu">
+                <a 
+                  class="dropdown-item"
+                  data-th-each="child : ${item.children}"
+                  data-th-href="${child.url}"
+                  data-th-text="${child.displayName}"
+                ></a>
+              </div>
+            </li>
+          </ul>
+          <!-- ticket -->
+          <a data-th-if="${settings.ticketUrl}" class="ticket" data-th-href=${settings.ticketUrl}>
+            <img data-th-src="${portal.assetUrl({'_path=images/icon/ticket.png'})}" alt="ticket">
+            <span data-th-text="${settings.ticketText}">Buy Ticket</span>
+          </a>
+          </div>
+      </div>
+    </nav>        
+    <!--====  End of Navigation Section  ====-->
+
+
+    <!--========================================
+    =            Breadcrumbs Section           =
+    =========================================-->
+    <section 
+      class="page-title bg-title overlay-dark breadcrumbs"
+      data-th-if="${settings.breadscrumb} and not ${settings.breadscrumb.hideBanner}"
+      role="navigation"
+      data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.breadcrumb.background, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center breadcrumbsAlignment">
+            <div class="title">
+              <h3 data-th-text="${templateName}"></h3>
+            </div>
+            <ol class="breadcrumb p-0 m-0">
+              <li class="breadcrumb-item" >
+                <a data-th-if="${homeUrl}" data-th-href="${homeUrl}">HOME</a>
+              </li>
+              <li data-th-text="${templateName}" class="breadcrumb-item active"></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--====  End of Breadcrumbs Section  ====-->
+    
+
+    <!--========================================
+    =            Region Section                =
+    =========================================-->
+    <main data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
+        <div data-th-if="${mainRegion}" data-th-remove="tag">
+            <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+            </div>
+        </div>
+    </main>
+    
+    <!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
+    <main data-th-if="${isFragment}" data-th-remove="tag">
+        <div data-portal-component="fragment" data-th-remove="tag"/>
+    </main>
+    <!--====  End of Region Section  ====-->
+    
+    
+    <!--============================
+    =            Footer            =
+    =============================-->
+    <footer class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="block text-center">
+              <div class="footer-logo">
+                <img data-th-if="${settings.footerLogo}" data-th-src="${portal.imageUrl({'_id=' + settings.footerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
+              </div>
+              <ul class="social-links-footer list-inline">
+                <li data-th-if="${settings.facebookUrl}" class="list-inline-item">
+                  <a data-th-href="${settings.facebookUrl}"><i class="fa fa-facebook"></i></a>
                 </li>
-                <li data-th-each="item, iterStat : ${menuItems}" class="nav-item dropdown dropdown-slide">
-                  <a class="nav-link" data-th-href="${item.url}">
-                    <span data-th-text="${item.displayName}"></span>
-                    <span data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
-                  </a>
-                  <div data-th-if="${item.hasChildren}" class="dropdown-menu">
-                    <a 
-                      class="dropdown-item"
-                      data-th-each="child : ${item.children}"
-                      data-th-href="${child.url}"
-                      data-th-text="${child.displayName}"
-                    ></a>
-                  </div>
+                <li data-th-if="${settings.twitterUrl}" class="list-inline-item">
+                  <a data-th-href="${settings.twitterUrl}"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li data-th-if="${settings.instagramUrl}" class="list-inline-item">
+                  <a data-th-href="${settings.instagramUrl}"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li data-th-if="${settings.rssUrl}" class="list-inline-item">
+                  <a data-th-href="${settings.rssUrl}"><i class="fa fa-rss"></i></a>
+                </li>
+                <li data-th-if="${settings.vimeoUrl}" class="list-inline-item">
+                  <a data-th-href="${settings.vimeoUrl}"><i class="fa fa-vimeo"></i></a>
                 </li>
               </ul>
-              <!-- ticket -->
-              <a data-th-if="${ticketUrl}" class="ticket" data-th-href=${ticketUrl}>
-                <img data-th-src="${portal.assetUrl({'_path=images/icon/ticket.png'})}" alt="ticket">
-                <span data-th-text="${ticketText}">Buy Ticket</span>
-              </a>
-              </div>
+            </div>                  
           </div>
-        </nav>        
-        <!--====  End of Navigation Section  ====-->
-
-
-        <!--========================================
-        =            Breadcrumbs Section           =
-        =========================================-->
-        <section 
-          class="page-title bg-title overlay-dark breadcrumbs"
-          data-th-if="${breadcrumbs} and not ${breadcrumbsHideBanner}"
-          role="navigation"
-          data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + breadcrumbsBackground, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'"
-        >
-          <div class="container">
-            <div class="row">
-              <div class="col-12 text-center breadcrumbsAlignment">
-                <div class="title">
-                  <h3 data-th-text="${templateName}"></h3>
-                </div>
-                <ol class="breadcrumb p-0 m-0">
-                  <li 
-                    class="breadcrumb-item"
-                  >
-                    <a data-th-if="${homeUrl}" data-th-href="${homeUrl}">HOME</a>
-                  </li>
-                  <li data-th-text="${templateName}" class="breadcrumb-item active"></li>
-                </ol>
-              </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Subfooter -->
+    <footer class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 align-self-center">
+            <div class="copyright-text" data-th-utext="${settings.licence}">
+              <p><a>Eventre</a> &#169; 2017 All Right Reserved</p>
             </div>
           </div>
-        </section>
-        <!--====  End of Breadcrumbs Section  ====-->
-        
-
-        <!--========================================
-        =            Region Section                =
-        =========================================-->
-        <main data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
-            <div data-th-if="${mainRegion}" data-th-remove="tag">
-                <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
-                    <div data-portal-component="${component.path}" data-th-remove="tag"></div>
-                </div>
-            </div>
-        </main>
-        
-        <!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
-        <main data-th-if="${isFragment}" data-th-remove="tag">
-            <div data-portal-component="fragment" data-th-remove="tag"/>
-        </main>
-        <!--====  End of Region Section  ====-->
-        
-        
-        <!--============================
-        =            Footer            =
-        =============================-->
-        <footer class="footer-main">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="block text-center">
-                  <div class="footer-logo">
-                    <img data-th-if="${footerLogo}" data-th-src="${portal.imageUrl({'_id=' + footerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
-                  </div>
-                  <ul class="social-links-footer list-inline">
-                    <li data-th-if="${facebookUrl}" class="list-inline-item">
-                      <a data-th-href="${facebookUrl}"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li data-th-if="${twitterUrl}" class="list-inline-item">
-                      <a data-th-href="${twitterUrl}"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li data-th-if="${instagramUrl}" class="list-inline-item">
-                      <a data-th-href="${instagramUrl}"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li data-th-if="${rssUrl}" class="list-inline-item">
-                      <a data-th-href="${rssUrl}"><i class="fa fa-rss"></i></a>
-                    </li>
-                    <li data-th-if="${vimeoUrl}" class="list-inline-item">
-                      <a data-th-href="${vimeoUrl}"><i class="fa fa-vimeo"></i></a>
-                    </li>
-                  </ul>
-                </div>                  
-              </div>
-            </div>
+          <div class="col-md-6">
+            <a class="to-top"><i class="fa fa-angle-up"></i></a>
           </div>
-        </footer>
-        <!-- Subfooter -->
-        <footer class="subfooter">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 align-self-center">
-                <div class="copyright-text" data-th-utext="${licence}">
-                  <p><a>Eventre</a> &#169; 2017 All Right Reserved</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <a class="to-top"><i class="fa fa-angle-up"></i></a>
-              </div>
-            </div>
-          </div>
-        </footer>
-    </body>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

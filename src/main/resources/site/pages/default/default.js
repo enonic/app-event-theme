@@ -45,31 +45,38 @@ exports.get = function(req) {
             });
         }
     });
-
-    /* log.info('default.js JSON %s', JSON.stringify(menuItems), null, 4); */
+    
+    var properName = app.name.replace(/\./g, '-');
+    
+    var siteConfig = site.x[properName].siteConfig;
+    log.info('default.js JSON %s', JSON.stringify(templateName, null, 4));
 
 	// Prepare the model that will be passed to the view
     var model = {
         siteName: site.displayName,
         isFragment: isFragment,
         mainRegion: mainRegion,
-        licence: licence,
-        headerLogo: config.headerLogo,
-        footerLogo: config.footerLogo,
-        facebookUrl: config.facebookUrl,
-        twitterUrl: config.twitterUrl,
-        instagramUrl: config.instagramUrl,
-        rssUrl: config.rssUrl,
-        vimeoUrl: config.ticketUrl,
-        ticketUrl: config.ticketUrl,
-        ticketText: ticketText,
-        breadcrumbs: breadcrumbItems,
-        breadcrumbsBackground: config.breadcrumbsBackground,
-        breadcrumbsHideBanner: breadcrumbsHideBanner,
+        settings: {
+            licence: siteConfig.licence,
+            headerLogo: siteConfig.headerLogo,
+            footerLogo: siteConfig.footerLogo,
+            facebookUrl: siteConfig.facebookUrl,
+            twitterUrl: siteConfig.twitterUrl,
+            instagramUrl: siteConfig.instagramUrl,
+            rssUrl: siteConfig.rssUrl,
+            vimeoUrl: siteConfig.ticketUrl,
+            ticketUrl: siteConfig.ticketUrl,
+            ticketText: siteConfig.ticketText,
+            breadcrumb: {
+                items:  breadcrumbItems,
+                background: siteConfig.breadcrumbsBackground,
+                hideBanner: siteConfig.breadcrumbsHideBanner,
+            },
+        },
         templateName: templateName,
         homeUrl: libPortal.url({path: site._path}),
         menuItems: menuItems,
-        homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id })
+        homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id }),
     };
 
     // Return a response from the server to the client
