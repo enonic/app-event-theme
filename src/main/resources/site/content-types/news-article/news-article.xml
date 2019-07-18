@@ -3,7 +3,7 @@
   <display-name>News Article</display-name>
   <super-type>base:structured</super-type>
   <form>
-    <field-set name="basic">
+    <field-set>
       <label>News Article</label>
       <items>
         <input type="ImageSelector" name="image">

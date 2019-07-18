@@ -3,7 +3,7 @@
   <display-name>Speaker</display-name>
   <super-type>base:structured</super-type>
   <form>
-    <field-set name="basic">
+    <field-set>
       <label>Speaker</label>
       <items>
         <input type="ImageSelector" name="image">
