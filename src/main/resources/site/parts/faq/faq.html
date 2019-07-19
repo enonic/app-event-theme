@@ -24,7 +24,7 @@
                             </div>
                             <!-- Answer Box -->
                             <div data-th-id="|faq-${iterstat.index}|" class="collapse show answer-box-hidden">
-                                <div class="card-body" data-th-utext="${faq.answer}"></div>
+                                <div class="card-body" data-th-utext="${portal.processHtml({'_value=' + faq.answer})}"></div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             </div>
                             <!-- Answer Box -->
                             <div data-th-id="|faq-${iterstat.index}|" class="collapse show answer-box-hidden">
-                                <div class="card-body" data-th-utext="${faq.answer}"></div>
+                                <div class="card-body" data-th-utext="${portal.processHtml({'_value=' + faq.answer})}"></div>
                             </div>
                         </div>
                     </div>

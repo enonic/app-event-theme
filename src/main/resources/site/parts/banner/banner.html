@@ -4,7 +4,7 @@
 >
 	<div class="bannerText">
 		<p>The countdown is finished!</p>
-		<div data-th-utext="${title}" class="bannerTitle"></div>
+		<div data-th-utext="${portal.processHtml({'_value=' + title})}" class="bannerTitle"></div>
 		<div class="info">
 			<p class="left" data-th-if="${dateLabel}" data-th-text="${dateLabel}"></p>
 			<p class="right" data-th-if="${location}" data-th-text="${location}"></p>

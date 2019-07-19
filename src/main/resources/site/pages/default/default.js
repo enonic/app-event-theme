@@ -15,9 +15,7 @@ exports.get = function(req) {
     
     // Fragment handling (single fragments should use this page controller automatically to render itself)
     var isFragment = content.type === 'portal:fragment';
-    var mainRegion = isFragment ? null : content.page.regions.main;    
-    var licence = config.licence || '<p>Copyright &#169; Enonic AS. All Rights Reserved. <a href="https://enonic.com/privacy-policy">Privacy Policy</a>. <a href="https://enonic.com/cookie-policy">Cookie Policy</a>. </p>';
-    var ticketText = config.ticketText || 'BUY TICKET';
+    var mainRegion = isFragment ? null : content.page.regions.main;
 
     // Get a breadcrumb menu for current content.
     var breadcrumbItems = libMenu.getBreadcrumbMenu({
@@ -69,6 +67,9 @@ exports.get = function(req) {
             vimeoUrl: siteConfig.ticketUrl,
             ticketUrl: siteConfig.ticketUrl,
             ticketText: siteConfig.ticketText,
+            fromDate: siteConfig.fromDate,
+            toDate: siteConfig.toDate,
+            location: siteConfig.location,
             breadcrumb: {
                 items: breadcrumbItems,
                 background: siteConfig.breadcrumbsBackground,

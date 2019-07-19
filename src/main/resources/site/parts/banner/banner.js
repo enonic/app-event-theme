@@ -9,16 +9,19 @@ exports.get = function(req) {
 	/* ### Collect ### */
 	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+    var site = libPortal.getSite();
     var config = component.config;
-
+	
+    var properName = app.name.replace(/\./g, '-');
+    var siteConfig = site.x[properName].siteConfig; 
 	
 	/* ### Manipulate ### */
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var dateLabel = "";
 	
 	if (config.fromDate && config.toDate) {
-		var fromDate = new Date(config.fromDate);
-		var toDate = new Date(config.toDate);
+		var fromDate = new Date(siteConfig.fromDate);
+		var toDate = new Date(siteConfig.toDate);
 
 		dateLabel += fromDate.getDate();
 		 if (fromDate.getFullYear() === toDate.getFullYear()) {
@@ -32,17 +35,17 @@ exports.get = function(req) {
 		}
 	}
 	
-    /* log.info('banner.js JSON %s', JSON.stringify(fulldate, null, 4)); */
+    log.info('banner.js JSON %s', JSON.stringify(siteConfig, null, 4));
 
 	/* ### Prepare ### */
 	var model = {
 		content: content,
 		component: component,
 		haveCountDown: config.haveCountDown,
-		title: config.title,
+		title: "<h1>" + site.displayName + "</h1>",
 		dateLabel: dateLabel,
-		location: config.location,
-		ticketUrl: config.ticketUrl,
+		location: siteConfig.location,
+		ticketUrl: siteConfig.ticketUrl,
 		backgroundImage: config.backgroundImage,
 	};
 

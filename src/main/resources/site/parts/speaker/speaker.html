@@ -21,7 +21,7 @@
                             <p data-th-text="${speaker.data.title}"></p>
                         </div>
                         <div class="details">
-                            <div class="details" data-th-utext="${speaker.data.description}">
+                            <div class="details" data-th-utext="${portal.processHtml({'_value=' + speaker.data.description})}">
                         </div>
                         <div class="social-profiles">
                             <h5>Social Profiles</h5>
@@ -53,7 +53,7 @@
                 <div class="personal-info">
                     <h5>Personal Information</h5>                            
                     <div class="details">
-                        <div class="details" data-th-utext="${speaker.data.personalInformation}"></div>
+                        <div class="details" data-th-utext="${portal.processHtml({'_value=' + speaker.data.personalInformation})}"></div>
                     </div>
                 </div>
                 </div>

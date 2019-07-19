@@ -43,7 +43,7 @@
 								</ul>
 							</div>
 							<div class="post-details">
-                                <div class="description-details" data-th-utext="${newsArticle.data.description}"></div>
+                                <div class="description-details" data-th-utext="${portal.processHtml({'_value=' + newsArticle.data.description})}"></div>
 								<div class="share-block">
 									<div class="tag">
 										<p>Tags:</p>
