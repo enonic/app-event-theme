@@ -29,27 +29,29 @@ exports.get = function(req) {
     var breadcrumbsHideBanner = false;
     if (config.breadcrumbsHideBanner) {
         breadcrumbsHideBanner = true;
-    }    
-    
-    var templateName = '';
-    if (content.page.template) { templateName = libContent.get({ key: content.page.template }).displayName; }
-    else { breadcrumbItems = false; }
+    }
 
     let menuItems = libMenu.getMenuTree(2); // Get 2 levels of menu based on content setting 'Show in menu'.
     menuItems.forEach(element => {
         element.url = libPortal.pageUrl({ id: element.id });
-
         if (element.hasChildren) {
             element.children.forEach(subElement => {
                 subElement.url = libPortal.pageUrl({ id: subElement.id});
             });
         }
     });
+
+    let templateName = '';
+    let pageTemplate = content.page.template;
+    let libContentDisplayName = libContent.get({ key: content._id }).displayName;
+    if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
+    else if (libContentDisplayName && libContentDisplayName != site.displayName) { templateName = libContentDisplayName; }
+    else { breadcrumbItems = false; }
     
     var properName = app.name.replace(/\./g, '-');
-    
-    var siteConfig = site.x[properName].siteConfig;
-    log.info('default.js JSON %s', JSON.stringify(templateName, null, 4));
+    var siteConfig = site.x[properName].siteConfig;   
+
+    /* log.info('default.js JSON %s', JSON.stringify(site.displayName, null, 4)); */
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -68,7 +70,7 @@ exports.get = function(req) {
             ticketUrl: siteConfig.ticketUrl,
             ticketText: siteConfig.ticketText,
             breadcrumb: {
-                items:  breadcrumbItems,
+                items: breadcrumbItems,
                 background: siteConfig.breadcrumbsBackground,
                 hideBanner: siteConfig.breadcrumbsHideBanner,
             },

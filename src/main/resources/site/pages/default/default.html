@@ -75,13 +75,14 @@
     <!--========================================
     =            Breadcrumbs Section           =
     =========================================-->
+    <!--&& settings.breadscrumb.hideBanner == false-->
     <section 
       class="page-title bg-title overlay-dark breadcrumbs"
-      data-th-if="${settings.breadscrumb} and not ${settings.breadscrumb.hideBanner}"
+      data-th-if="${ settings.breadscrumb != false && !settings.breadcrumb.hideBanner && templateName != ''}"
       role="navigation"
       data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.breadcrumb.background, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'"
     >
-      <div class="container">
+    <div class="container">
         <div class="row">
           <div class="col-12 text-center breadcrumbsAlignment">
             <div class="title">
