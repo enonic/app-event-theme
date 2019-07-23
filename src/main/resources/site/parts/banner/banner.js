@@ -35,7 +35,7 @@ exports.get = function(req) {
 		}
 	}
 	
-    log.info('banner.js JSON %s', JSON.stringify(siteConfig, null, 4));
+    /* log.info('banner.js JSON %s', JSON.stringify(siteConfig, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
