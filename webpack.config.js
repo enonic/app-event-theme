@@ -17,7 +17,7 @@ module.exports = {
         filename: './js/[name].js',
     },
     resolve: {
-        extensions: ['.js', '.less', '.sass', '.css', '.scss'],
+        extensions: ['.js', '.less', '.sass', '.css', '.scss', 'png'],
     },
     module: {
         rules: [
@@ -47,6 +47,10 @@ module.exports = {
             {
                 test: /\.(eot|woff|woff2|ttf|svg)$/,
                 use: 'file-loader?name=fonts/[name].[ext]'
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                use: 'file-loader?name=images/[name].[ext]'
             }
         ],
     },
