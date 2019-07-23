@@ -1,0 +1,48 @@
+<part>
+	<display-name>Schedule</display-name>
+	<description>The event's schedule</description>
+	<form>
+		<input type="TextLine" name="description">
+          <label>Description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <field-set>
+            <label>Talks</label>
+            <items>
+                <item-set name="talks">
+                    <label>a speaker</label> 
+                    <occurrences minimum="0" maximum="0"/>
+                    <items>
+                        <input type="Long" name="day">
+                            <label>Day</label>
+                            <occurrences minimum="1" maximum="1"/>
+                        <default>1</default>
+                        <config>
+                            <regexp>^[1-9]\d*$</regexp>
+                        </config>
+                        </input>
+                        <input type="Time" name="time">
+                            <label>Time</label>
+                            <occurrences minimum="1" maximum="1"/>
+                        </input>
+                        <input type="ContentSelector" name="speaker">
+                            <label>Speaker</label>
+                            <occurrences minimum="0" maximum="1"/>
+                            <config>
+                                <allowContentType>speaker</allowContentType>
+                            </config>
+                        </input>
+                        <input type="TextLine" name="subject">
+                            <label>Subject</label>
+                            <occurrences minimum="1" maximum="1"/>
+                        </input>
+                        <input type="TextLine" name="venue">
+                            <label>Venue</label>
+                            <occurrences minimum="1" maximum="1"/>
+                        </input>
+                    </items>
+                </item-set>
+            </items>
+        </field-set>
+	</form>
+</part>

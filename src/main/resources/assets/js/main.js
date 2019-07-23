@@ -11,6 +11,9 @@ example();
 
 var $ = require('./jquery.min.js');
 window.$ = $;
+
+// parts
 require('./parts/faq.js');
 require('./parts/search.js');
 require('./parts/register-to.js');
+require('./parts/schedule.js');
