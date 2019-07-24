@@ -17,6 +17,7 @@ require('./parts/faq.js');
 require('./parts/search.js');
 require('./parts/register-to.js');
 require('./parts/schedule.js');
+require('./parts/contact.js');
 
 // pages
 require('./pages/default.js');
