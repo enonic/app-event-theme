@@ -17,7 +17,7 @@ exports.get = function(req) {
     sponsors.forEach(element => {
         element = libUtil.data.forceArray(element);
     });
-    log.info('sponsor.js JSON %s', JSON.stringify(sponsors, null, 4));
+    /* log.info('sponsor.js JSON %s', JSON.stringify(sponsors, null, 4)); */
 
     /* ### Prepare ### */
 	var model = {

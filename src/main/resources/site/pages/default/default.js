@@ -49,7 +49,7 @@ exports.get = function(req) {
     var properName = app.name.replace(/\./g, '-');
     var siteConfig = site.x[properName].siteConfig;   
 
-    /* log.info('default.js JSON %s', JSON.stringify(site.displayName, null, 4)); */
+    /* log.info('default.js JSON %s', JSON.stringify(siteConfig.isNewsletter, null, 4)); */
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -70,6 +70,12 @@ exports.get = function(req) {
             fromDate: siteConfig.fromDate,
             toDate: siteConfig.toDate,
             location: siteConfig.location,
+            newsletter: {
+                isNewsletter: siteConfig.isNewsletter,
+                description: siteConfig.newsLetterDescription,
+                url: siteConfig.newsLetterUrl,
+                image: siteConfig.newsletterBackgroundImage
+            },
             breadcrumb: {
                 items: breadcrumbItems,
                 background: siteConfig.breadcrumbsBackground,
@@ -82,8 +88,17 @@ exports.get = function(req) {
         homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id }),
     };
 
+	var scriptUrl = libPortal.assetUrl({
+		path: '/js/bundle.js'
+	});
+
     // Return a response from the server to the client
     return {
-        body: libThymeleaf.render(viewFile, model) // Render the dynamic HTML with values from the model
+        body: libThymeleaf.render(viewFile, model), // Render the dynamic HTML with values from the model
+		pageContributions: {
+		  headEnd: [
+			`<script src='${scriptUrl}'></script>`
+		  ]
+		}
     };
 };

@@ -1,6 +1,7 @@
 <x-data>
   <display-name>Site Configurations</display-name>
   <form>
+    <!-- Header -->
     <input type="ImageSelector" name="headerLogo">
         <label>Logo in header (on light background)</label>
         <occurrences minimum="1" maximum="1"/>
@@ -26,7 +27,27 @@
         <label>Ticket Text</label>
         <default>BUY TICKET</default>
         <occurrences minimum="0" maximum="1"/>
+    </input>    
+    <!-- Newsletter -->
+    <input type="CheckBox" name="isNewsletter">
+        <label>Newsletter</label>
+        <config>
+            <alignment>right</alignment> 
+        </config>
     </input>
+    <input type="TextLine" name="newsLetterDescription">
+        <label>Newsletter description</label>
+        <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="newsLetterUrl">
+        <label>Newsletter Button Url</label>
+        <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="ImageSelector" name="newsletterBackgroundImage">
+        <label>Newsletter background image</label>
+        <occurrences minimum="0" maximum="1"/>
+    </input>
+    <!-- Footer -->
     <input type="ImageSelector" name="footerLogo">
         <label>Logo in footer (on dark background)</label>
         <occurrences minimum="1" maximum="1"/>
@@ -66,6 +87,7 @@
             <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
         </config>
     </input>
+    <!-- General -->
     <input type="Date" name="fromDate">
         <label>From</label>
         <occurrences minimum="1" maximum="1"/>
