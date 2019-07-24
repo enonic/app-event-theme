@@ -44,7 +44,7 @@ exports.get = function(req) {
 		haveCountDown: config.haveCountDown,
 		title: "<h1>" + site.displayName + "</h1>",
 		dateLabel: dateLabel,
-		location: siteConfig.location,
+		location: siteConfig.city,
 		ticketUrl: siteConfig.ticketUrl,
 		backgroundImage: config.backgroundImage,
 	};

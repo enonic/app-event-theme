@@ -69,7 +69,7 @@ exports.get = function(req) {
             ticketText: siteConfig.ticketText,
             fromDate: siteConfig.fromDate,
             toDate: siteConfig.toDate,
-            location: siteConfig.location,
+            city: siteConfig.city,
             newsletter: {
                 isNewsletter: siteConfig.isNewsletter,
                 description: siteConfig.newsLetterDescription,
@@ -80,6 +80,13 @@ exports.get = function(req) {
                 items: breadcrumbItems,
                 background: siteConfig.breadcrumbsBackground,
                 hideBanner: siteConfig.breadcrumbsHideBanner,
+            },
+            googleMaps: {
+                isGoogleMaps: siteConfig.isGoogleMaps,
+                apiKey: siteConfig.googleApi,
+                address: siteConfig.address,
+                phone: siteConfig.phone,
+                email: siteConfig.email,
             },
         },
         templateName: templateName,
