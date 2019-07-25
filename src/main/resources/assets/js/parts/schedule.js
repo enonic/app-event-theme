@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
             element.classList.remove("active");
         }
         this.classList.add("active");
-        console.log(this.getAttribute('day'));
 
         // talks
         for (let i = 0; i < document.getElementsByClassName('schedule-details').length; i++) { // for all day buttons

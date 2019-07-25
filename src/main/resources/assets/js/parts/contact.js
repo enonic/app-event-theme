@@ -1,6 +1,5 @@
 $(function () {
     function sendRegisterData(url) {
-        console.log("contact button tests");
         $.ajax({
             method: 'POST',
             url: url,
