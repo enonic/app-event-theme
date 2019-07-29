@@ -19,6 +19,7 @@ require('./parts/register-to.js');
 require('./parts/schedule.js');
 require('./parts/contact.js');
 require('./parts/gallery.js');
+require('./parts/banner.js');
 
 // pages
 require('./pages/default.js');

@@ -35,7 +35,7 @@ exports.get = function(req) {
 		}
 	}
 	
-    /* log.info('banner.js JSON %s', JSON.stringify(siteConfig, null, 4)); */
+    /* log.info('banner.js JSON %s', JSON.stringify(fromDate, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
@@ -44,13 +44,23 @@ exports.get = function(req) {
 		haveCountDown: config.haveCountDown,
 		title: "<h1>" + site.displayName + "</h1>",
 		dateLabel: dateLabel,
+		dateFrom: months[fromDate.getMonth()].substring(0, 3) + " " + fromDate.getDate() + ", " + fromDate.getFullYear(),
 		location: siteConfig.city,
 		ticketUrl: siteConfig.ticketUrl,
 		backgroundImage: config.backgroundImage,
 	};
+	
+	var scriptUrl = libPortal.assetUrl({
+		path: '/js/bundle.js'
+	});
 
 	/* ### Return ### */
 	return {
-		body: libThymeleaf.render(viewFile, model)
+		body: libThymeleaf.render(viewFile, model),
+		pageContributions: {
+		  headEnd: [
+			`<script src='${scriptUrl}'></script>`
+		  ]
+		}
 	};
 };
