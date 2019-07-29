@@ -4,7 +4,7 @@ $(function () {
             method: 'POST',
             url: url,
             data: {
-                name: document.getElementById('newsletter-email').value
+                email: document.getElementById('newsletter-email').value
             }
         }).done(function () {
             button = document.getElementById('subscribe-button');
