@@ -8,6 +8,20 @@
     text-align: center;
 }
 
+	/* The sticky class is added to the header with JS when it reaches its scroll position */
+	.sticky {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9001;
+	}
+  
+	/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+	.sticky + .content {
+		padding-top: 102px;
+		z-index: 9001;
+	}
+
 .xp-layout {
 	max-width: 1280px;
 	margin: auto;
@@ -168,7 +182,7 @@
 	bottom: 0;
   } */
   
-  /* .overlay-lighter:before {
+  .overlay-lighter:before {
 	content: '';
 	background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
 	opacity: .20;
@@ -177,7 +191,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-  } */
+  }
   
   .text-overlay:after {
 	content: 'CONFERENCE';
@@ -205,7 +219,7 @@
 	bottom: 0;
   }
   
-  /* .overlay-dark:before {
+  .overlay-dark:before {
 	content: '';
 	background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
 	opacity: .75;
@@ -214,7 +228,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-  } */
+  }
   
   .overlay-white:before {
 	content: '';
