@@ -2456,7 +2456,8 @@
   
   .single-speaker .block .image-block {
 	background: #fff;
-	padding: 6px;
+    border: 1px solid #e5e5e5;
+    padding: 6px;
   }
   
   @media (max-width: 767px) {
@@ -2881,7 +2882,7 @@
 	border-width: 0 1px 1px 1px;
 	border-style: solid;
 	border-color: #e5e5e5;
-	max-width: 730px;
+	/* max-width: 730px; */
   }
   
   .news .blog-post .post-content .date {
