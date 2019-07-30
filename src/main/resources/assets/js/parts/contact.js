@@ -2,12 +2,13 @@ $(function () {
     function sendRegisterData(url) {
         $.ajax({
             method: 'POST',
-            url: url,
+            url: '/_/service/app.event.theme/contact',
             data: {
                 name: document.getElementById('contactName').value,
-                email: document.getElementById('contactEmail').value,
+                fromEmail: document.getElementById('contactEmail').value,
                 phone: document.getElementById('contactPhone').value,
-                ticket: document.getElementById('contactMessage').value
+                message: document.getElementById('contactMessage').value,
+                toEmail: url,
             }
         }).done(function () {
             button = document.getElementById('contact-button');

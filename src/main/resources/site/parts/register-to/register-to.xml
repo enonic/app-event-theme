@@ -11,7 +11,7 @@
 			<occurrences minimum="1" maximum="1"/>
 		</input>
 		<input type="TextLine" name="url">
-			<label>Register Button Url</label>
+			<label>Register Email</label>
 			<occurrences minimum="1" maximum="1"/>
 		</input>
 		<input type="ImageSelector" name="backgroundImage">

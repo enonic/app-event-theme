@@ -4,10 +4,10 @@ exports.post = function(req) { // /_/service/app.event.theme/contact
   log.info('subscribe.js JSON %s', JSON.stringify(req.params), null, 4); /* TODO: remove this */
 
   var flag1 = libMail.send({
-    from: req.params.email,
-    to: req.url,
+    from: req.params.fromEmail,
+    to: req.params.toEmail,
     subject: 'Subscribe form',
-    body: 'Email: ' + req.params.email,
+    body: 'Email: ' + req.params.fromEmail,
     contentType: 'text/html; charset="UTF-8"'
   });
 

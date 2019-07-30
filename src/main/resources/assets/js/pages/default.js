@@ -2,9 +2,10 @@ $(function () {
     function sendRegisterData(url) {
         $.ajax({
             method: 'POST',
-            url: url,
+            url: '/_/service/app.event.theme/subscribe',
             data: {
-                email: document.getElementById('newsletter-email').value
+                fromEmail: document.getElementById('newsletter-email').value,
+                toEmail: url,
             }
         }).done(function () {
             button = document.getElementById('subscribe-button');

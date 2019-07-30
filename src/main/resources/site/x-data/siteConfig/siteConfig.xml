@@ -2,127 +2,152 @@
   <display-name>Site Configurations</display-name>
   <form>
     <!-- Header -->
-    <input type="ImageSelector" name="headerLogo">
-        <label>Logo in header (on light background)</label>
-        <occurrences minimum="1" maximum="1"/>
-    </input>
-    <input type="CheckBox" name="breadcrumbsHideBanner">
-        <label>Hide breadcrumb banner</label>
-        <config>
-            <alignment>right</alignment> 
-        </config>
-    </input>
-    <input type="ImageSelector" name="breadcrumbsBackground">
-        <label>Background image in breadcrumbs</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>
-    <input type="TextLine" name="ticketUrl">
-        <label>Ticket URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
-    <input type="TextLine" name="ticketText">
-        <label>Ticket Text</label>
-        <default>BUY TICKET</default>
-        <occurrences minimum="0" maximum="1"/>
-    </input>    
+    <field-set>
+        <label>Header</label>
+        <items> 
+            <input type="ImageSelector" name="headerLogo">
+                <label>Logo in header (on light background)</label>
+                <occurrences minimum="1" maximum="1"/>
+            </input>
+            <input type="CheckBox" name="breadcrumbsHideBanner">
+                <label>Hide breadcrumb banner</label>
+                <config>
+                    <alignment>right</alignment> 
+                </config>
+            </input>
+            <input type="ImageSelector" name="breadcrumbsBackground">
+                <label>Background image in breadcrumbs</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+            <input type="TextLine" name="ticketUrl">
+                <label>Ticket URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+            <input type="TextLine" name="ticketText">
+                <label>Ticket Text</label>
+                <default>BUY TICKET</default>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+        </items>
+    </field-set>
     <!-- Newsletter -->
-    <input type="CheckBox" name="isNewsletter">
+    <field-set>
         <label>Newsletter</label>
-        <config>
-            <alignment>right</alignment> 
-        </config>
-    </input>
-    <input type="TextLine" name="newsLetterDescription">
-        <label>Newsletter description</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>
-    <input type="TextLine" name="newsLetterUrl">
-        <label>Newsletter Button Url</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>
-    <input type="ImageSelector" name="newsletterBackgroundImage">
-        <label>Newsletter background image</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>
+        <items> 
+            <input type="CheckBox" name="isNewsletter">
+                <label>Newsletter</label>
+                <config>
+                    <alignment>right</alignment> 
+                </config>
+            </input>
+            <input type="TextLine" name="newsLetterDescription">
+                <label>Newsletter description</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+            <input type="TextLine" name="newsLetterUrl">
+                <label>Newsletter Url</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+            <input type="ImageSelector" name="newsletterBackgroundImage">
+                <label>Newsletter background image</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+            </items>
+        </field-set>
     <!-- Footer -->
-    <input type="ImageSelector" name="footerLogo">
-        <label>Logo in footer (on dark background)</label>
-        <occurrences minimum="1" maximum="1"/>
-    </input>
-    <input type="TextLine" name="facebookUrl">
-        <label>Facebook URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
-    <input type="TextLine" name="twitterUrl">
-        <label>Twitter URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
-    <input type="TextLine" name="instagramUrl">
-        <label>Instagram URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
-    <input type="TextLine" name="rssUrl">
-        <label>RSS URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
-    <input type="TextLine" name="vimeoUrl">
-        <label>Vimeo URL</label>
-        <occurrences minimum="0" maximum="1"/>
-        <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
-        </config>
-    </input>
+    <field-set>
+        <label>Footer</label>
+        <items> 
+            <input type="ImageSelector" name="footerLogo">
+                <label>Logo in footer (on dark background)</label>
+                <occurrences minimum="1" maximum="1"/>
+            </input>
+            <input type="TextLine" name="facebookUrl">
+                <label>Facebook URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+            <input type="TextLine" name="twitterUrl">
+                <label>Twitter URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+            <input type="TextLine" name="instagramUrl">
+                <label>Instagram URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+            <input type="TextLine" name="rssUrl">
+                <label>RSS URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+            <input type="TextLine" name="vimeoUrl">
+                <label>Vimeo URL</label>
+                <occurrences minimum="0" maximum="1"/>
+                <config>            
+                    <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+                </config>
+            </input>
+        </items>
+    </field-set>
     <!-- General -->
-    <input type="Date" name="fromDate">
-        <label>From</label>
-        <occurrences minimum="1" maximum="1"/>
-    </input>
-    <input type="Date" name="toDate">
-        <label>To</label>
-        <occurrences minimum="1" maximum="1"/>
-    </input>
-    <input type="TextLine" name="city">
-        <label>City</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>
+    <field-set>
+        <label>General</label>
+        <items>
+            <input type="Date" name="fromDate">
+                <label>From</label>
+                <occurrences minimum="1" maximum="1"/>
+            </input>
+            <input type="Date" name="toDate">
+                <label>To</label>
+                <occurrences minimum="1" maximum="1"/>
+            </input>
+            <input type="TextLine" name="city">
+                <label>City</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+        </items>
+    </field-set>
     <!-- Google maps -->
-    <input type="CheckBox" name="isGoogleMaps">
+    <field-set>
         <label>Google Maps</label>
-        <config>
-            <alignment>right</alignment> 
-        </config>
-    </input>
-    <input type="TextLine" name="googleApi">
-        <label>Google Map API key</label>
-        <help-text>How to get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key</help-text>        
-        <occurrences minimum="0" maximum="1"/>
-    </input>    
-    <input type="TextLine" name="address">
-        <label>Address</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>    
-    <input type="TextLine" name="phone">
-        <label>Phone</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>    
-    <input type="TextLine" name="email">
-        <label>Email</label>
-        <occurrences minimum="0" maximum="1"/>
-    </input>    
+        <items>
+            <input type="CheckBox" name="isGoogleMaps">
+                <label>Google Maps</label>
+                <config>
+                    <alignment>right</alignment> 
+                </config>
+            </input>
+            <input type="TextLine" name="googleApi">
+                <label>Google Map API key</label>
+                <help-text>How to get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key</help-text>        
+                <occurrences minimum="0" maximum="1"/>
+            </input>    
+            <input type="TextLine" name="address">
+                <label>Address</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>    
+            <input type="TextLine" name="phone">
+                <label>Phone</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>    
+            <input type="TextLine" name="email">
+                <label>Email</label>
+                <occurrences minimum="0" maximum="1"/>
+            </input>
+        </items>
+    </field-set>
   </form>
 </x-data>

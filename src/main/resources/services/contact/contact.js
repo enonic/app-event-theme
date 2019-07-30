@@ -1,15 +1,15 @@
 const libMail = require('/lib/xp/mail');
 
 exports.post = function(req) { // /_/service/app.event.theme/contact
-  log.info('contact.js JSON %s', JSON.stringify(req.params), null, 4); /* TODO: remove this */
+  /* log.info('contact.js JSON %s', JSON.stringify(req.params), null, 4); */
 
   var flag1 = libMail.send({
-    from: req.params.email,
-    to: req.url,
+    from: req.params.fromEmail,
+    to: req.params.toEmail,
     subject: 'Contact form',
     body: 'Name: ' + req.params.name + '<br>' +
           'Phone: ' + req.params.phone + '<br>' +
-          'Email: ' + req.params.email + '<br>' +
+          'Email: ' + req.params.fromEmail + '<br>' +
           'Message: ' + req.params.message,
     contentType: 'text/html; charset="UTF-8"'
   });

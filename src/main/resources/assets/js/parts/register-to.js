@@ -2,12 +2,13 @@ $(function () {
     function sendRegisterData(url) {
         $.ajax({
             method: 'POST',
-            url: url,
+            url: '/_/service/app.event.theme/register',
             data: {
                 name: document.getElementById('registerName').value,
-                email: document.getElementById('registerEmail').value,
+                fromEmail: document.getElementById('registerEmail').value,
                 phone: document.getElementById('registerPhone').value,
-                ticket: document.getElementById('select-ticket').value
+                ticket: document.getElementById('select-ticket').value,
+                toEmail: url,
             }
         }).done(function () {
             button = document.getElementById('register-button');
