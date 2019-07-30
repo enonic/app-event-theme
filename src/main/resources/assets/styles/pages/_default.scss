@@ -147,17 +147,17 @@
 	box-shadow: 0px 0px 30px 0px rgba(11, 29, 66, 0.15);
   }
     
- /*  .overlay:before {
-	content: '';
-	background: url(../images/background/objects.png) no-repeat;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-  } */
+	.overlay:before {
+		content: '';
+		background: url(../images/background/objects.png) no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
   
-  .overlay:after {
+  /* .overlay:after {
 	content: '';
 	background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
 	opacity: .25;
@@ -166,9 +166,9 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-  }
+  } */
   
-  .overlay-lighter:before {
+  /* .overlay-lighter:before {
 	content: '';
 	background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
 	opacity: .20;
@@ -177,7 +177,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-  }
+  } */
   
   .text-overlay:after {
 	content: 'CONFERENCE';
@@ -205,7 +205,7 @@
 	bottom: 0;
   }
   
-  .overlay-dark:before {
+  /* .overlay-dark:before {
 	content: '';
 	background: -webkit-linear-gradient(-45deg, #1e5799 0%, #1d1546 0%, #1a0b25 100%, #207cca 100%);
 	opacity: .75;
@@ -214,7 +214,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-  }
+  } */
   
   .overlay-white:before {
 	content: '';
