@@ -21,15 +21,16 @@ exports.get = function(req) {
 		result = libContent.query({ // query bruker 'string literals'
 			start: 0,
 			count: 10,
-			query: `displayName = '${searchWord}' OR 
-					displayName LIKE '*${searchWord}*' OR
-					fulltext('data.personalInformation, data.description', "${searchWord}", 'OR')
+			query: `displayName = '${searchWord}^10' OR 
+					displayName LIKE '*${searchWord}*^5' OR					
+					fulltext('_allText', "${searchWord}", 'OR')
 			`,		
 			contentTypes: [
 				app.name + ':news-article',
 				app.name + ':speaker',
 			]		
-		});
+		});		
+		/* fulltext('data.personalInformation, data.description', "${searchWord}", 'OR') */
 		/* log.info('search.js JSON %s', JSON.stringify(result, null, 4)); */
 		
 		libUtil.data.forceArray(result.hits).forEach(element => { // for each element get their respective working url's

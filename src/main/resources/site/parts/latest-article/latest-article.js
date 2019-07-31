@@ -38,7 +38,7 @@ exports.get = function(req) {
         });
     }
 
-    log.info('latest-post.js JSON %s', JSON.stringify(articles, null, 4));
+    /* log.info('latest-post.js JSON %s', JSON.stringify(articles, null, 4)); */
     
 	/* ### Prepare ### */
 	let model = {

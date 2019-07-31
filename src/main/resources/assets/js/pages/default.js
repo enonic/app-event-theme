@@ -2,7 +2,7 @@ $(function () {
     function sendRegisterData(url) {
         $.ajax({
             method: 'POST',
-            url: '/_/service/app.event.theme/subscribe',
+            url: '/_/service/app.event.theme/subscribe', // TODO: bruk portalLib.serviceUrl
             data: {
                 fromEmail: document.getElementById('newsletter-email').value,
                 toEmail: url,

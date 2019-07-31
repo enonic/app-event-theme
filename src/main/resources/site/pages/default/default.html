@@ -5,7 +5,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>app-event-theme</title>
+      <title>app-event-theme</title> <!-- TODO: need the event name here -->
 
       <!-- PLUGINS CSS STYLE -->
       <!-- Bootstrap -->
@@ -165,11 +165,9 @@
       <!-- Google Map -->
       <div id="map">
         <iframe
+          id="google-map-iframe"
           data-th-if="${settings.googleMaps.apiKey}"
-          width="600"
-          height="450"
           frameborder="0"
-          style="border:0"
           data-th-src="'https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZXFQjYhuQUYRKo-2LUPM4fY&key=' + ${settings.googleMaps.apiKey}" 
           allowfullscreen
         ></iframe>
