@@ -40,7 +40,7 @@ exports.get = function(req) {
     });
 
     let templateName = '';
-    let pageTemplate = content.page.template;
+    let pageTemplate = content.page.template; // TODO: crashes if no template
     let libContentDisplayName = libContent.get({ key: content._id }).displayName;
     if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
     else if (libContentDisplayName && libContentDisplayName != site.displayName) { templateName = libContentDisplayName; }

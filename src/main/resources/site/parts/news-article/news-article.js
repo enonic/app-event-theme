@@ -19,13 +19,14 @@ exports.get = function(req) {
 	let date = new Date(content.createdTime.split('T')[0]);
 
 	if (content.createdTime) {
-        published.day = date.getDay() | 0;
+        published.day = date.getDate() | 0;
         published.month = months[date.getMonth()]
         published.year = date.getFullYear() | 0;
 	}
 
 	content.owner = libAuth.getPrincipal(content.owner).displayName;
-    /* log.info('speakers.js JSON %s', JSON.stringify(published, null, 4)); */
+
+    /* log.info('news-article.js JSON %s', JSON.stringify(content.createdTime, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {

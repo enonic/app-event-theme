@@ -28,7 +28,7 @@ exports.get = function(req) {
 
             var date = new Date(news.createdTime.split('T')[0]);        
             var newsPublished = {
-                day: date.getDay() | 0, // trick to force number to have no digits
+                day: date.getDate() | 0, // trick to force number to have no digits
                 month: months[date.getMonth()],
                 year: date.getFullYear() | 0    // trick to force number to have no digits
             };
@@ -43,7 +43,7 @@ exports.get = function(req) {
         });
     }
     
-    /* log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4)); */
+    log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4));
 
 	/* ### Prepare ### */
 	var model = {

@@ -1,0 +1,29 @@
+<div class="widget latest-post">
+    <h5 class="widget-header">Latest Articles</h5>
+    <!-- Post -->
+    <div 
+        class="media"
+        data-th-each="article: ${articles}"
+    >
+        <img 
+            data-th-src="${article.image}"
+            class="img-fluid" 
+            alt="post-thumb" 
+            style="width:200px"
+        >
+        <div class="media-body">
+            <h6>
+                <a 
+                    data-th-href="${article.url}"
+                    data-th-text="${article.name}"
+                ></a>
+            </h6>
+            <p href="#">
+                <span 
+                    class="fa fa-calendar"
+                    data-th-text="${article.date}"
+                ></span>
+            </p>
+        </div>
+    </div>    
+</div>
