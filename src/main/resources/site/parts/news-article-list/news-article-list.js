@@ -43,7 +43,7 @@ exports.get = function(req) {
         });
     }
     
-    log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4));
+    /* log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {

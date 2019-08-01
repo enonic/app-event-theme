@@ -1,0 +1,18 @@
+<div class="widget tags">
+    <!-- Widget Header -->
+    <h5 class="widget-header">Popular Tags</h5>
+    <ul class="list-inline">
+        <li 
+            class="list-inline-item"
+            data-th-each="tag, iterstate: ${mostPopularTags}"
+            >
+            <a
+                href="#"
+                data-th-text="${tag}"
+                data-th-value="${tag}"
+                data-th-home="${siteUrl}"
+                class="tag-list-item"
+            ></a>
+        </li>
+    </ul>
+</div>
