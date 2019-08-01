@@ -48,8 +48,13 @@
 									<div class="tag">
 										<p>Tags:</p>
 										<ul class="list-inline">
-											<li class="list-inline-item" data-th-each="tag: ${newsArticle.data.tag}">
-												<a href="#" data-th-text="${tag}"></a> <!-- TODO: Want to link to tag relevant News Articles -->
+											<li class="list-inline-item news-article-tags" data-th-each="tag: ${newsArticle.data.tag}">
+												<a
+													data-th-text="${tag}"
+													data-th-value="${tag}"
+													data-th-home="${siteUrl}"
+													class="tag-list-item"
+												></a> <!-- TODO: Want to link to tag relevant News Articles -->
 											</li>
 										</ul>
 									</div>

@@ -11,7 +11,11 @@ exports.get = function(req) {
 	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     
-	/* ### Manipulate ### */
+	/* ### Manipulate ### */	
+    let siteUrl = libPortal.pageUrl({
+        id: libPortal.getSite()._id
+	});
+
     content.data.tag = libUtil.data.forceArray(content.data.tag);
 
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -29,15 +33,26 @@ exports.get = function(req) {
     /* log.info('news-article.js JSON %s', JSON.stringify(content.createdTime, null, 4)); */
 
 	/* ### Prepare ### */
-	var model = {
+	let model = {
 		content: content,
         component: component,
         newsArticle: content,
-        published: published
+		published: published,
+		siteUrl: siteUrl,
 	};
+
+	
+	let scriptUrl = libPortal.assetUrl({
+		path: '/js/bundle.js'
+    });
 
 	/* ### Return ### */
 	return {
-		body: libThymeleaf.render(viewFile, model)
+		body: libThymeleaf.render(viewFile, model),
+		pageContributions: {
+		  headEnd: [
+			`<script src='${scriptUrl}'></script>`
+		  ]
+		}
 	};
 };

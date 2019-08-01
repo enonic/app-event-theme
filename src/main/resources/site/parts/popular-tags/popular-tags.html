@@ -4,10 +4,9 @@
     <ul class="list-inline">
         <li 
             class="list-inline-item"
-            data-th-each="tag, iterstate: ${mostPopularTags}"
+            data-th-each="tag: ${mostPopularTags}"
             >
             <a
-                href="#"
                 data-th-text="${tag}"
                 data-th-value="${tag}"
                 data-th-home="${siteUrl}"

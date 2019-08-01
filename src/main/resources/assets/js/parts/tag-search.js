@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     
     // listeners
     try { // adding listeners to every tag-list-item
-        for (let i = 0; i < document.getElementsByClassName('tag-list-item').length; i++) { // for all day buttons
+        for (let i = 0; i < document.getElementsByClassName('tag-list-item').length; i++) {
             let element = document.getElementsByClassName('tag-list-item')[i];
             element.addEventListener('click', getAndSendTag);        
         }        

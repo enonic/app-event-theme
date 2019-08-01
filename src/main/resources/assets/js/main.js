@@ -20,7 +20,7 @@ require('./parts/schedule.js');
 require('./parts/contact.js');
 require('./parts/gallery.js');
 require('./parts/banner.js');
-require('./parts/popular-tags.js');
+require('./parts/tag-search.js');
 
 // pages
 require('./pages/default.js');
