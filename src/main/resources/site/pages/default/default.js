@@ -40,11 +40,13 @@ exports.get = function(req) {
     });
 
     let templateName = '';
-    let pageTemplate = content.page.template; // TODO: crashes if no template
-    let libContentDisplayName = libContent.get({ key: content._id }).displayName;
-    if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
-    else if (libContentDisplayName && libContentDisplayName != site.displayName) { templateName = libContentDisplayName; }
-    else { breadcrumbItems = false; }
+    try {
+        let pageTemplate = content.page.template; // crashes if no template
+        let libContentDisplayName = libContent.get({ key: content._id }).displayName;
+        if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
+        else if (libContentDisplayName && libContentDisplayName != site.displayName) { templateName = libContentDisplayName; }
+        else { breadcrumbItems = false; }
+    } catch(err) {}
     
     var properName = app.name.replace(/\./g, '-');
     var siteConfig = site.x[properName].siteConfig;   
