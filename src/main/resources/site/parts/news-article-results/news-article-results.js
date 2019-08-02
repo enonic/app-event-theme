@@ -13,17 +13,17 @@ exports.get = function(req) {
     /* var config = component.config; */
 	
 	/* ### Manipulate ### */
-	let searchWord = decodeURI(req.url.substring(req.url.search('=') + 1, req.url.length));
-	/* log.info('search-results.js JSON %s', JSON.stringify(searchWord, null, 4)); */
+	let splittedAbsoluteURL = decodeURI(req.url).split('/');
+	let dataUrl = splittedAbsoluteURL[splittedAbsoluteURL.length - 1];
+	let searchBy = dataUrl.substring(dataUrl.search("\\?") + 1, dataUrl.search("=")); // 'category' or 'tag'
+	let searchWord = dataUrl.substring(dataUrl.search("=") + 1, dataUrl.length);
 	
 	let result = {hits: []};
 	if (searchWord !== '') {
-		result = libContent.query({ // query bruker 'string literals'
-			query: `data.tag = '${searchWord}'`,		
+		result = libContent.query({
+			query: "data." + searchBy + " = '" + searchWord + "'",
 			contentTypes: [ app.name + ':news-article' ]		
-		});		
-		/* fulltext('data.personalInformation, data.description', "${searchWord}", 'OR') */
-		/* log.info('search.js JSON %s', JSON.stringify(result, null, 4)); */
+		});
 		
 		libUtil.data.forceArray(result.hits).forEach(element => { // for each element get their respective working url's
 			element.url = libPortal.pageUrl({ id: element._id })

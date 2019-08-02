@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<content-type xmlns="urn:enonic:xp:model:1.0">
+<content-type>
   <display-name>News Article</display-name>
   <super-type>base:structured</super-type>
   <form>
@@ -8,7 +8,7 @@
       <items>
         <input type="TextLine" name="category">
           <label>Category</label>
-          <occurences minimum="1" maximum="1">
+          <occurences minimum="1" maximum="1"/>
           <default>Uncategorized</default>
         </input>
         <input type="ImageSelector" name="image">

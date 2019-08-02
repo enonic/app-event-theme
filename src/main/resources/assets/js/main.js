@@ -21,6 +21,7 @@ require('./parts/contact.js');
 require('./parts/gallery.js');
 require('./parts/banner.js');
 require('./parts/tag-search.js');
+require('./parts/category-search.js');
 
 // pages
 require('./pages/default.js');

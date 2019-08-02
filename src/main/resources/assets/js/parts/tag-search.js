@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     function getAndSendTag(event) {
         let tag = this.getAttribute('value');
         let home = this.getAttribute('home');
-        window.location.href = home + '/news-article-results' + '?search=' + tag
+        window.location.href = home + '/news-article-results' + '?tag=' + tag
     };
     
     // listeners
