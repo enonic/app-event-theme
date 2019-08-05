@@ -1,7 +1,7 @@
 var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
-/* var libUtil = require('/lib/util'); */
+var libUtil = require('/lib/util');
 
 var viewFile = resolve('popular-tags.html');
 
@@ -25,10 +25,12 @@ exports.get = function(req) {
     // extract tags from query
     let rawTags = [];
     result.hits.forEach(element => {
-        if (element.data.tag !== null && element.data.tag !== undefined)
-        element.data.tag.forEach(tag => {
-                rawTags.push(tag.toLowerCase());
-            })
+        if (element.data.tag !== null && element.data.tag !== undefined) {
+            element.data.tag = libUtil.data.forceArray(element.data.tag);
+            element.data.tag.forEach(tag => {
+                    rawTags.push(tag.toLowerCase());
+                })
+        }
     });
 
     // count occurences of tags

@@ -3,7 +3,11 @@
 	data-th-style=" ${backgroundImage} ? 'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1280)', '_format=jpeg'})} + ');' :	''"
 >
 	<div class="bannerText">
-		<p data-th-attr="from-date=|${dateFrom}|" id="banner-countdown">The countdown is finished!</p>
+		<p
+			data-th-if="${haveCountDown}"
+			data-th-attr="from-date=|${dateFrom}|"
+			id="banner-countdown"
+		></p>
 		<div data-th-utext="${portal.processHtml({'_value=' + title})}" class="bannerTitle"></div>
 		<div class="info">
 			<p class="left" data-th-if="${dateLabel}" data-th-text="${dateLabel}"></p>
