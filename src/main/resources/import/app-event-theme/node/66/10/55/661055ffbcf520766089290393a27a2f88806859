@@ -1,0 +1,1 @@
+{"attachedBinaries":[],"childOrder":"_ts DESC","data":[{"name":"displayName","type":"String","values":[{"v":"Administration Console Login"}]},{"name":"principalType","type":"String","values":[{"v":"ROLE"}]},{"name":"description","type":"String","values":[{}]}],"id":"role:system.admin.login","manualOrderValue":null,"nodeType":"default"}
