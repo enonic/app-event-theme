@@ -86,7 +86,7 @@ public class DemoInitializer
     private void doInitialize()
         throws Exception
     {
-        final ContentPath demoSitePath = ContentPath.from( "/app-event-theme" );
+        final ContentPath demoSitePath = ContentPath.from( "/big-data-conference" );
         if ( hasContent( demoSitePath ) )
         {
             return;

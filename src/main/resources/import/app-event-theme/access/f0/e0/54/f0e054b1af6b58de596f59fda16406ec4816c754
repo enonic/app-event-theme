@@ -1,1 +1,0 @@
-{"inheritPermissions":false,"permissions":[{"allow":["READ","CREATE","MODIFY","DELETE","PUBLISH","READ_PERMISSIONS","WRITE_PERMISSIONS"],"deny":[],"principal":"user:system:su"}]}

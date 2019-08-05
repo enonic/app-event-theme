@@ -1,1 +1,0 @@
-{"attachedBinaries":[],"childOrder":"_ts DESC","data":[{"name":"displayName","type":"String","values":[{"v":"Content Manager Administrator"}]},{"name":"principalType","type":"String","values":[{"v":"ROLE"}]},{"name":"description","type":"String","values":[{}]}],"id":"role:cms.admin","manualOrderValue":null,"nodeType":"default"}

@@ -1,1 +1,0 @@
-{"inheritPermissions":false,"permissions":[{"allow":["READ"],"deny":[],"principal":"role:cms.cm.app"},{"allow":["READ","CREATE","MODIFY","DELETE","PUBLISH","READ_PERMISSIONS","WRITE_PERMISSIONS"],"deny":[],"principal":"role:system.admin"},{"allow":["READ","CREATE","MODIFY","DELETE","PUBLISH","READ_PERMISSIONS","WRITE_PERMISSIONS"],"deny":[],"principal":"role:cms.admin"}]}
