@@ -6,13 +6,13 @@
           <label>Description</label>
           <occurrences minimum="0" maximum="1"/>
         </input>
-        <input type="ContentSelector" name="scheduleAttachment">
+        <input type="MediaSelector" name="scheduleMedia">
             <label>Upload schedule</label>
             <occurrences minimum="0" maximum="1"/>
-            <help-text>Uploaded schedule must be named: schedule</help-text>
-            <config>
-                <allowContentType>*:^schedule*</allowContentType>
-            </config>
+            <!-- <help-text>Uploaded schedule must be named: schedule</help-text> -->
+            <!-- <config>
+                <allowPath>./*</allowPath>
+            </config> -->
         </input>
         <field-set>
             <label>Talks</label>

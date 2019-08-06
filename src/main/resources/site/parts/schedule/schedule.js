@@ -51,15 +51,15 @@ exports.get = function(req) {
         });
     }
 
-    let attachmentUrl;
-    if (config.scheduleAttachment !== null && config.scheduleAttachment !== undefined) {
-        attachmentUrl = libPortal.attachmentUrl({ 
-            id: libContent.get({ key: config.scheduleAttachment })._id,
-            download: true
+    let mediaUrl;
+    if (config.scheduleMedia !== null && config.scheduleMedia !== undefined) {
+        mediaUrl = libPortal.attachmentUrl({
+            path: libContent.get({ key: config.scheduleMedia })._path,
+            type: "absolute"
         });
     }
 
-    /* log.info('schedule.js JSON %s', JSON.stringify(attachmentUrl, null, 4)); */
+    /* log.info('schedule.js JSON %s', JSON.stringify(mediaUrl, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
@@ -69,7 +69,7 @@ exports.get = function(req) {
         description: config.description,
         talks: talks,
         days: days,
-        scheduleAttachment: attachmentUrl,
+        mediaUrl: mediaUrl,
     };
     
 	var scriptUrl = libPortal.assetUrl({
