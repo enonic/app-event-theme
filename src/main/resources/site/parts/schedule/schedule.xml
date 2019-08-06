@@ -6,6 +6,14 @@
           <label>Description</label>
           <occurrences minimum="0" maximum="1"/>
         </input>
+        <input type="ContentSelector" name="scheduleAttachment">
+            <label>Upload schedule</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>Uploaded schedule must be named: schedule</help-text>
+            <config>
+                <allowContentType>*:^schedule*</allowContentType>
+            </config>
+        </input>
         <field-set>
             <label>Talks</label>
             <items>

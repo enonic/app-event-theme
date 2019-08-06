@@ -35,7 +35,6 @@ exports.get = function(req) {
         date.setDate(date.getDate() + i);
         days.push(formatDate(date));
     }
-    /* log.info('schedule.js JSON %s', JSON.stringify(days, null, 4)); */
 
     // talks
     let talks = libUtil.data.forceArray(config.talks);
@@ -51,7 +50,16 @@ exports.get = function(req) {
             }
         });
     }
-    /* log.info('schedule.js JSON %s', JSON.stringify(talks, null, 4)); */
+
+    let attachmentUrl;
+    if (config.scheduleAttachment !== null && config.scheduleAttachment !== undefined) {
+        attachmentUrl = libPortal.attachmentUrl({ 
+            id: libContent.get({ key: config.scheduleAttachment })._id,
+            download: true
+        });
+    }
+
+    /* log.info('schedule.js JSON %s', JSON.stringify(attachmentUrl, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
@@ -61,6 +69,7 @@ exports.get = function(req) {
         description: config.description,
         talks: talks,
         days: days,
+        scheduleAttachment: attachmentUrl,
     };
     
 	var scriptUrl = libPortal.assetUrl({
