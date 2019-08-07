@@ -24,7 +24,5 @@ $(function () {
             sendRegisterData(url);
         });
     }
-    catch (err) {
-        console.log('register-to.js: Error adding listener to register-button');
-    }
+    catch (err) {}
 });

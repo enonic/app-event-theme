@@ -30,7 +30,5 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
             let element = document.getElementsByClassName('day-buttons')[i];
             element.addEventListener('click', toggleActive);        
         }
-    } catch (err) {
-        console.log('schedule.js: Error adding listener to day-button ' + err);
-    }
+    } catch (err) {}
 });

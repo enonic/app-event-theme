@@ -24,7 +24,5 @@ $(function () {
             sendRegisterData(url);
         });
     }
-    catch (err) {
-        console.log('contact.js: Error adding listener to contact-button');
-    }
+    catch (err) {}
 });

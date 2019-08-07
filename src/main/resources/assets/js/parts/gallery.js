@@ -26,7 +26,5 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
             let element = document.getElementsByClassName('control')[i];
             element.addEventListener('click', toggleGallery);        
         }
-    } catch(err) {
-        console.log("gallery.js: Error adding listener to controll button " + err)
-    }
+    } catch(err) {}
 });

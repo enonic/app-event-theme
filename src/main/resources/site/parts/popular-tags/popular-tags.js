@@ -49,7 +49,9 @@ exports.get = function(req) {
     // get most popular tags by numTags
     let mostPopularTags = [];
     for (let i = 0; i < config.numTags; i++) {
-        mostPopularTags.push(sortable.pop()[0]);
+        try {
+            mostPopularTags.push(sortable.pop()[0]);
+        } catch(err) {}
     }
 
     /* log.info('latest-post.js JSON %s', JSON.stringify(mostPopularTags, null, 4)); */
