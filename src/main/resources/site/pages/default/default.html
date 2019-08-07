@@ -32,7 +32,7 @@
     <nav class="navbar main-nav border-less navbar-expand-lg p-0" id="myHeader">
       <div class="container-fluid p-0">
           <!-- logo -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" data-th-href="${homeUrl}">
               <img data-th-if="${settings.headerLogo}" data-th-src="${portal.imageUrl({'_id=' + settings.headerLogo, '_scale=max(200)'})}" alt="logo" class="img-fluid">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
