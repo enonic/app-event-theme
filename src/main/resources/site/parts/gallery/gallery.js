@@ -12,11 +12,14 @@ exports.get = function(req) {
 	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
     let config = component.config;
 	
-    /* ### Manipulate ### */
-    let galleries = libUtil.data.forceArray(config.galleries);
-    galleries.forEach(element => {
-        element.images = libUtil.data.forceArray(element.images);
-    });
+	/* ### Manipulate ### */
+	let galleries = [];
+	if (config.galleries != null && config.galleries != undefined) {
+		galleries = libUtil.data.forceArray(config.galleries);
+		galleries.forEach(element => {
+			element.images = libUtil.data.forceArray(element.images);
+		});
+	}
     /* log.info('gallery.js JSON %s', JSON.stringify(galleries, null, 4)); */
 
     /* ### Prepare ### */
