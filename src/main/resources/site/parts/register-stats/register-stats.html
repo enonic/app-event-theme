@@ -32,7 +32,7 @@
                             <!-- Service item -->
                             <div class="service-item">
                                 <i class="fa fa-calendar"></i>
-                                <h5 data-th-text="${days} + ' DAYS EVENT'"></h5>
+                                <h5 data-th-text="${days} == 1 ? ${days} + ' DAY EVENT' : ${days} + ' DAYS EVENT'"></h5>
                             </div>
                         </div>
                     </div>
