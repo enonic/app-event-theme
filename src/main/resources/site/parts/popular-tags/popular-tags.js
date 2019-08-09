@@ -5,22 +5,22 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('popular-tags.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
-	/* ### Collect ### */
-	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+    /* ### Collect ### */
+    let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+    let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     let config = component.config;
     /* let site = libPortal.getSite(); */
-    
+
     /* ### Manipulate ### */
-    
+
     let siteUrl = libPortal.pageUrl({
         id: libPortal.getSite()._id
-	});
+    });
 
     // query all news-articles
-    let result = libContent.query({ contentTypes: [ app.name + ":news-article" ] });
+    let result = libContent.query({ contentTypes: [app.name + ":news-article"] });
 
     // extract tags from query
     let rawTags = [];
@@ -28,8 +28,8 @@ exports.get = function(req) {
         if (element.data.tag !== null && element.data.tag !== undefined) {
             element.data.tag = libUtil.data.forceArray(element.data.tag);
             element.data.tag.forEach(tag => {
-                    rawTags.push(tag.toLowerCase());
-                })
+                rawTags.push(tag.toLowerCase());
+            })
         }
     });
 
@@ -44,37 +44,37 @@ exports.get = function(req) {
     for (let tag in count) {
         sortable.push([tag, count[tag]]);
     }
-    sortable.sort(function(a, b) { return a[1] - b[1]; });
-    
+    sortable.sort(function (a, b) { return a[1] - b[1]; });
+
     // get most popular tags by numTags
     let mostPopularTags = [];
     for (let i = 0; i < config.numTags; i++) {
         try {
             mostPopularTags.push(sortable.pop()[0]);
-        } catch(err) {}
+        } catch (err) { }
     }
 
     /* log.info('latest-post.js JSON %s', JSON.stringify(mostPopularTags, null, 4)); */
-    
-	/* ### Prepare ### */
-	let model = {
-		content: content,
+
+    /* ### Prepare ### */
+    let model = {
+        content: content,
         component: component,
         siteUrl: siteUrl,
         mostPopularTags: mostPopularTags,
-	};
+    };
 
-	var scriptUrl = libPortal.assetUrl({
-		path: '/js/bundle.js'
+    var scriptUrl = libPortal.assetUrl({
+        path: '/js/bundle.js'
     });
-    
-	/* ### Return ### */
-	return {
-		body: libThymeleaf.render(viewFile, model),
-		pageContributions: {
-		  headEnd: [
-			`<script src='${scriptUrl}'></script>`
-		  ]
-		}
-	};
+
+    /* ### Return ### */
+    return {
+        body: libThymeleaf.render(viewFile, model),
+        pageContributions: {
+            headEnd: [
+                `<script src='${scriptUrl}'></script>`
+            ]
+        }
+    };
 };

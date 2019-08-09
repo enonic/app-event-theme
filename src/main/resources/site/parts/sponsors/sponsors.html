@@ -21,17 +21,25 @@
                     <!-- Sponsors image list -->
                     <ul class="list-inline sponsors-list">
                         <li class="list-inline-item" data-th-each="sponsor: ${sponsorType.sponsors}">
-                            <div class="image-block text-center">
-                                <a data-th-href="${sponsor.url}">
-                                    <img data-th-src="${portal.imageUrl({'_id=' + sponsor.image, '_scale=block(165, 55)'})}" alt="sponsors-logo" class="img-fluid">
-                                </a>
-                            </div>
+                            <a data-th-href="${sponsor.url}" target="_blank">
+                                <div class="image-block text-center">
+                                    <img 
+                                        data-th-src="${portal.imageUrl({'_id=' + sponsor.image, '_scale=block(140, 55)'})}"
+                                        alt="sponsors-logo"
+                                        class="img-fluid"
+                                    >
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="sponsor-btn text-center col-12">
-                <a data-th-href="${becomeSponsorUrl}" class="btn btn-main-md">Become a sponsor</a>
+                <a
+                    data-th-if="${becomeSponsorUrl}"
+                    data-th-href="${becomeSponsorUrl}"
+                    class="btn btn-main-md"
+                >Become a sponsor</a>
             </div>
         </div>
     </div>

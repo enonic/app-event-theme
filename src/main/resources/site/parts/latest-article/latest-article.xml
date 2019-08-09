@@ -3,7 +3,7 @@
 	<description>Lists latest articles by ascending date</description>
 	<form>
         <input type="TextLine" name="numPosts"> <!-- Regular expression will not work unless type is TextLine -->
-            <label>Number of News Articles</label>
+            <label>Maximum number of News Articles</label>
             <occurrences minimum="1" maximum="1"/>
             <default>5</default>
             <config>

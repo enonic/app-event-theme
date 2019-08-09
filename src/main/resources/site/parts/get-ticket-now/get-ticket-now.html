@@ -16,5 +16,5 @@
             </div>
         </div>
     </div>
-    <div><img data-th-src="${portal.imageUrl({'_id=' + foregroundImage, '_scale=block(399, 492)', '_format=png'})}" class="img-fluid image-block"></div>
+    <div><img data-th-src="${foregroundImage} ? ${portal.imageUrl({'_id=' + foregroundImage, '_scale=block(399, 492)', '_format=png'})} : ''" class="img-fluid image-block"></div>
 </section>

@@ -6,11 +6,11 @@ var libAuth = require('/lib/xp/auth');
 
 var viewFile = resolve('news-article-list.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
-	/* ### Collect ### */
-	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+    /* ### Collect ### */
+    var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+    var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     var config = component.config;
 
     /* ### Manipulate ### */
@@ -26,7 +26,7 @@ exports.get = function(req) {
                 scale: 'block(350, 222)'
             });
 
-            var date = new Date(news.createdTime.split('T')[0]);        
+            var date = new Date(news.createdTime.split('T')[0]);
             var newsPublished = {
                 day: date.getDate() | 0, // trick to force number to have no digits
                 month: months[date.getMonth()],
@@ -42,19 +42,19 @@ exports.get = function(req) {
             });
         });
     }
-    
+
     /* log.info('news-articles-list.js JSON %s', JSON.stringify(newsDetails, null, 4)); */
 
-	/* ### Prepare ### */
-	var model = {
-		content: content,
+    /* ### Prepare ### */
+    var model = {
+        content: content,
         component: component,
         newsList: newsDetails,
         description: config.description,
-	};
+    };
 
-	/* ### Return ### */
-	return {
-		body: libThymeleaf.render(viewFile, model)
-	};
+    /* ### Return ### */
+    return {
+        body: libThymeleaf.render(viewFile, model)
+    };
 };

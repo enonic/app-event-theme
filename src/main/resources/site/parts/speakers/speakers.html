@@ -13,14 +13,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="speaker-list-items">
             <div 
                 class="col-lg-3 col-md-4 col-sm-6"
                 data-th-each="speaker : ${speakers}"
             >
 				<!-- Speaker -->
 				<div class="speaker-item">
-					<div class="image">
+					<div class="image" id="speaker-image">
 						<img 
                             data-th-src="${speaker.image}"
                             alt="speaker" 

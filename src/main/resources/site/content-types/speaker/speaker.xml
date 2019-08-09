@@ -74,7 +74,7 @@
         <item-set name="personalSkills"> 
           <label>a personal skill</label> 
           <occurrences minimum="0" maximum="0"/>
-          <help-text>Personal skills may be specified here.</help-text> 
+          <help-text>Personal skills may be specified here.</help-text>
           <items>
             <input type="TextLine" name="skill">
               <label>Skill</label>

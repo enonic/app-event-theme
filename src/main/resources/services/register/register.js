@@ -1,7 +1,7 @@
 const libMail = require('/lib/xp/mail');
 
 exports.post = function(req) { // /_/service/app.event.theme/contact
-  /* log.info('register.js JSON %s', JSON.stringify(req.params), null, 4); */
+  log.info('register.js JSON %s', JSON.stringify(req.params), null, 4);
 
   var flag1 = libMail.send({
     from: req.params.fromEmail,

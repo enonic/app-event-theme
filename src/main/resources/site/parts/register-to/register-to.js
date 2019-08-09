@@ -5,34 +5,35 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('register-to.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
 	/* ### Collect ### */
-	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
-    var config = component.config;
-	
+	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+	let config = component.config;
+	let site = libPortal.getSite();
+
 	/* ### Manipulate ### */
 	let ticketTypes = [];
 	if (config.ticketTypes === null || config.ticketTypes === undefined)
-		ticketTypes = [{ticketType: 'Standard'}]
+		ticketTypes = [{ ticketType: 'Standard' }]
 	else
 		ticketTypes = libUtil.data.forceArray(config.ticketTypes)
 
 	/* log.info('register-to.js JSON %s', JSON.stringify(ticketTypes), null, 4); */
 
 	/* ### Prepare ### */
-	var model = {
+	let model = {
 		content: content,
-        component: component,
-        heading: config.heading,
-        description: config.description,
+		component: component,
+		heading: site.displayName,
+		description: config.description,
 		url: config.url,
 		ticketTypes: ticketTypes,
-        backgroundImage: config.backgroundImage,
+		backgroundImage: config.backgroundImage,
 	};
 
-	var scriptUrl = libPortal.assetUrl({
+	let scriptUrl = libPortal.assetUrl({
 		path: '/js/bundle.js'
 	});
 
@@ -40,9 +41,9 @@ exports.get = function(req) {
 	return {
 		body: libThymeleaf.render(viewFile, model),
 		pageContributions: {
-		  headEnd: [
-			`<script src='${scriptUrl}'></script>`
-		  ]
+			headEnd: [
+				`<script src='${scriptUrl}'></script>`
+			]
 		}
 	};
 };

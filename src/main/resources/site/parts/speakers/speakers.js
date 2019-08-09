@@ -5,16 +5,16 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('speakers.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
-	/* ### Collect ### */
-	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+    /* ### Collect ### */
+    var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+    var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     var config = component.config;
 
     /* ### Manipulate ### */
     var speakersDetails = [];
-        
+
     if (config.speakers !== null && config.speakers !== undefined) {
         libUtil.data.forceArray(config.speakers).forEach(element => { // Retrieve all speakers with all of their details            
             var speaker = libContent.get({ key: element });
@@ -34,17 +34,17 @@ exports.get = function(req) {
 
     /* log.info('speakers.js JSON %s', JSON.stringify(speakersDetails, null, 4)); */
 
-	/* ### Prepare ### */
-	var model = {
-		content: content,
+    /* ### Prepare ### */
+    var model = {
+        content: content,
         component: component,
         speakers: speakersDetails,
         backgroundImage: config.backgroundImage,
         description: config.description,
-	};
+    };
 
-	/* ### Return ### */
-	return {
-		body: libThymeleaf.render(viewFile, model)
-	};
+    /* ### Return ### */
+    return {
+        body: libThymeleaf.render(viewFile, model)
+    };
 };

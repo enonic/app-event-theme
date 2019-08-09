@@ -12,6 +12,7 @@
             <div 
                 class="col-lg-4 col-md-6 mb-20"
                 data-th-each="testimonial: ${testimonials}"
+                data-th-if="${testimonial.speaker} and ${testimonial.testimonial}"
             >
                 <!-- Testimonial -->
                 <div class="testimonial-item">

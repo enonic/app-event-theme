@@ -5,38 +5,43 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('testimonial.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
-	/* ### Collect ### */
-	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
+    /* ### Collect ### */
+    let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+    let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
     let config = component.config;
-	
+
     /* ### Manipulate ### */
-    let testimonials = libUtil.data.forceArray(config.testimonials);
-    testimonials.forEach(element => {
-        let speakerData = libContent.get({ key: element.speaker });
-        /* log.info('testimonial.js JSON %s', JSON.stringify(speakerData, null, 4)); */
-        element.speaker = {
-            image: libPortal.imageUrl({ id: speakerData.data.image, scale: 'block(65, 65)' }),
-            name: speakerData.displayName,
-            title: speakerData.data.title,
-            url: libPortal.pageUrl({ id: speakerData._id })
-        };
-    });
+    let testimonials = [];
+    if (config.testimonials != null && config.testimonials != undefined) {
+        testimonials = libUtil.data.forceArray(config.testimonials);
+        testimonials.forEach(element => {
+            if (element.speaker != null && element.speaker != undefined) {
+                let speakerData = libContent.get({ key: element.speaker });
+                /* log.info('testimonial.js JSON %s', JSON.stringify(speakerData, null, 4)); */
+                element.speaker = {
+                    image: libPortal.imageUrl({ id: speakerData.data.image, scale: 'block(65, 65)' }),
+                    name: speakerData.displayName,
+                    title: speakerData.data.title,
+                    url: libPortal.pageUrl({ id: speakerData._id })
+                };
+            }
+        });
+    }
 
     /* log.info('testimonial.js JSON %s', JSON.stringify(testimonials, null, 4)); */
 
     /* ### Prepare ### */
-	var model = {
-		content: content,
+    var model = {
+        content: content,
         component: component,
         description: config.description,
         testimonials: testimonials
     };
 
-	/* ### Return ### */
-	return {
-		body: libThymeleaf.render(viewFile, model)
-	};
+    /* ### Return ### */
+    return {
+        body: libThymeleaf.render(viewFile, model)
+    };
 };

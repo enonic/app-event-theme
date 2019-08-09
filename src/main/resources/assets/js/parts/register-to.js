@@ -1,5 +1,6 @@
 $(function () {
     function sendRegisterData(url) {
+        console.log('scubbi-dubb!');
         $.ajax({
             method: 'POST',
             url: '/_/service/app.event.theme/register',
@@ -24,5 +25,5 @@ $(function () {
             sendRegisterData(url);
         });
     }
-    catch (err) {}
+    catch (err) { }
 });

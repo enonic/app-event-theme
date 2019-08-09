@@ -2,6 +2,10 @@
 <part>
     <display-name>Speaker List</display-name>
     <form>
+        <input type="TextLine" name="description">
+            <label>Description</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
         <input type="ContentSelector" name="speakers">
             <label>Speaker</label>
             <occurrences minimum="0" maximum="0"/>
@@ -9,13 +13,9 @@
                 <allowContentType>speaker</allowContentType>
             </config>
         </input>
-		<input type="TextLine" name="description">
-			<label>Description</label>
-			<occurrences minimum="0" maximum="1"/>
-		</input>
-		<input type="ImageSelector" name="backgroundImage">
-			<label>Background Image</label>
-			<occurrences minimum="0" maximum="1"/>
-		</input>
+        <input type="ImageSelector" name="backgroundImage">
+            <label>Background Image</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
     </form>
 </part>
