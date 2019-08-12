@@ -51,7 +51,7 @@ exports.get = function(req) {
     var properName = app.name.replace(/\./g, '-');
     var siteConfig = site.x[properName].siteConfig;   
 
-    /* log.info('default.js JSON %s', JSON.stringify(siteConfig.isNewsletter, null, 4)); */
+    /* log.info('default.js JSON %s', JSON.stringify(siteConfig.latitude, null, 4)); */
 
 	// Prepare the model that will be passed to the view
     var model = {
@@ -86,6 +86,8 @@ exports.get = function(req) {
             googleMaps: {
                 isGoogleMaps: siteConfig.isGoogleMaps,
                 apiKey: siteConfig.googleApi,
+                latitude: siteConfig.latitude,
+                longitude: siteConfig.longitude,
                 address: siteConfig.address,
                 phone: siteConfig.phone,
                 email: siteConfig.email,

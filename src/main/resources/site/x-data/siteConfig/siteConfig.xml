@@ -125,7 +125,7 @@
             <label>Google Maps</label>
             <items>
                 <input type="CheckBox" name="isGoogleMaps">
-                    <label>Google Maps</label>
+                    <label>Enable Google Maps</label>
                     <config>
                         <alignment>right</alignment>
                     </config>
@@ -133,7 +133,15 @@
                 <input type="TextLine" name="googleApi">
                     <label>Google Map API key</label>
                     <help-text>How to get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key</help-text>
-                    <occurrences minimum="0" maximum="1"/>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="Double" name="latitude">
+                    <label>Latitude</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="Double" name="longitude">
+                    <label>Longitude</label>
+                    <occurrences minimum="1" maximum="1"/>
                 </input>
                 <input type="TextLine" name="address">
                     <label>Address</label>

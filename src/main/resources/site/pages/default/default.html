@@ -164,11 +164,13 @@
     <section class="map" data-th-if="${settings.googleMaps.isGoogleMaps}">
       <!-- Google Map -->
       <div id="map">
+        <!-- data-th-src="'https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZXFQjYhuQUYRKo-2LUPM4fY&key=' + ${settings.googleMaps.apiKey}" -->
         <iframe
           id="google-map-iframe"
           data-th-if="${settings.googleMaps.apiKey}"
           frameborder="0"
-          data-th-src="'https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZXFQjYhuQUYRKo-2LUPM4fY&key=' + ${settings.googleMaps.apiKey}" 
+
+          data-th-src="'https://www.google.com/maps/embed/v1/view?center=' + ${settings.googleMaps.latitude} + ',' + ${settings.googleMaps.longitude} + '&zoom=16&key=' + ${settings.googleMaps.apiKey}" 
           allowfullscreen
         ></iframe>
       </div>
