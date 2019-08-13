@@ -2,7 +2,7 @@
     <id>3a8a2d77-d121-440f-b594-cf2135132615</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-05T13:29:20.548Z</timestamp>
+    <timestamp>2019-08-13T08:16:03.251Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -37,11 +37,11 @@
         </principal>
     </permissions>
     <data>
-        <boolean name="valid">true</boolean>
+        <boolean name="valid">false</boolean>
         <string name="displayName">Big Data Conference</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-08-05T13:29:20.523Z</dateTime>
+        <dateTime name="modifiedTime">2019-08-13T08:16:03.251Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-05-29T11:34:45.064Z</dateTime>
@@ -107,7 +107,7 @@
                     <reference name="headerLogo">64dd0faa-2e3e-4040-83fd-dcbe67580672</reference>
                     <boolean name="breadcrumbsHideBanner">false</boolean>
                     <reference name="breadcrumbsBackground">a9a94d2e-26a0-4993-9566-74bbeb9256e2</reference>
-                    <string name="ticketUrl">https://www.youtube.com</string>
+                    <string name="ticketUrl">https://www.google.com</string>
                     <string name="ticketText">BUY TICKET</string>
                     <reference name="footerLogo">898fabe1-5443-43ad-acad-ecb622b6b146</reference>
                     <string name="facebookUrl">https://www.google.com</string>
@@ -115,30 +115,24 @@
                     <string name="instagramUrl">https://www.google.com</string>
                     <string name="rssUrl">https://www.google.com</string>
                     <string name="vimeoUrl">https://www.google.com</string>
-                    <string name="licence">&lt;p&gt;
-    Copyright © Enonic AS. All Rights Reserved. 
-            
-    &lt;a href="https://enonic.com/privacy-policy"&gt;Privacy Policy&lt;/a&gt;
-    .
-            
-    &lt;a href="https://enonic.com/cookie-policy"&gt;Cookie Policy&lt;/a&gt;
-    .
-            
-&lt;/p&gt;</string>
+                    <string name="licence">&lt;p&gt;Copyright © Acme Corporation AS. All Rights Reserved. &lt;a href="https://www.google.com" target="_blank"&gt;Privacy Policy&lt;/a&gt; . &lt;a href="https://www.google.com" target="_blank"&gt;Cookie Policy&lt;/a&gt; .&lt;/p&gt;
+</string>
                     <string name="TEST EN TEST">fsdfs44444444444444444444</string>
                     <localDate name="fromDate">2022-08-20Z</localDate>
-                    <localDate name="toDate">2022-08-22Z</localDate>
+                    <localDate name="toDate">2022-08-21Z</localDate>
                     <string name="location">Oslo</string>
                     <boolean name="isNewsletter">true</boolean>
                     <string name="newsLetterDescription">Cras ultricies mi eu turpis hendrerit fringilla. Curabitur vestibulum aliquam leo. Curabitur nisi.</string>
-                    <string name="newsLetterUrl">smo@enonic.com</string>
+                    <string name="newsLetterUrl">@acme.no</string>
                     <reference name="newsletterBackgroundImage">72d83a8d-5aac-4510-aae8-cdacf84b77a0</reference>
                     <string name="city">Stavanger</string>
                     <boolean name="isGoogleMaps">false</boolean>
-                    <string name="address">Kirkegata 1-3</string>
-                    <string name="phone">800En0ni3</string>
-                    <string name="email">@enonic.com</string>
-                    <string name="googleApi">AIzaSyBLj8vBGIJinC7FLKM6AL7lO2yKG0aINWw</string>
+                    <string name="address">Slottsplassen 1, 0010 Oslo</string>
+                    <string name="phone">800-500-300</string>
+                    <string name="email">@acme.no</string>
+                    <string isNull="true" name="googleApi"/>
+                    <double name="latitude">59.91711</double>
+                    <double name="longitude">10.727361</double>
                 </property-set>
             </property-set>
         </property-set>
@@ -218,7 +212,8 @@
 
 &lt;p&gt;[speaker speakers="f0f98d13-7060-43f4-b303-73eb03e23923"/]&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt ut labore et dolore magna aliq enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.&lt;/p&gt;</string>
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt ut labore et dolore magna aliq enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.&lt;/p&gt;
+</string>
             </property-set>
         </property-set>
         <property-set name="components">
@@ -238,7 +233,7 @@
                             <reference name="speakers">f0f98d13-7060-43f4-b303-73eb03e23923</reference>
                             <reference name="speakers">10c9fc1d-7375-424f-9246-f8e834278f1e</reference>
                             <reference name="backgroundImage">885f128c-5e5c-4825-96ee-5baf95265a40</reference>
-                            <string name="description">These fantastic speakers, such wow</string>
+                            <string name="description">Nam quam nunc blandit vel</string>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -293,12 +288,9 @@
                     <property-set name="app-event-theme">
                         <property-set name="register-to">
                             <string name="heading">BIG DATA CONFERANCE</string>
-                            <string name="description">Give us your personal information now!</string>
-                            <string name="url">smo@enonic.com</string>
+                            <string name="description">Vestibulum purus quam scelerisque ut</string>
+                            <string isNull="true" name="url"/>
                             <reference name="backgroundImage">247fdf82-f3a5-4863-a9b6-33a861aa18f1</reference>
-                            <property-set name="ticketTypes">
-                                <string name="ticketType">Bronze</string>
-                            </property-set>
                             <property-set name="ticketTypes">
                                 <string name="ticketType">Silver</string>
                             </property-set>
@@ -323,44 +315,10 @@
                         <property-set name="get-ticket">
                             <string name="description">Sed in libero ut nibh placerat accumsan. Nullam tincidunt adipiscing enim.</string>
                             <property-set name="tickets">
-                                <string name="ticketUrl">https://www.nrk.no</string>
-                                <property-set name="details">
-                                    <string name="detail">Mandatory participation</string>
-                                    <boolean name="isProvided">true</boolean>
-                                    <boolean name="isMandatory">true</boolean>
-                                    <boolean name="isAvailable">true</boolean>
-                                </property-set>
-                                <property-set name="details">
-                                    <string name="detail">BYOD</string>
-                                    <boolean name="isProvided">true</boolean>
-                                    <boolean name="isMandatory">true</boolean>
-                                    <boolean name="isAvailable">true</boolean>
-                                </property-set>
-                                <property-set name="details">
-                                    <string name="detail">Free coffee</string>
-                                    <boolean name="isProvided">true</boolean>
-                                    <boolean name="isMandatory">false</boolean>
-                                    <boolean name="isAvailable">false</boolean>
-                                </property-set>
-                                <property-set name="details">
-                                    <string name="detail">The cake is not a lie</string>
-                                    <boolean name="isProvided">true</boolean>
-                                    <boolean name="isMandatory">false</boolean>
-                                    <boolean name="isAvailable">false</boolean>
-                                </property-set>
-                                <string name="ticketType">Bronze</string>
-                                <string name="ticketPrice">150,-</string>
-                                <boolean name="isFeatured">false</boolean>
-                            </property-set>
-                            <property-set name="tickets">
                                 <string name="ticketType">Silver</string>
                                 <string name="ticketPrice">225,-</string>
                                 <string name="ticketUrl">https://www.nrk.no</string>
                                 <boolean name="isFeatured">true</boolean>
-                                <property-set name="details">
-                                    <string name="detail">Mandatory participation</string>
-                                    <boolean name="isAvailable">false</boolean>
-                                </property-set>
                                 <property-set name="details">
                                     <string name="detail">BYOD</string>
                                     <boolean name="isAvailable">true</boolean>
@@ -380,10 +338,6 @@
                                 <string name="ticketUrl">https://www.nrk.no</string>
                                 <boolean name="isFeatured">false</boolean>
                                 <property-set name="details">
-                                    <string name="detail">Mandatory participation</string>
-                                    <boolean name="isAvailable">false</boolean>
-                                </property-set>
-                                <property-set name="details">
                                     <string name="detail">BYOD</string>
                                     <boolean name="isAvailable">false</boolean>
                                 </property-set>
@@ -401,10 +355,6 @@
                                 <string name="ticketPrice">810,-</string>
                                 <string name="ticketUrl">https://www.nrk.no</string>
                                 <boolean name="isFeatured">false</boolean>
-                                <property-set name="details">
-                                    <string name="detail">Mandatory participation</string>
-                                    <boolean name="isAvailable">false</boolean>
-                                </property-set>
                                 <property-set name="details">
                                     <string name="detail">BYOD</string>
                                     <boolean name="isAvailable">false</boolean>
@@ -499,7 +449,7 @@
                             <reference name="newsArticles">53ab64f6-48f9-4b6e-b7fc-2147d1b6fb87</reference>
                             <reference name="newsArticles">cfebc43d-1f11-401d-b1c4-beb01356f3e8</reference>
                             <reference name="newsArticles">3198c1dd-f012-41db-ad35-967d757af8ea</reference>
-                            <string name="description">These are fantastic news for this event!</string>
+                            <string name="description">Mauris turpis nunc blandit et</string>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -605,6 +555,19 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>components.layout.config.app-event-theme.2-col.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>x.app-event-theme.siteConfig.licence</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

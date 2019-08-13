@@ -84,7 +84,6 @@ exports.get = function(req) {
                 hideBanner: siteConfig.breadcrumbsHideBanner,
             },
             googleMaps: {
-                isGoogleMaps: siteConfig.isGoogleMaps,
                 apiKey: siteConfig.googleApi,
                 latitude: siteConfig.latitude,
                 longitude: siteConfig.longitude,

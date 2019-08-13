@@ -123,7 +123,7 @@
     ===============================================-->
     <section 
       class="cta-subscribe bg-subscribe overlay-dark"
-      data-th-if="${settings.newsletter.isNewsletter}"
+      data-th-if="${settings.newsletter.url}"
       data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.newsletter.image, '_scale=block(1920, 1644)'})} + ');'"
     >
       <div class="container">
@@ -161,15 +161,12 @@
     <!--================================
     =            Google Map            =
     =================================-->
-    <section class="map" data-th-if="${settings.googleMaps.isGoogleMaps}">
+    <section class="map" data-th-if="${settings.googleMaps.apiKey}">
       <!-- Google Map -->
       <div id="map">
-        <!-- data-th-src="'https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZXFQjYhuQUYRKo-2LUPM4fY&key=' + ${settings.googleMaps.apiKey}" -->
         <iframe
           id="google-map-iframe"
-          data-th-if="${settings.googleMaps.apiKey}"
           frameborder="0"
-
           data-th-src="'https://www.google.com/maps/embed/v1/view?center=' + ${settings.googleMaps.latitude} + ',' + ${settings.googleMaps.longitude} + '&zoom=16&key=' + ${settings.googleMaps.apiKey}" 
           allowfullscreen
         ></iframe>
@@ -224,7 +221,6 @@
         <div class="row">
           <div class="col-md-6 align-self-center">
             <div class="copyright-text" data-th-utext="${portal.processHtml({'_value=' + settings.licence})}">
-              <p><a>Eventre</a> &#169; 2017 All Right Reserved</p>
             </div>
           </div>
           <div class="col-md-6">

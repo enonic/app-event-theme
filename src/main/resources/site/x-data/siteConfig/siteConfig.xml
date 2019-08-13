@@ -37,18 +37,12 @@
         <field-set>
             <label>Newsletter</label>
             <items>
-                <input type="CheckBox" name="isNewsletter">
-                    <label>Newsletter</label>
-                    <config>
-                        <alignment>right</alignment>
-                    </config>
-                </input>
                 <input type="TextLine" name="newsLetterDescription">
                     <label>Newsletter description</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
                 <input type="TextLine" name="newsLetterUrl">
-                    <label>Newsletter Url</label>
+                    <label>Newsletter Email</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
                 <input type="ImageSelector" name="newsletterBackgroundImage">
@@ -64,6 +58,10 @@
                 <input type="ImageSelector" name="footerLogo">
                     <label>Logo in footer (on dark background)</label>
                     <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="HtmlArea" name="licence">
+                    <label>Licence text</label>
+                    <occurrences minimum="0" maximum="1"/>
                 </input>
                 <input type="TextLine" name="facebookUrl">
                     <label>Facebook URL</label>
@@ -124,12 +122,6 @@
         <field-set>
             <label>Google Maps</label>
             <items>
-                <input type="CheckBox" name="isGoogleMaps">
-                    <label>Enable Google Maps</label>
-                    <config>
-                        <alignment>right</alignment>
-                    </config>
-                </input>
                 <input type="TextLine" name="googleApi">
                     <label>Google Map API key</label>
                     <help-text>How to get an API key: https://developers.google.com/maps/documentation/javascript/get-api-key</help-text>

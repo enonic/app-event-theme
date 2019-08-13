@@ -21,9 +21,7 @@ $(function () {
             sendRegisterData(url);
         });
     }
-    catch (err) {
-        console.log('default.js: Error adding listener to subscribe-button');
-    }
+    catch (err) {}
 });
 
 window.addEventListener('DOMContentLoaded', (event) => { // activate the script after everything has loaded

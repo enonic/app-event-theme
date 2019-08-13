@@ -2,7 +2,7 @@
     <id>eb23f282-59fc-4420-b4f9-0c8389c4bdcf</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-05T08:00:42.117Z</timestamp>
+    <timestamp>2019-08-13T08:23:09.133Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -41,7 +41,7 @@
         <string name="displayName">FAQ</string>
         <string name="type">app.event.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-08-05T08:00:42.112Z</dateTime>
+        <dateTime name="modifiedTime">2019-08-13T08:23:09.130Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-07-02T11:25:29.486Z</dateTime>
@@ -80,7 +80,7 @@
                 <property-set name="config">
                     <property-set name="app-event-theme">
                         <property-set name="faq">
-                            <string isNull="true" name="description"/>
+                            <string name="description">Aenean commodo ligula eget dolor</string>
                             <property-set name="questions">
                                 <string name="question">Quisque ut nisi?</string>
                                 <string name="answer">&lt;p&gt;Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Aenean vulputate eleifend tellus. Sed fringilla mauris sit amet nibh.&lt;/p&gt;

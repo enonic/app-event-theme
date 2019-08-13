@@ -2,7 +2,7 @@
     <id>753a13a1-84c7-4cfd-8ab4-fcc85b556139</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-07-31T11:36:05.098Z</timestamp>
+    <timestamp>2019-08-13T10:06:23.640Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -41,13 +41,14 @@
         <string name="displayName">Contact</string>
         <string name="type">app.event.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-07-30T06:29:17.493Z</dateTime>
+        <dateTime name="modifiedTime">2019-08-13T10:06:23.637Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-07-24T13:20:24.103Z</dateTime>
         <property-set name="publish">
             <dateTime name="first">2019-07-31T11:36:03.768Z</dateTime>
             <dateTime name="from">2019-07-31T11:36:03.768Z</dateTime>
+            <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
@@ -80,7 +81,7 @@
                     <property-set name="app-event-theme">
                         <property-set name="contact">
                             <string name="description">Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Aliquam lobortis. Quisque rutrum.</string>
-                            <string name="url">smo@enonic.com</string>
+                            <string isNull="true" name="url"/>
                             <string name="toMailAddress">smo@enonic.com</string>
                         </property-set>
                     </property-set>
