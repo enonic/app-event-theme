@@ -34,7 +34,8 @@ exports.get = function(req) {
         leftConfig: leftConfig,
 		rightConfig: rightConfig,
 		haveFullSpace: haveFullSpace,
-        backgroundImage: config.backgroundImage,
+		backgroundImage: config.backgroundImage,
+		fixedBackground: config.fixedBackground,
 	};
 
 	/* ### Return ### */
