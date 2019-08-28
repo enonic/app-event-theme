@@ -30,7 +30,8 @@ exports.get = function(req) {
 		content: content,
 		regions: regions,
         component: component,
-        backgroundImage: config.backgroundImage,
+		backgroundImage: config.backgroundImage,
+		fixedBackground: config.fixedBackground,
 	};
 
 	/* ### Return ### */
