@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <layout>
-  <display-name>1 column - for narrow and big text</display-name>
+  <display-name>1 column</display-name>
+  <description>A one column layout</description>
   <form>
     <input type="ImageSelector" name="backgroundImage">
       <label>Background Image</label>

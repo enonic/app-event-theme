@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <part>
     <display-name>News Article List</display-name>
+    <description>Displays news article results from parts "Popular Tags" and "Category"</description>
     <form>
 		<input type="TextLine" name="description">
 			<label>Description</label>

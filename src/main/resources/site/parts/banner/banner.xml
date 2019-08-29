@@ -1,6 +1,6 @@
 <part>
 	<display-name>Banner</display-name>
-	<description>This is a test part that will become something bigger later</description>
+	<description>A title showcase banner</description>
 	<form>
 		<input type="CheckBox" name="haveCountDown">
 			<label>Count-down?</label>

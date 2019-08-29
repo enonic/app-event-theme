@@ -1,6 +1,6 @@
 <part>	
 	<display-name>Contact</display-name>
-	<description>Get in touch</description>
+	<description>A contact form where users may get in touch</description>
 	<form>
 		<input type="TextLine" name="description">
           <label>Description</label>

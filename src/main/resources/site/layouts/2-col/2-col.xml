@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <layout>
     <display-name>2 columns</display-name>
+    <description>A two column layout</description>
     <form>
         <input type="ComboBox" name="columnConfig">
             <label>Column configuration</label>
