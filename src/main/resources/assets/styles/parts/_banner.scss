@@ -9,6 +9,10 @@
   margin-top: 50px;
   display: inline-block;
   text-align: left;
+
+  @include media("<medium") {
+    padding-left: 25px;
+  }
 }
 
 .info {
@@ -31,8 +35,17 @@
   overflow: inherit;
 }
 
-.bannerTitle > h1 {
+.bannerTitle > h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #ff6600;
+
+  @include media("<medium") {
+    font-size: 2.5rem;
+  }
 }
 .bannerTitle > h2 {
   color: #fff;
@@ -48,4 +61,10 @@ h2 {
 
 .bannerTitle {
   margin-bottom: -65px;
+}
+
+#banner-countdown {
+  @include media("<medium") {
+    font-size: 13px;
+  }
 }

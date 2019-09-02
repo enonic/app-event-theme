@@ -1,32 +1,71 @@
 .layout-2-col- {
-    &30 {
-        width:30%;
-        padding: 0 25px;
-    }
-    
-    &50 {
-        width:50%;
-        padding: 0 25px;
-    }
-    
-    &70 {
-        width:70%;
-        padding: 0 25px;
-    }
+  &30 {
+    width: 30%;
+    padding: 0 25px;
 
-    &full- {
-        &30 { width:30%; }        
-        &50 { width:50%; }
-        &70 { width:70%; }
+    @include media("<medium") {
+      width: 100%;
+      padding: 0px;
+      h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
     }
+  }
+
+  &50 {
+    width: 50%;
+    padding: 0 25px;
+
+    @include media("<medium") {
+      width: 100%;
+      padding: 0px;
+      h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
+    }
+  }
+
+  &70 {
+    width: 70%;
+    padding: 0 25px;
+
+    @include media("<medium") {
+      width: 100%;
+      padding: 0px;
+      h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
+    }
+  }
+
+  &full- {
+    &30 {
+      width: 30%;
+      @include media("<medium") { 
+          width: 100%;
+          padding: 0px;
+          h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
+        }
+    }
+    &50 {
+      width: 50%;
+      @include media("<medium") { 
+          width: 100%;
+          padding: 0px;
+          h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
+        }
+    }
+    &70 {
+      width: 70%;
+      @include media("<medium") { 
+          width: 100%;
+          padding: 0px;
+          h1, h2, h3, h4, h5, h6 { font-size: 2.4rem; }
+        }
+    }
+  }
 }
 
 .layout-image {
-    background-repeat: no-repeat;
-  
-    &-fixed {
-      background: fixed no-repeat;
-      background-size: cover;
-      background-position: 50%;
-    }
+  background-repeat: no-repeat;
+
+  &-fixed {
+    background: fixed no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
 }

@@ -912,6 +912,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .footer-main .block ul.social-links-footer .list-inline-item:not(:last-child) {
   margin-right: 20px;
+  margin-top: 20px;
 }
 
 .footer-main .block ul.social-links-footer li a {
@@ -1988,13 +1989,6 @@ select.form-control:not([size]):not([multiple]) {
   padding: 102.5px 10%;
 }
 
-.registration-block {
-  position: relative;
-  height: 100%;
-  height: 550px;
-  padding: 120px 10%;
-}
-
 .registration .registration-block .block {
   position: relative;
   z-index: 9;
@@ -2178,9 +2172,9 @@ select.form-control:not([size]):not([multiple]) {
   margin-bottom: 40px;
 }
 
-.sponsors .block .list-inline-item:not(:last-child) {
+/* .sponsors .block .list-inline-item:not(:last-child) {
   margin-right: 15px;
-}
+} */
 
 .sponsors .block .image-block {
   padding: 45px 0;
