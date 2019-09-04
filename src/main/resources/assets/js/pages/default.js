@@ -21,6 +21,13 @@ $(function () {
         } else {
             element.classList.add("show");
         }
+
+        for (let i = 0; i < document.getElementsByClassName('nav-link-hasChildren').length; i++) {
+            let element = document.getElementsByClassName('nav-link-hasChildren')[i];
+            let elementMenu = document.getElementById('submenu-' + element.getAttribute('subChoice'));
+            elementMenu.style.display = 'none';
+            elementMenu.dataset.toggle = 'false';
+        }
     }
 
     function toggleNavLinkHasChildren(event) {
@@ -54,13 +61,12 @@ $(function () {
     catch (err) { }
 
     try {
-        console.log('try');
         for (let i = 0; i < document.getElementsByClassName('nav-link-hasChildren').length; i++) {
             let element = document.getElementsByClassName('nav-link-hasChildren')[i];
             element.addEventListener('click', toggleNavLinkHasChildren);
         }
     }
-    catch (err) { console.log('catch'); }
+    catch (err) {}
 });
 
 window.addEventListener('DOMContentLoaded', (event) => { // activate the script after everything has loaded
