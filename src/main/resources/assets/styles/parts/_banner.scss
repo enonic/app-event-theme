@@ -13,6 +13,10 @@
   @include media("<medium") {
     padding-left: 25px;
   }
+
+  @include media("<large") {
+    padding-left: 25px;
+  }
 }
 
 .info {

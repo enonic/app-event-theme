@@ -1,5 +1,14 @@
 .category-list-items {
-    display: flex;
-    justify-content: space-between;
-	cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  @include media("<medium") {
+    padding: 0px 15px;
+  }
+}
+
+.category-list {
+  @include media("<medium") {
+    padding: 0px 15px!important;
+  }
 }

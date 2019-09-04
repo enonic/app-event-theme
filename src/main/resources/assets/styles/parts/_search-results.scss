@@ -1,49 +1,53 @@
 .search-results {
-    margin: auto;
-    width: 50%;
-    padding-bottom: 50px;
-    text-align: center;
+  margin: auto;
+  width: 50%;
+  padding-bottom: 50px;
+  text-align: center;
 
-    h3 {
-        padding-bottom: 25px;
-        /* These are technically the same, but use both */
-        overflow-wrap: break-word;
-        word-wrap: break-word;
+  h3 {
+    padding-bottom: 25px;
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
-        -ms-word-break: break-all;
-        /* This is the dangerous one in WebKit, as it breaks things wherever */
-        word-break: break-all;
-        /* Instead use this non-standard one: */
-        word-break: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
 
-        /* Adds a hyphen where the word breaks, if supported (No Blink) */
-        -ms-hyphens: auto;
-        -moz-hyphens: auto;
-        -webkit-hyphens: auto;
-        hyphens: auto;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    @include media("<medium") {
+        font-size: 25px;
     }
+  }
 
-    #search-results-a {
-        color: #FF6600;
-        font-weight: bold;
-        font-size: large;
-    }
+  #search-results-a {
+    color: #ff6600;
+    font-weight: bold;
+    font-size: large;
+  }
 
-    .search-result {
-        margin: 25px 0px;
-    }
-    
-    a {
-        color: #FF6600;
-    }
+  .search-result {
+    margin: 25px 0px;
+  }
 
-    div {
-        max-height: 80px;
-        overflow: hidden;
-    }
+  a {
+    color: #ff6600;
+  }
 
-    #search-results-home {
-        color: white;
-        margin-top:50px;
-    }
+  div {
+    max-height: 80px;
+    overflow: hidden;
+  }
+
+  #search-results-home {
+    color: white;
+    margin-top: 50px;
+  }
 }
