@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <layout>
     <display-name>2 columns</display-name>
+    <description>A two column layout</description>
     <form>
         <input type="ComboBox" name="columnConfig">
             <label>Column configuration</label>
@@ -14,16 +15,23 @@
             </config>
             <default>50-50</default>
         </input>
-		<input type="CheckBox" name="haveFullSpace">
-			<label>Full space?</label>
-			<config>
-				<alignment>right</alignment> 
-			</config>
-		</input>
+        <input type="CheckBox" name="haveFullSpace">
+            <label>Full space?</label>
+            <config>
+                <alignment>right</alignment>
+            </config>
+        </input>
         <input type="ImageSelector" name="backgroundImage">
-			<label>Background Image</label>
-			<occurrences minimum="0" maximum="1"/>
-		</input>        
+            <label>Background Image</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="CheckBox" name="fixedBackground">
+            <label>Fixed background</label>
+            <help-text>Stops scroling of the background image</help-text>
+            <config>
+                <alignment>right</alignment>
+            </config>
+        </input>
     </form>
     <regions>
         <region name="left"/>

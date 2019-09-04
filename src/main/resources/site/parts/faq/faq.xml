@@ -1,5 +1,6 @@
 <part>
 	<display-name>FAQ</display-name>
+  <description>A collection of users frequently asked questions</description>
   <form>
     <input type="TextLine" name="description">
         <label>Description</label>

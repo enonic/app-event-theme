@@ -1,6 +1,6 @@
 <macro>
     <display-name>Speaker</display-name>
-    <description>Add a speaker</description>
+    <description>Add a speaker card</description>
 
     <form>
         <input type="ContentSelector" name="speakers">

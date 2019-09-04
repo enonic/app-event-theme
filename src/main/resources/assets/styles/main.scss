@@ -1,3 +1,9 @@
+// libs
+@import 'lib/mixins/_include-media.scss';
+
+// global
+@import 'global/_variables';
+
 // pages
 @import 'pages/_default.scss';
 
@@ -17,12 +23,17 @@
 @import 'parts/_news-article-results.scss';
 @import 'parts/_news-article.scss';
 @import 'parts/_categories.scss';
+@import 'parts/_register-stats.scss';
+@import 'parts/_register-to.scss';
+@import 'parts/_sponsors.scss';
+@import 'parts/_popular-tags.scss';
 
 // content types
 @import 'content-types/_speaker.scss';
 
 // layouts
 @import 'layouts/_2-col.scss';
+@import 'layouts/_1-col.scss';
 
 // macros
 @import 'macros/_speakers.scss'

@@ -1,7 +1,7 @@
-var libPortal = require('/lib/xp/portal'); // Import the portal functions
-var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
-var libMenu = require('/lib/menu.js');
+var libPortal = require('/lib/xp/portal');
+var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
+var libMenu = require('/lib/menu.js');
 
 var viewFile = resolve('default.html');
 
@@ -9,25 +9,20 @@ var viewFile = resolve('default.html');
 exports.get = function(req) {
 
     // Get the content that is using the page
-    var content = libPortal.getContent();
-    var site = libPortal.getSite();
-    var config = libPortal.getSiteConfig();
+    let content = libPortal.getContent();
+    let site = libPortal.getSite();
+    // let config = libPortal.getSiteConfig();
     
     // Fragment handling (single fragments should use this page controller automatically to render itself)
-    var isFragment = content.type === 'portal:fragment';
-    var mainRegion = isFragment ? null : content.page.regions.main;
+    let isFragment = content.type === 'portal:fragment';
+    let mainRegion = isFragment ? null : content.page.regions.main;
+
+    // Site
+    let properName = app.name.replace(/\./g, '-');
+    let siteConfig = site.x[properName].siteConfig;   
 
     // Get a breadcrumb menu for current content.
-    var breadcrumbItems = libMenu.getBreadcrumbMenu({
-        params: {
-            showHomepage: true
-        }
-    });
-    
-    var breadcrumbsHideBanner = false;
-    if (config.breadcrumbsHideBanner) {
-        breadcrumbsHideBanner = true;
-    }
+    let breadcrumbItems = libMenu.getBreadcrumbMenu({ params: { showHomepage: true } });
 
     let menuItems = libMenu.getMenuTree(2); // Get 2 levels of menu based on content setting 'Show in menu'.
     menuItems.forEach(element => {
@@ -40,21 +35,22 @@ exports.get = function(req) {
     });
 
     let templateName = '';
-    try {
+    try {        
         let pageTemplate = content.page.template; // crashes if no template
-        let libContentDisplayName = libContent.get({ key: content._id }).displayName;
-        if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
-        else if (libContentDisplayName && libContentDisplayName != site.displayName) { templateName = libContentDisplayName; }
+
+        let menuContent = libContent.get({ key: content._id });
+        let displayName = menuContent.displayName;
+        let menuName = menuContent.x[properName]['menu-item'].menuName;
+        if (menuName) { templateName = menuName; }
+        else if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
+        else if (displayName && displayName != site.displayName) { templateName = displayName; }
         else { breadcrumbItems = false; }
-    } catch(err) {}
-    
-    var properName = app.name.replace(/\./g, '-');
-    var siteConfig = site.x[properName].siteConfig;   
+    } catch(err) {}    
 
     /* log.info('default.js JSON %s', JSON.stringify(siteConfig.latitude, null, 4)); */
 
 	// Prepare the model that will be passed to the view
-    var model = {
+    let model = {
         siteName: site.displayName,
         isFragment: isFragment,
         mainRegion: mainRegion,
@@ -98,9 +94,7 @@ exports.get = function(req) {
         homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id }),
     };
 
-	var scriptUrl = libPortal.assetUrl({
-		path: '/js/bundle.js'
-	});
+	let scriptUrl = libPortal.assetUrl({ path: '/js/bundle.js' });
 
     // Return a response from the server to the client
     return {

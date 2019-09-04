@@ -1,6 +1,6 @@
 <part>
 	<display-name>Gallery</display-name>
-	<description>Place a gallery of images here</description>
+	<description>Place galleries of images here</description>
 	<form>
 		<input type="TextLine" name="description">
           <label>Description</label>

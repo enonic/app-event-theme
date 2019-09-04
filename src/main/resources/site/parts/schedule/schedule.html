@@ -11,22 +11,21 @@
         <div class="row">
             <div class="col-12">
                 <div class="schedule-tab">
-                    <ul class="nav nav-pills text-center" data-th-each="day, iterstat: ${days}">  <!-- For each day the event will be -->
+                    <ul class="nav nav-pills text-center" data-th-each="day: ${days}">
+                        <!-- For each day the event will be -->
                         <li class="nav-item">
-                            <a 
-                                class="nav-link day-buttons"
-                                data-th-day="${iterstat.count}"
-                                data-th-classappend="${iterstat.count == 1 ? 'active' : ''}"
-                            >
-                                <span id="day-heading" data-th-text="|Day ${iterstat.count}|"></span>
-                                <span data-th-text="${day}"></span>
+                            <a class="nav-link day-buttons" data-th-day="${day.day}"
+                                data-th-classappend="${day.day == 1 ? 'active' : ''}">
+                                <span id="day-heading" data-th-text="|Day ${day.day}|"></span>
+                                <span data-th-text="${day.date}"></span>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="schedule-contents bg-schedule">
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active schedule-item" id="nov20">    <!-- For each day the event will be -->
+                        <div class="tab-pane fade show active schedule-item" id="nov20">
+                            <!-- For each day the event will be -->
                             <!-- Headings -->
                             <ul class="m-0 p-0">
                                 <li class="headings">
@@ -36,12 +35,8 @@
                                     <div class="venue">Venue</div>
                                 </li>
                                 <!-- Schedule Details -->
-                                <li 
-                                    class="schedule-details"
-                                    data-th-each="talk : ${talks}"
-                                    data-th-day="${talk.day}"
-                                    data-th-classappend="${talk.day} == 1 ? 'visible' : 'hidden'"
-                                >
+                                <li class="schedule-details" data-th-each="talk : ${talks}" data-th-day="${talk.day}"
+                                    data-th-classappend="${talk.day} == 1 ? 'visible' : 'hidden'">
                                     <div class="block">
                                         <!-- time -->
                                         <div class="time">
@@ -51,7 +46,8 @@
                                         <!-- Speaker -->
                                         <div class="speaker">
                                             <a data-th-href="${talk.url}">
-                                                <img data-th-if=${talk.speaker} data-th-src="${talk.image}" alt="speaker-thumb-one">
+                                                <img data-th-if=${talk.speaker} data-th-src="${talk.image}"
+                                                    alt="speaker-thumb-one">
                                             </a>
                                             <a data-th-href="${talk.url}">
                                                 <span class="name" data-th-text="${talk.name}"></span>
@@ -68,15 +64,8 @@
                     </div>
                 </div>
 
-                <div 
-                    data-th-if="${mediaUrl}"
-                    class="download-button text-center"
-                >
-                    <a 
-                        class="btn btn-main-md"
-                        data-th-href="${mediaUrl}"
-                        download
-                    >Download Schedule</a>
+                <div data-th-if="${mediaUrl}" class="download-button text-center">
+                    <a class="btn btn-main-md" data-th-href="${mediaUrl}" download>Download Schedule</a>
                 </div>
 
             </div>
