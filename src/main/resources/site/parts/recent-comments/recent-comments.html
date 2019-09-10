@@ -1,14 +1,23 @@
 <aside class="widget widget_recent_comments">
-    <h1 class="widget-title" data-th-text="${title}">Recent Comments</h1>
-    <ul>
+    <a id="topComment"></a>
+    <h4 class="widget-title" data-th-text="|Comments (${numComments})|"></h4>
+    <ul class="comment-list">
         <li class="recentcomments" data-th-each="comment : ${comments}">
-            <a data-th-if="${comment.website}" data-th-href="${comment.website}" href="#" data-th-text="${comment.name}" target="_blank" rel="external nofollow" class="url">Name</a>
-            <span data-th-if="${!comment.website}" data-th-text="${comment.name}"></span> on
-            <a href="#" data-th-href="${portal.pageUrl({'_path=' + comment.postPath })} + '#comments'" data-th-text="${comment.postTitle}">Post title</a>
-            <div data-th-utext=${comment.comment}></div>
+            <a data-th-if="${comment.website}" data-th-href="${comment.website}" href="#" data-th-text="${comment.name}"
+                target="_blank" rel="external nofollow" class="url">Name</a>
+            <p data-th-if="${!comment.website}" data-th-text="${comment.name}"></p> <!-- on -->
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span data-th-if="${!comment.website}" data-th-text="${comment.date}"></span> <!-- on -->
+            <!-- <a href="#" data-th-href="${portal.pageUrl({'_path=' + comment.postPath })} + '#comments'" data-th-text="${comment.postTitle}">Post title</a> -->
+            <div data-th-text="${comment.comment}"></div>            
         </li>
     </ul>
-    <div class="leave-a-comment">   <!--  -->
-        <h3>Leave A Comment</h3>
+    <div id="leave-a-comment" data-th-attr="parent-path=|${parentPath}|, parent-id=|${parentId}|">
+        <!--  -->
+        <h5>Leave a Comment</h5>
+        <input id="comment-name" type="text" value="Anonymous"><br>
+        <textarea id="comment-content" rows="5" cols="60" maxlength="280"></textarea>
+        <br>
+        <button id="comment-button" type="submit" class="btn btn-main-md">Submit a thought</button>
     </div>
 </aside>

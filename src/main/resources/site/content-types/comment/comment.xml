@@ -17,22 +17,22 @@
                     <label>Comment</label>
                     <occurrences minimum="1" maximum="1"/>
                 </input>
-                <input type="ContentSelector" name="post">
-                    <label>Post</label>
+                <input type="ContentSelector" name="newsArticle">
+                    <label>News Article</label>
                     <occurrences minimum="1" maximum="1"/>
                     <config>
                         <relationship-type>system:reference</relationship-type>
                         <allow-content-type>news-article</allow-content-type>
                     </config>
                 </input>
-                <input type="ContentSelector" name="commentParent">
+                <!-- <input type="ContentSelector" name="commentParent">
                     <label>Comment parent</label>
                     <occurrences minimum="0" maximum="1"/>
                     <config>
                         <relationship-type>system:reference</relationship-type>
                         <allow-content-type>comment</allow-content-type>
                     </config>
-                </input>
+                </input> -->
             </items>
         </field-set>
     </form>

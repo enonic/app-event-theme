@@ -22,6 +22,7 @@ require('./parts/gallery.js');
 require('./parts/banner.js');
 require('./parts/tag-search.js');
 require('./parts/category-search.js');
+require('./parts/recent-comments.js');
 
 // pages
 require('./pages/default.js');
