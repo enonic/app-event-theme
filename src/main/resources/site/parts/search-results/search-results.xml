@@ -1,6 +1,6 @@
 <part>
 	<display-name>Search Results</display-name>
-	<description>Displays search results from the part "Search"</description>
+	<description>Displays all search results</description>
 	<form>		
 	</form>
 </part>

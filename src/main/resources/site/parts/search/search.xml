@@ -1,6 +1,6 @@
 <part>
 	<display-name>Search</display-name>
-	<description>Searches through available News Articles</description>
+	<description>Searches News Articles and Speakers</description>
 	<form>
 		<input type="CheckBox" name="width">
 			<label>Set width to 50%</label>

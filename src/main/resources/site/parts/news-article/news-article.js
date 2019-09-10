@@ -2,8 +2,11 @@ var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 var libUtil = require('/lib/util');
 var libAuth = require('/lib/xp/auth');
+var libContent = require('/lib/xp/content');
 
 var viewFile = resolve('news-article.html');
+
+var searchResultsPageExists = false;
 
 exports.get = function(req) {
 
@@ -11,6 +14,16 @@ exports.get = function(req) {
 	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     
+    if (searchResultsPageExists == false) {
+        var site = libPortal.getSite();
+        var searchUrl = libContent.get({
+            key: site._path + "/search-results",
+        });
+        if (searchUrl != null) {
+            searchResultsPageExists = !searchResultsPageExists;
+        }
+	}
+	
 	/* ### Manipulate ### */	
     let siteUrl = libPortal.pageUrl({
         id: libPortal.getSite()._id
@@ -39,6 +52,7 @@ exports.get = function(req) {
         newsArticle: content,
 		published: published,
 		siteUrl: siteUrl,
+		searchResultsPageExists: searchResultsPageExists,
 	};
 
 	

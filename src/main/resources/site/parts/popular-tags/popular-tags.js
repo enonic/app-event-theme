@@ -5,6 +5,8 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('popular-tags.html');
 
+var searchResultsPageExists = false;
+
 exports.get = function (req) {
 
     /* ### Collect ### */
@@ -14,6 +16,16 @@ exports.get = function (req) {
     /* let site = libPortal.getSite(); */
 
     /* ### Manipulate ### */
+
+    if (searchResultsPageExists == false) {
+        var site = libPortal.getSite();
+        var searchUrl = libContent.get({
+            key: site._path + "/search-results",
+        });
+        if (searchUrl != null) {
+            searchResultsPageExists = !searchResultsPageExists;
+        }
+	}
 
     let siteUrl = libPortal.pageUrl({
         id: libPortal.getSite()._id
@@ -62,6 +74,7 @@ exports.get = function (req) {
         component: component,
         siteUrl: siteUrl,
         mostPopularTags: mostPopularTags,
+        searchResultsPageExists: searchResultsPageExists,
     };
 
     var scriptUrl = libPortal.assetUrl({

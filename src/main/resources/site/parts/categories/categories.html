@@ -10,13 +10,13 @@
                 data-th-text="${category[0]}"
                 data-th-value="${category[0]}"
                 data-th-home="${siteUrl}"
-                class="category-list-item"
+                data-th-class="${searchResultsPageExists} ? 'category-list-item' : ''"
             ></a>
             <a 
                 data-th-text="'(' + ${category[1] + ')'}"
                 data-th-value="${category[0]}"
                 data-th-home="${siteUrl}"
-                class="category-list-item"
+                data-th-class="${searchResultsPageExists} ? 'category-list-item' : ''"
             ></a>
         </li>
     </ul>

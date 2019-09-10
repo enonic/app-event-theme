@@ -10,7 +10,7 @@
                 data-th-text="${tag}"
                 data-th-value="${tag}"
                 data-th-home="${siteUrl}"
-                class="tag-list-item"
+                data-th-class="${searchResultsPageExists} ? 'tag-list-item' : ''"
             ></a>
         </li>
     </ul>

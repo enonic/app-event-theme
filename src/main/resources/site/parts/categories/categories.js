@@ -4,23 +4,34 @@ var libContent = require('/lib/xp/content');
 /* var libUtil = require('/lib/util'); */
 
 var viewFile = resolve('categories.html');
+var searchResultsPageExists = false;
 
-exports.get = function(req) {
+exports.get = function (req) {
 
-	/* ### Collect ### */
-	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
-    /* let config = component.config; */	
-    
-	/* ### Manipulate ### */
+    /* ### Collect ### */
+    let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+    let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+    /* let config = component.config; */
 
-	let siteUrl = libPortal.pageUrl({
+    if (searchResultsPageExists == false) {
+        var site = libPortal.getSite();
+        var searchUrl = libContent.get({
+            key: site._path + "/search-results",
+        });
+        if (searchUrl != null) {
+            searchResultsPageExists = !searchResultsPageExists;
+        }
+    }
+
+    /* ### Manipulate ### */
+
+    let siteUrl = libPortal.pageUrl({
         id: libPortal.getSite()._id
-	});
+    });
 
     // query all news-articles
-    let result = libContent.query({ contentTypes: [ app.name + ":news-article" ] });
-	/* log.info('categories.js result %s', JSON.stringify(result, null, 4)); */
+    let result = libContent.query({ contentTypes: [app.name + ":news-article"] });
+    /* log.info('categories.js result %s', JSON.stringify(result, null, 4)); */
 
     // extract categories from query
     let rawCategories = [];
@@ -40,29 +51,30 @@ exports.get = function(req) {
     for (let categories in count) {
         sortable.push([categories, count[categories]]);
     }
-    sortable.sort(function(a, b) { return b[1] - a[1]; });
+    sortable.sort(function (a, b) { return b[1] - a[1]; });
 
-	/* log.info('categories.js sortable %s', JSON.stringify(sortable, null, 4)); */
+    /* log.info('categories.js sortable %s', JSON.stringify(sortable, null, 4)); */
 
-	/* ### Prepare ### */
-	let model = {
-		content: content,
+    /* ### Prepare ### */
+    let model = {
+        content: content,
         component: component,
         siteUrl: siteUrl,
-        categories: sortable
-	};
+        categories: sortable,
+        searchResultsPageExists: searchResultsPageExists,
+    };
 
-	let scriptUrl = libPortal.assetUrl({
-		path: '/js/bundle.js'
+    let scriptUrl = libPortal.assetUrl({
+        path: '/js/bundle.js'
     });
 
-	/* ### Return ### */
-	return {
-		body: libThymeleaf.render(viewFile, model),
-		pageContributions: {
-		  headEnd: [
-			`<script src='${scriptUrl}'></script>`
-		  ]
-		}
-	};
+    /* ### Return ### */
+    return {
+        body: libThymeleaf.render(viewFile, model),
+        pageContributions: {
+            headEnd: [
+                `<script src='${scriptUrl}'></script>`
+            ]
+        }
+    };
 };
