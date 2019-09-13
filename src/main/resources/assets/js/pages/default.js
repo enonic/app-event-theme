@@ -35,7 +35,10 @@ $(function () {
         let elementMenu = document.getElementById('submenu-' + element.getAttribute('subChoice'));
 
         if (elementMenu.dataset.toggle === 'false') {
-            elementMenu.style.display = 'inherit';
+            elementMenu.style.display = 'block';
+            elementMenu.style.opacity = '1';
+            elementMenu.style.visibility = 'visible';
+            elementMenu.style.transform = 'none';
             elementMenu.dataset.toggle = 'true';
         } else if (elementMenu.dataset.toggle === 'true') {
             elementMenu.style.display = 'none';
@@ -47,7 +50,7 @@ $(function () {
     // listeners
     try {
         document.getElementById('subscribe-button').addEventListener('click', function (e) {
-            var url = e.target.dataset.url;
+            let url = e.target.dataset.url;
             sendRegisterData(url);
         });
     }
@@ -66,7 +69,7 @@ $(function () {
             element.addEventListener('click', toggleNavLinkHasChildren);
         }
     }
-    catch (err) {}
+    catch (err) { }
 });
 
 window.addEventListener('DOMContentLoaded', (event) => { // activate the script after everything has loaded
@@ -77,10 +80,10 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     window.onscroll = function () { scrollFunction() };
 
     // Get the header
-    var header = document.getElementById("myHeader");
+    let header = document.getElementById("myHeader");
 
     // Get the offset position of the navbar
-    var sticky = header.offsetTop;
+    let sticky = header.offsetTop;
 
     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function scrollFunction() {
@@ -109,7 +112,6 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     }
 
     try {
-        var toTopButton = document.getElementById('toTop');
-        toTopButton.addEventListener('click', sendUserToTop);
+        document.getElementById('toTop').addEventListener('click', sendUserToTop);
     } catch (err) { }
 });
