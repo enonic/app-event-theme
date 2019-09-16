@@ -45,6 +45,17 @@ $(function () {
             elementMenu.style.display = 'none';
             elementMenu.dataset.toggle = 'false';
         }
+
+        for (let i = 0; i < document.getElementsByClassName('nav-item').length; i++) {
+            try {
+                if (i.toString() === element.getAttribute('subChoice')) {
+                    continue;
+                }
+                let elementMenu = document.getElementById('submenu-' + i.toString());
+                elementMenu.style.display = 'none';
+                elementMenu.dataset.toggle = 'false';
+            } catch (error) {}
+        }
         event.preventDefault();
     }
 
