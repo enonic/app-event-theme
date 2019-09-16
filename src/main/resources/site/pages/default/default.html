@@ -37,7 +37,7 @@
       <a class="navbar-brand" data-th-href="${homeUrl}">
         <img data-th-if="${settings.headerLogo}"
           data-th-src="${portal.imageUrl({'_id=' + settings.headerLogo, '_scale=max(200)'})}" alt="logo"
-          class="img-fluid">
+          class="img-fluid not-too-fluid">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,17 +47,17 @@
         <!-- navigation menu -->
         <ul class="navbar-nav mx-auto">
           <li class="nav-item active">
-            <a class="nav-link" data-th-href="${homeUrl}">Home
+            <a class="nav-link nav-name" data-th-href="${homeUrl}">Home
               <span class="dividers">/</span>
             </a>
           </li>
           <li data-th-each="item, iterStat : ${menuItems}" class="nav-item dropdown dropdown-slide">
-            <a class="nav-link" data-th-href="${item.url}" data-th-if="${!item.hasChildren}">
+            <a class="nav-link nav-name" data-th-href="${item.url}" data-th-if="${!item.hasChildren}">
               <span data-th-text="${item.displayName}"></span>
               <span class="dividers" data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
             </a>
             <div 
-              class="nav-link nav-link-hasChildren"
+              class="nav-link nav-name nav-link-hasChildren"
               data-th-href="${item.url}"
               data-th-if="${item.hasChildren}"
               data-th-attr="subChoice=|${iterStat.index}|"

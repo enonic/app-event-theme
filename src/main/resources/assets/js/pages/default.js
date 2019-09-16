@@ -40,6 +40,7 @@ $(function () {
             elementMenu.style.visibility = 'visible';
             elementMenu.style.transform = 'none';
             elementMenu.dataset.toggle = 'true';
+            elementMenu.style['border-top'] = '3px solid #ff6600';
         } else if (elementMenu.dataset.toggle === 'true') {
             elementMenu.style.display = 'none';
             elementMenu.dataset.toggle = 'false';

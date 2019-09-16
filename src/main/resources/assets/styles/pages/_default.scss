@@ -706,18 +706,24 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Montserrat", sans-serif;
 }
 
-@media (max-width: 1024px) {
-  .main-nav .navbar-nav .nav-item .nav-link {
-    font-size: 0.875rem;
-  }
-}
-
 .main-nav .navbar-nav .nav-item .nav-link span {
   color: #222222;
   margin-left: 20px;
 }
 
-@media (max-width: 1024px) {
+.not-too-fluid {
+  min-width: 150px;
+}
+
+.navbar-nav {
+  flex-wrap: wrap;
+}
+
+.nav-name {
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
   .main-nav .navbar-nav .nav-item .nav-link span {
     border-bottom: 1px solid #ff6600;
     width: 400px;
@@ -725,10 +731,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .dividers {
-  @include media("<medium") {
-    display: none;
-  }
-  @include media("<large") {
+  @media (max-width: 991px) {
     display: none;
   }
 }
@@ -744,10 +747,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .fa-angle-down {
   display: none;
-  @include media("<medium") {
-    display: inline-block;
-  }
-  @include media("<large") {
+  @media (max-width: 991px) {
     display: inline-block;
   }
 }
@@ -2541,11 +2541,6 @@ select.form-control:not([size]):not([multiple]) {
 
 .testimonial .testimonial-slider .owl-dots .owl-dot.active span {
   background: #ff6600;
-}
-
-.single-speaker .block {
-  /* padding-bottom: 70px;
-	border-bottom: 1px solid #e5e5e5; */ /* Removed because it messes up the single-speaker */
 }
 
 .single-speaker .block .image-block {
