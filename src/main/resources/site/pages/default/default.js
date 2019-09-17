@@ -47,7 +47,7 @@ exports.get = function(req) {
         else { breadcrumbItems = false; }
     } catch(err) {}    
 
-    log.info('default.js JSON %s', JSON.stringify(menuItems, null, 4));
+    /* log.info('default.js JSON %s', JSON.stringify(menuItems, null, 4)); */
 
 	// Prepare the model that will be passed to the view
     let model = {

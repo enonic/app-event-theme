@@ -745,13 +745,6 @@ select.form-control:not([size]):not([multiple]) {
   border-top: 1px solid rgba(100, 100, 100, 0.1);
 }
 
-.fa-angle-down {
-  display: none;
-  @media (max-width: 991px) {
-    display: inline-block;
-  }
-}
-
 .main-nav .dropdown-slide {
   position: static;
 }

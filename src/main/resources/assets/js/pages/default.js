@@ -30,9 +30,12 @@ $(function () {
         }
     }
 
-    function toggleNavLinkHasChildren(event) {
+    function toggleSubmenu(event) {
         let element = this;
-        let elementMenu = document.getElementById('submenu-' + element.getAttribute('subChoice'));
+        let id = element.getAttribute('subChoice');
+        let elementMenu = document.getElementById('submenu-' + id);
+        let angleUpIcon = document.getElementById('submenu-fa-angle-up-' + id);
+        let angleDownIcon = document.getElementById('submenu-fa-angle-down-' + id);
 
         if (elementMenu.dataset.toggle === 'false') {
             elementMenu.style.display = 'block';
@@ -41,20 +44,29 @@ $(function () {
             elementMenu.style.transform = 'none';
             elementMenu.dataset.toggle = 'true';
             elementMenu.style['border-top'] = '3px solid #ff6600';
+            angleUpIcon.style.display = 'inline-block';
+            angleDownIcon.style.display = 'none';
         } else if (elementMenu.dataset.toggle === 'true') {
             elementMenu.style.display = 'none';
             elementMenu.dataset.toggle = 'false';
+            angleUpIcon.style.display = 'none';
+            angleDownIcon.style.display = 'inline-block';
         }
 
         for (let i = 0; i < document.getElementsByClassName('nav-item').length; i++) {
             try {
-                if (i.toString() === element.getAttribute('subChoice')) {
+                if (i.toString() === id) {
                     continue;
                 }
                 let elementMenu = document.getElementById('submenu-' + i.toString());
                 elementMenu.style.display = 'none';
                 elementMenu.dataset.toggle = 'false';
-            } catch (error) {}
+
+                let elementangleUpIcon = document.getElementById('submenu-fa-angle-up-' + i);
+                let elementAngleDownIcon = document.getElementById('submenu-fa-angle-down-' + i);
+                elementangleUpIcon.style.display = 'none';
+                elementAngleDownIcon.style.display = 'inline-block';
+            } catch (error) { }
         }
         event.preventDefault();
     }
@@ -78,7 +90,7 @@ $(function () {
     try {
         for (let i = 0; i < document.getElementsByClassName('nav-link-hasChildren').length; i++) {
             let element = document.getElementsByClassName('nav-link-hasChildren')[i];
-            element.addEventListener('click', toggleNavLinkHasChildren);
+            element.addEventListener('click', toggleSubmenu);
         }
     }
     catch (err) { }
