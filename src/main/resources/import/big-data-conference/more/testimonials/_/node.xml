@@ -2,7 +2,7 @@
     <id>74ad817b-fcd7-467d-951c-5196342433d7</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-13T08:28:38.444Z</timestamp>
+    <timestamp>2019-08-28T11:01:03.285Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -91,8 +91,7 @@
                             </property-set>
                             <property-set name="testimonials">
                                 <reference name="speaker">69ceb819-dfc0-443f-91ef-b2b4cc4c2201</reference>
-                                <string name="testimonial">&lt;p&gt;Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Nulla sit amet est. Vivamus euismod mauris. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor.&lt;/p&gt;
-</string>
+                                <string name="testimonial">&lt;p&gt;Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Nulla sit amet est. Vivamus euismod mauris. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor.&lt;/p&gt;</string>
                             </property-set>
                             <property-set name="testimonials">
                                 <reference name="speaker">10c9fc1d-7375-424f-9246-f8e834278f1e</reference>
@@ -104,8 +103,7 @@
                             </property-set>
                             <property-set name="testimonials">
                                 <reference name="speaker">fd407c4b-77a5-4196-bc61-8f3f9a85d0f8</reference>
-                                <string name="testimonial">&lt;p&gt;Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Curabitur ullamcorper ultricies nisi.&lt;/p&gt;
-</string>
+                                <string name="testimonial">&lt;p&gt;Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Curabitur ullamcorper ultricies nisi.&lt;/p&gt;</string>
                             </property-set>
                         </property-set>
                     </property-set>

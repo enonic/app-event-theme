@@ -2,8 +2,8 @@
     <id>0f79f2fe-448f-4e38-abff-34e4df7dc633</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-05T13:29:46.306Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2019-08-28T11:01:04.242Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
             <allow type="array">

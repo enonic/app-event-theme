@@ -2,8 +2,8 @@
     <id>4a96f9d7-8e41-4588-81c9-73ee814e4670</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-07-31T11:36:05.147Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2019-09-18T06:44:49.419Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
             <allow type="array">
@@ -41,20 +41,21 @@
         <string name="displayName">Schedule</string>
         <string name="type">app.event.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-07-30T10:27:49.139Z</dateTime>
+        <dateTime name="modifiedTime">2019-09-18T06:44:49.417Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-07-19T13:18:49.912Z</dateTime>
         <property-set name="publish">
             <dateTime name="first">2019-07-31T11:36:03.768Z</dateTime>
             <dateTime name="from">2019-07-31T11:36:03.768Z</dateTime>
+            <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
             <property-set name="app-event-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">true</boolean>
-                    <string isNull="true" name="menuName"/>
+                    <string name="menuName">The Schedule</string>
                 </property-set>
             </property-set>
         </property-set>

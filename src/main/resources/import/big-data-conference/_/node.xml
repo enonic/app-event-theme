@@ -1,8 +1,8 @@
 <node>
     <id>3a8a2d77-d121-440f-b594-cf2135132615</id>
-    <childOrder>modifiedtime DESC</childOrder>
+    <childOrder>_manualordervalue DESC, _ts DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-13T08:16:03.251Z</timestamp>
+    <timestamp>2019-09-18T08:08:25.649Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -37,11 +37,11 @@
         </principal>
     </permissions>
     <data>
-        <boolean name="valid">false</boolean>
+        <boolean name="valid">true</boolean>
         <string name="displayName">Big Data Conference</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-08-13T08:16:03.251Z</dateTime>
+        <dateTime name="modifiedTime">2019-09-18T08:08:25.642Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-05-29T11:34:45.064Z</dateTime>
@@ -115,11 +115,10 @@
                     <string name="instagramUrl">https://www.google.com</string>
                     <string name="rssUrl">https://www.google.com</string>
                     <string name="vimeoUrl">https://www.google.com</string>
-                    <string name="licence">&lt;p&gt;Copyright © Acme Corporation AS. All Rights Reserved. &lt;a href="https://www.google.com" target="_blank"&gt;Privacy Policy&lt;/a&gt; . &lt;a href="https://www.google.com" target="_blank"&gt;Cookie Policy&lt;/a&gt; .&lt;/p&gt;
-</string>
+                    <string name="licence">&lt;p&gt;Copyright © Acme Corporation AS. All Rights Reserved. &lt;a href="https://www.google.com" target="_blank"&gt;Privacy Policy&lt;/a&gt; . &lt;a href="https://www.google.com" target="_blank"&gt;Cookie Policy&lt;/a&gt; .&lt;/p&gt;</string>
                     <string name="TEST EN TEST">fsdfs44444444444444444444</string>
                     <localDate name="fromDate">2022-08-20Z</localDate>
-                    <localDate name="toDate">2022-08-21Z</localDate>
+                    <localDate name="toDate">2022-08-22Z</localDate>
                     <string name="location">Oslo</string>
                     <boolean name="isNewsletter">true</boolean>
                     <string name="newsLetterDescription">Cras ultricies mi eu turpis hendrerit fringilla. Curabitur vestibulum aliquam leo. Curabitur nisi.</string>
@@ -170,6 +169,7 @@
                             <string name="location">Oslo</string>
                             <string name="ticketUrl">https://www.youtube.com/watch?v=MfmYCM4CS8o&amp;list=RD8SbUC-UaAxE&amp;index=27</string>
                             <reference name="backgroundImage">1d7e377f-765c-4a77-8f4f-f506ffd5be76</reference>
+                            <boolean name="haveOverlay">true</boolean>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -184,8 +184,8 @@
                     <property-set name="app-event-theme">
                         <property-set name="2-col">
                             <string name="columnConfig">30-70</string>
-                            <reference name="backgroundImage">a7315e6b-e5d1-4aa1-bba6-09e40081eda0</reference>
                             <boolean name="haveFullSpace">false</boolean>
+                            <boolean name="fixedBackground">false</boolean>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -202,7 +202,7 @@
             <string name="type">text</string>
             <string name="path">/main/1/right/0</string>
             <property-set name="text">
-                <string name="value">&lt;h2&gt;About The&amp;nbsp;&lt;em&gt;Eventre&lt;/em&gt;&lt;/h2&gt;
+                <string name="value">&lt;h2&gt;About The&amp;nbsp;&lt;em&gt;Big Data Conference&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco.&lt;/p&gt;
 
@@ -232,7 +232,7 @@
                             <reference name="speakers">fd407c4b-77a5-4196-bc61-8f3f9a85d0f8</reference>
                             <reference name="speakers">f0f98d13-7060-43f4-b303-73eb03e23923</reference>
                             <reference name="speakers">10c9fc1d-7375-424f-9246-f8e834278f1e</reference>
-                            <reference name="backgroundImage">885f128c-5e5c-4825-96ee-5baf95265a40</reference>
+                            <reference name="backgroundImage">447b7ab8-2a98-4b8c-a23e-49b827b1e154</reference>
                             <string name="description">Nam quam nunc blandit vel</string>
                         </property-set>
                     </property-set>
@@ -256,6 +256,7 @@
                         <property-set name="2-col">
                             <string name="columnConfig">50-50</string>
                             <boolean name="haveFullSpace">true</boolean>
+                            <boolean name="fixedBackground">false</boolean>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -317,7 +318,7 @@
                             <property-set name="tickets">
                                 <string name="ticketType">Silver</string>
                                 <string name="ticketPrice">225,-</string>
-                                <string name="ticketUrl">https://www.nrk.no</string>
+                                <string name="ticketUrl">https://www.google.com</string>
                                 <boolean name="isFeatured">true</boolean>
                                 <property-set name="details">
                                     <string name="detail">BYOD</string>
@@ -335,7 +336,7 @@
                             <property-set name="tickets">
                                 <string name="ticketType">Gold</string>
                                 <string name="ticketPrice">375,-</string>
-                                <string name="ticketUrl">https://www.nrk.no</string>
+                                <string name="ticketUrl">https://www.google.com</string>
                                 <boolean name="isFeatured">false</boolean>
                                 <property-set name="details">
                                     <string name="detail">BYOD</string>
@@ -353,7 +354,7 @@
                             <property-set name="tickets">
                                 <string name="ticketType">Platinum</string>
                                 <string name="ticketPrice">810,-</string>
-                                <string name="ticketUrl">https://www.nrk.no</string>
+                                <string name="ticketUrl">https://www.google.com</string>
                                 <boolean name="isFeatured">false</boolean>
                                 <property-set name="details">
                                     <string name="detail">BYOD</string>
@@ -414,7 +415,7 @@
                                 </property-set>
                                 <property-set name="sponsors">
                                     <reference name="image">a4218e1e-3221-4043-8c22-f38ae086e02c</reference>
-                                    <string isNull="true" name="url"/>
+                                    <string name="url">https://www.google.com</string>
                                 </property-set>
                             </property-set>
                             <property-set name="sponsors">

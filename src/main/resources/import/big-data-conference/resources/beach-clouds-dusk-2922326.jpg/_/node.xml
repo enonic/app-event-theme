@@ -1,0 +1,219 @@
+<node>
+    <id>447b7ab8-2a98-4b8c-a23e-49b827b1e154</id>
+    <childOrder>modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <timestamp>2019-09-18T08:08:34.739Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
+    <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+    </permissions>
+    <data>
+        <boolean name="valid">true</boolean>
+        <string name="displayName">beach-clouds-dusk-2922326</string>
+        <string name="type">media:image</string>
+        <dateTime name="createdTime">2019-09-18T07:41:33.051Z</dateTime>
+        <string name="creator">user:system:su</string>
+        <string name="modifier">user:system:su</string>
+        <dateTime name="modifiedTime">2019-09-18T07:41:33.051Z</dateTime>
+        <string name="owner">user:system:su</string>
+        <property-set name="data">
+            <property-set name="media">
+                <string name="attachment">beach-clouds-dusk-2922326.jpg</string>
+                <property-set name="focalPoint">
+                    <double name="x">0.5</double>
+                    <double name="y">0.5</double>
+                </property-set>
+            </property-set>
+            <string name="caption"/>
+            <string name="artist"/>
+            <string name="copyright"/>
+            <string name="tags"/>
+        </property-set>
+        <property-set name="x">
+            <property-set name="media">
+                <property-set name="imageInfo">
+                    <long name="imageHeight">5472</long>
+                    <string name="contentType">image/jpeg</string>
+                    <string name="colorSpace">RGB</string>
+                    <long name="imageWidth">3648</long>
+                    <long name="pixelSize">19961856</long>
+                    <long name="byteSize">6480943</long>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">beach-clouds-dusk-2922326.jpg</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">beach-clouds-dusk-2922326.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">6480943</long>
+            <string name="text"/>
+        </property-set>
+        <property-set name="publish">
+            <dateTime name="first">2019-09-18T08:08:34.718Z</dateTime>
+            <dateTime name="from">2019-09-18T08:08:34.718Z</dateTime>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>document_index_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+        <allTextIndexConfig/>
+    </indexConfigs>
+</node>

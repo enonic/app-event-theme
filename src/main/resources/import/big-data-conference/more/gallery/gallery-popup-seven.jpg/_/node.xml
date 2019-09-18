@@ -2,7 +2,7 @@
     <id>9f26d200-2611-4322-84a7-af80a23c7ec1</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-08-05T07:53:17.351Z</timestamp>
+    <timestamp>2019-09-18T08:08:47.332Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -76,6 +76,10 @@
             <string name="mimeType">image/jpeg</string>
             <long name="size">108203</long>
             <string name="text"/>
+        </property-set>
+        <property-set name="publish">
+            <dateTime name="first">2019-09-18T08:08:47.209Z</dateTime>
+            <dateTime name="from">2019-09-18T08:08:47.209Z</dateTime>
         </property-set>
     </data>
     <indexConfigs>
