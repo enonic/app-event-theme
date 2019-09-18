@@ -8,6 +8,12 @@
 				<alignment>right</alignment> 
 			</config>
 		</input>		
+		<input type="CheckBox" name="haveOverlay">
+			<label>Overlay?</label>
+			<config>
+				<alignment>right</alignment> 
+			</config>
+		</input>		
 		<input type="ImageSelector" name="backgroundImage">
 			<label>Background Image</label>
 			<occurrences minimum="1" maximum="1"/>

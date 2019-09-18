@@ -40,6 +40,7 @@ exports.get = function (req) {
 		content: content,
 		component: component,
 		haveCountDown: config.haveCountDown,
+		haveOverlay: config.haveOverlay,
 		title: "<h1>" + site.displayName + "</h1>",
 		dateLabel: dateLabel,
 		dateFrom: months[fromDate.getMonth()].substring(0, 3) + " " + fromDate.getDate() + ", " + fromDate.getFullYear(),
