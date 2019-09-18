@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     // actions
     function getAndSendQueryWord(event) {
         let input = document.getElementById('search-input');
-        window.location.href = input.dataset.home + '/search-results' + '?search=' + input.value
+        window.location.href = input.getAttribute('data-home') + '/search-results' + '?search=' + input.value
     };
     
     function getAndSendCaegory(event) {

@@ -2,20 +2,22 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     // actions
     function toggleShowMore(event) {
         let questionElement = this;
-        let answerElement = document.getElementById('faq-'+questionElement.dataset.index);
+        let answerElement = document.getElementById('faq-' + questionElement.getAttribute('data-index'));
 
-        if (questionElement.dataset.toggle === 'false') {
+        if (questionElement.getAttribute('data-toggle') === 'false') {
             if (answerElement.classList.contains('answer-box-hidden')) {
-                answerElement.classList.replace('answer-box-hidden', 'answer-box-show');
-                questionElement.dataset.toggle = 'true';
+                answerElement.classList.remove('answer-box-hidden');
+                answerElement.classList.add('answer-box-show');
+                questionElement.setAttribute('data-toggle', 'true');
             }
-        } else if (questionElement.dataset.toggle === 'true') {
+        } else if (questionElement.getAttribute('data-toggle') === 'true') {
             if (answerElement.classList.contains('answer-box-show')) {
-                answerElement.classList.replace('answer-box-show', 'answer-box-hidden');
-                questionElement.dataset.toggle = 'false';
+                answerElement.classList.add('answer-box-hidden');
+                answerElement.classList.remove('answer-box-show');
+                questionElement.setAttribute('data-toggle', 'false');
             }
         }
-        
+
         event.preventDefault();
     };
 
@@ -23,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try {
         for (let i = 0; i < document.getElementsByClassName('faq-toggle-view-more').length; i++) { // for all question boxes
             let element = document.getElementsByClassName('faq-toggle-view-more')[i];
-            element.addEventListener('click', toggleShowMore);        
+            element.addEventListener('click', toggleShowMore);
         }
-    } catch(err) {}
+    } catch (err) { }
 });

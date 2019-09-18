@@ -20,7 +20,7 @@ $(function () {
     // listeners
     try {
         document.getElementById('contact-button').addEventListener('click', function (e) {
-            var url = e.target.dataset.url;
+            var url = e.target.getAttribute('data-url');
             sendRegisterData(url);
         });
     }

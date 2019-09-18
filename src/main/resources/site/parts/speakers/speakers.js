@@ -22,7 +22,7 @@ exports.get = function (req) {
             speakersDetails.push({
                 name: speaker.displayName,
                 title: speaker.data.title,
-                image: libPortal.imageUrl({ id: speaker.data.image, scale: 'block(256, 270)' }), // hard coded image dimensions relative to template site
+                image: libPortal.imageUrl({ id: speaker.data.image, scale: 'block(256, 320)' }), // hard coded image dimensions relative to template site (256, 270)
                 url: libPortal.pageUrl({ id: speaker._id }),
                 linkedinUrl: speaker.data.linkedinUrl,
                 twitterUrl: speaker.data.twitterUrl,

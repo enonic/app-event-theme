@@ -26,11 +26,7 @@ exports.get = function(req) {
 		}
 	}
 	
-	log.info('');
-	log.info('');
-	log.info('search.js result %s', JSON.stringify(searchResultsPageExists, null, 4));
-	log.info('');
-	log.info('');
+	/* log.info('search.js result %s', JSON.stringify(searchResultsPageExists, null, 4)); */
 
     let siteUrl = libPortal.pageUrl({
         id: libPortal.getSite()._id

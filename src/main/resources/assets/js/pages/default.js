@@ -26,7 +26,7 @@ $(function () {
             let element = document.getElementsByClassName('nav-link-hasChildren')[i];
             let elementMenu = document.getElementById('submenu-' + element.getAttribute('subChoice'));
             elementMenu.style.display = 'none';
-            elementMenu.dataset.toggle = 'false';
+            elementMenu.setAttribute('data-toggle', 'false');
         }
     }
 
@@ -37,18 +37,18 @@ $(function () {
         let angleUpIcon = document.getElementById('submenu-fa-angle-up-' + id);
         let angleDownIcon = document.getElementById('submenu-fa-angle-down-' + id);
 
-        if (elementMenu.dataset.toggle === 'false') {
+        if (elementMenu.getAttribute('data-toggle') === 'false') {
             elementMenu.style.display = 'block';
             elementMenu.style.opacity = '1';
             elementMenu.style.visibility = 'visible';
             elementMenu.style.transform = 'none';
-            elementMenu.dataset.toggle = 'true';
+            elementMenu.setAttribute('data-toggle', 'true');
             elementMenu.style['border-top'] = '3px solid #ff6600';
             angleUpIcon.style.display = 'inline-block';
             angleDownIcon.style.display = 'none';
-        } else if (elementMenu.dataset.toggle === 'true') {
+        } else if (elementMenu.getAttribute('data-toggle') === 'true') {
             elementMenu.style.display = 'none';
-            elementMenu.dataset.toggle = 'false';
+            elementMenu.setAttribute('data-toggle', 'false');
             angleUpIcon.style.display = 'none';
             angleDownIcon.style.display = 'inline-block';
         }
@@ -60,7 +60,7 @@ $(function () {
                 }
                 let elementMenu = document.getElementById('submenu-' + i.toString());
                 elementMenu.style.display = 'none';
-                elementMenu.dataset.toggle = 'false';
+                elementMenu.setAttribute('data-toggle', 'false');
 
                 let elementangleUpIcon = document.getElementById('submenu-fa-angle-up-' + i);
                 let elementAngleDownIcon = document.getElementById('submenu-fa-angle-down-' + i);
@@ -74,7 +74,7 @@ $(function () {
     // listeners
     try {
         document.getElementById('subscribe-button').addEventListener('click', function (e) {
-            let url = e.target.dataset.url;
+            let url = e.target.getAttribute('url');
             sendRegisterData(url);
         });
     }
