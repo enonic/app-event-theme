@@ -6,20 +6,20 @@ var libMenu = require('/lib/menu.js');
 var viewFile = resolve('default.html');
 
 // Handle the GET request
-exports.get = function(req) {
+exports.get = function (req) {
 
     // Get the content that is using the page
     let content = libPortal.getContent();
     let site = libPortal.getSite();
     // let config = libPortal.getSiteConfig();
-    
+
     // Fragment handling (single fragments should use this page controller automatically to render itself)
     let isFragment = content.type === 'portal:fragment';
     let mainRegion = isFragment ? null : content.page.regions.main;
 
     // Site
     let properName = app.name.replace(/\./g, '-');
-    let siteConfig = site.x[properName].siteConfig;   
+    let siteConfig = site.x[properName].siteConfig;
 
     // Get a breadcrumb menu for current content.
     let breadcrumbItems = libMenu.getBreadcrumbMenu({ params: { showHomepage: true } });
@@ -29,15 +29,14 @@ exports.get = function(req) {
         element.url = libPortal.pageUrl({ id: element.id });
         if (element.hasChildren) {
             element.children.forEach(subElement => {
-                subElement.url = libPortal.pageUrl({ id: subElement.id});
+                subElement.url = libPortal.pageUrl({ id: subElement.id });
             });
         }
     });
 
     let templateName = '';
-    try {        
+    try {
         let pageTemplate = content.page.template; // crashes if no template
-
         let menuContent = libContent.get({ key: content._id });
         let displayName = menuContent.displayName;
         let menuName = menuContent.x[properName]['menu-item'].menuName;
@@ -45,11 +44,11 @@ exports.get = function(req) {
         else if (pageTemplate) { templateName = libContent.get({ key: pageTemplate }).displayName; }
         else if (displayName && displayName != site.displayName) { templateName = displayName; }
         else { breadcrumbItems = false; }
-    } catch(err) {}    
+    } catch (err) { }
 
     /* log.info('default.js JSON %s', JSON.stringify(menuItems, null, 4)); */
 
-	// Prepare the model that will be passed to the view
+    // Prepare the model that will be passed to the view
     let model = {
         siteName: site.displayName,
         isFragment: isFragment,
@@ -89,20 +88,20 @@ exports.get = function(req) {
             },
         },
         templateName: templateName,
-        homeUrl: libPortal.url({path: site._path}),
+        homeUrl: libPortal.url({ path: site._path }),
         menuItems: menuItems,
         homeUrl: libPortal.pageUrl({ id: libPortal.getSite()._id }),
     };
 
-	let scriptUrl = libPortal.assetUrl({ path: '/js/bundle.js' });
+    let scriptUrl = libPortal.assetUrl({ path: '/js/bundle.js' });
 
     // Return a response from the server to the client
     return {
         body: libThymeleaf.render(viewFile, model), // Render the dynamic HTML with values from the model
-		pageContributions: {
-		  headEnd: [
-			`<script src='${scriptUrl}'></script>`
-		  ]
-		}
+        pageContributions: {
+            headEnd: [
+                `<script src='${scriptUrl}'></script>`
+            ]
+        }
     };
 };
