@@ -13,12 +13,11 @@ exports.get = function (req) {
     let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
     let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     let config = component.config;
-    /* let site = libPortal.getSite(); */
+    let site = libPortal.getSite();
 
     /* ### Manipulate ### */
 
     if (searchResultsPageExists == false) {
-        var site = libPortal.getSite();
         var searchUrl = libContent.get({
             key: site._path + "/search-results",
         });
@@ -27,12 +26,13 @@ exports.get = function (req) {
         }
 	}
 
-    let siteUrl = libPortal.pageUrl({
-        id: libPortal.getSite()._id
-    });
+    let siteUrl = libPortal.pageUrl({ id: site._id });
 
     // query all news-articles
-    let result = libContent.query({ contentTypes: [app.name + ":news-article"] });
+    let result = libContent.query({ 
+        contentTypes: [app.name + ":news-article"],
+        query: "_path LIKE '/content" + site._path + "/*'", // Only get tags from this site.
+    });
 
     // extract tags from query
     let rawTags = [];

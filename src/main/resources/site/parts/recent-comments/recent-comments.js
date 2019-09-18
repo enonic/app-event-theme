@@ -11,13 +11,14 @@ exports.get = function (req) {
     let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
     let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     // let config = component.config;
+    let site = libPortal.getSite();
 
     /* ### Manipulate ### */
     let comments = [];
     let results = libContent.query({
         start: 0,
         count: 20,
-        query: "data.newsArticle = '" + content._id + "'",
+        query: "data.newsArticle = '" + content._id + "' AND _path LIKE '/content" + site._path + "/*'" ,
         sort: 'createdTime DESC',
         contentTypes: [app.name + ':comment']
     });

@@ -11,7 +11,7 @@ exports.get = function(req) {
 	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
     let config = component.config;
-    /* var site = libPortal.getSite(); */
+    let site = libPortal.getSite();
     
     /* ### Manipulate ### */
 
@@ -19,6 +19,7 @@ exports.get = function(req) {
     let result = libContent.query({
         start: 0,
         count: parseInt(config.numPosts, 10),
+        query: "_path LIKE '/content" + site._path + "/*'", // Only get tags from this site.
         sort: "createdTime DESC",
         contentTypes: [ app.name + ":news-article" ]
     });

@@ -191,11 +191,13 @@
       <div class="row">
         <div class="col-md-12">
           <div class="block text-center">
-            <div class="footer-logo">
-              <img data-th-if="${settings.footerLogo}"
-                data-th-src="${portal.imageUrl({'_id=' + settings.footerLogo, '_scale=max(200)'})}" alt="logo"
-                class="img-fluid">
-            </div>
+            <a class="navbar-brand" data-th-href="${homeUrl}">
+              <div class="footer-logo">
+                <img data-th-if="${settings.footerLogo}"
+                  data-th-src="${portal.imageUrl({'_id=' + settings.footerLogo, '_scale=max(200)'})}" alt="logo"
+                  class="img-fluid">
+              </div>
+            </a>
             <ul class="social-links-footer list-inline">
               <li data-th-if="${settings.facebookUrl}" class="list-inline-item">
                 <a data-th-href="${settings.facebookUrl}"><i class="fa fa-facebook"></i></a>
