@@ -6,4 +6,4 @@ A [template](https://themefisher.com/products/eventre-event-conference-website-t
 
 Licence: [Creative Common Attribution 3.0 License](https://themefisher.com/license/).
 
-![preview of the app](https://user-images.githubusercontent.com/4059636/62600577-859f1280-b8ef-11e9-8192-309730735071.png)
+![preview of the app](https://user-images.githubusercontent.com/4059636/65243551-cd1cdf00-dae8-11e9-8c5b-47f641ab95ff.PNG)
