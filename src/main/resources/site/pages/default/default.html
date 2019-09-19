@@ -56,7 +56,7 @@
               <span data-th-text="${item.displayName}"></span>
               <span class="dividers" data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
             </a>
-            <div 
+            <a
               class="nav-link nav-name nav-link-hasChildren"
               data-th-href="${item.url}"
               data-th-if="${item.hasChildren}"
@@ -66,7 +66,7 @@
               <i class="fa fa-angle-down" data-th-id="|submenu-fa-angle-down-${iterStat.index}|"></i>
               <i class="fa fa-angle-up" data-th-id="|submenu-fa-angle-up-${iterStat.index}|" style="display:none;"></i>
               <span class="dividers" data-th-if="${iterStat.index != menuItems.size - 1}">/</span>
-            </div>
+            </a>
             <div data-th-if="${item.hasChildren}" class="dropdown-menu submenu" data-th-id="|submenu-${iterStat.index}|" data-toggle="false">
               <a class="dropdown-item" data-th-href="${item.url}" data-th-text="${item.displayName}" style="font-weight: bold;"></a>
               <a class="dropdown-item" data-th-each="child : ${item.children}" data-th-href="${child.url}"
