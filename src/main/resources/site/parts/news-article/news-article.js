@@ -12,7 +12,8 @@ exports.get = function(req) {
 
 	/* ### Collect ### */
 	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
+	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format
+	let config = component.config;
     
     if (searchResultsPageExists == false) {
         var site = libPortal.getSite();
@@ -43,7 +44,7 @@ exports.get = function(req) {
 
 	content.owner = libAuth.getPrincipal(content.owner).displayName;
 
-    /* log.info('news-article.js JSON %s', JSON.stringify(content.createdTime, null, 4)); */
+    /* log.info('news-article.js JSON %s', JSON.stringify(config.hideDate, null, 4)); */
 
 	/* ### Prepare ### */
 	let model = {
@@ -51,6 +52,7 @@ exports.get = function(req) {
         component: component,
         newsArticle: content,
 		published: published,
+		hideDate: config.hideDate,
 		siteUrl: siteUrl,
 		searchResultsPageExists: searchResultsPageExists,
 	};

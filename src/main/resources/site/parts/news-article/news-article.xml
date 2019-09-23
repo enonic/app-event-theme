@@ -2,5 +2,12 @@
 <part>
     <display-name>News Article</display-name>
     <description>Display a news article</description>
-    <form/>
+    <form>
+        <input type="CheckBox" name="hideDate">
+            <label>Hide date label</label>
+            <config>
+                <alignment>right</alignment>
+            </config>
+        </input>
+    </form>
 </part>

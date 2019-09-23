@@ -13,7 +13,10 @@
                             />                            
 						</div>
 						<div class="post-content">
-							<div class="date date-format">
+							<div 
+								class="date date-format"
+								data-th-if="${hideDate == false}"
+							>
 								<h4 data-th-text="${published.day}"></h4>
                                 <span class="date-format" data-th-text="${published.month} + ' ' + ${published.year}"></span>
                                 <!-- <h4>
