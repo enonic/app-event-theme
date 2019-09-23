@@ -2,7 +2,7 @@
     <h5 class="widget-header">Latest Articles</h5>
     <!-- Post -->
     <div 
-        class="media"
+        class="media media-latest"
         data-th-each="article: ${articles}"
     >
         <a data-th-href="${article.url}">
@@ -10,7 +10,6 @@
                 data-th-src="${article.image}"
                 class="img-fluid" 
                 alt="post-thumb" 
-                style="width:200px"
             >
         </a>
         <div class="media-body">
