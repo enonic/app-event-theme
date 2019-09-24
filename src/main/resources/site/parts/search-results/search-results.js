@@ -11,59 +11,57 @@ exports.get = function (req) {
 	let content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	let component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
 	/* var config = component.config; */
+	let site = libPortal.getSite();
 
-	/* ### Manipulate ### */
-	/* let searchWord = decodeURI(req.url.substring(req.url.search('=') + 1, req.url.length)); */
-	/* log.info('search-results2.js JSON %s', JSON.stringify(searchWord, null, 4)); */
-
-	/* ------------------------------------------------------ */
 	let splittedAbsoluteURL = decodeURI(req.url).split('/');
 	let dataUrl = splittedAbsoluteURL[splittedAbsoluteURL.length - 1];
 	let searchBy = dataUrl.substring(dataUrl.search("\\?") + 1, dataUrl.search("=")); // 'category' or 'tag'
 	let searchWord = dataUrl.substring(dataUrl.search("=") + 1, dataUrl.length);
 
-	/* log.info(' ');
-	log.info(' '); */
-	/* log.info('search-results2.js JSON %s', JSON.stringify(splittedAbsoluteURL, null, 4)); */
-	/* log.info('search-results2.js JSON %s', JSON.stringify(dataUrl, null, 4));
-	log.info('search-results2.js JSON %s', JSON.stringify(searchBy, null, 4));
-	log.info('search-results2.js JSON %s', JSON.stringify(searchWord, null, 4));
-	log.info(' ');
-	log.info(' '); */
-	/* ------------------------------------------------------ */
-
 	let result = { hits: [] };
 	if (searchWord !== '') {
 		if (searchBy === 'search') {
-			result = libContent.query({ // query bruker 'string literals'
+			result = libContent.query({
 				start: 0,
 				count: 10,
-				query: `displayName = '${searchWord}^10' OR 
-		displayName LIKE '*${searchWord}*^5' OR					
-		fulltext('_allText', "${searchWord}", 'OR')
-		`,
+				query: `_path LIKE '/content${site._path}/*' AND
+						(displayName = '${searchWord}^10' OR 				
+						displayName LIKE '*${searchWord}*^5' OR					
+						fulltext('_allText', "${searchWord}", 'OR'))
+						`,
 				contentTypes: [
 					app.name + ':news-article',
 					app.name + ':speaker',
 				]
 			});
-			/* fulltext('data.personalInformation, data.description', "${searchWord}", 'OR') */
-			/* log.info('search.js JSON %s', JSON.stringify(result, null, 4)); */
-		} else if (searchBy === 'category' || searchBy === 'tag') {
+		} else if (searchBy === 'tag') {
 			result = libContent.query({
-				query: "data." + searchBy + " = '" + searchWord + "'",
+				start: 0,
+				count: 10,
+				query: `_path LIKE '/content${site._path}/*' AND
+						data.${searchBy} = '${searchWord}'`,
 				contentTypes: [app.name + ':news-article']
 			});
-
-			libUtil.data.forceArray(result.hits).forEach(element => { // for each element get their respective working url's
-				element.url = libPortal.pageUrl({ id: element._id })
+		} else if (searchBy === 'category') {
+			let categoryResult = libContent.query({
+				query: `_path LIKE '/content${site._path}/*' AND
+						displayName = '${searchWord}'`,
+				contentTypes: [app.name + ':category']
+			});
+			result = libContent.query({
+				start: 0,
+				count: 10,
+				query: `_path LIKE '/content${site._path}/*' AND
+						data.category = '${categoryResult.hits[0]._id}'`,
+				contentTypes: [app.name + ':news-article']
 			});
 		}
-
 		libUtil.data.forceArray(result.hits).forEach(element => { // for each element get their respective working url's
 			element.url = libPortal.pageUrl({ id: element._id })
 		});
 	}
+
+	/* log.info('search-results.js %s', JSON.stringify(site._path, null, 4)); */
 
 	let siteUrl = libPortal.pageUrl({
 		id: libPortal.getSite()._id

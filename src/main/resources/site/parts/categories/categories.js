@@ -1,7 +1,7 @@
 var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 var libContent = require('/lib/xp/content');
-/* var libUtil = require('/lib/util'); */
+var libUtil = require('/lib/util');
 
 var viewFile = resolve('categories.html');
 var searchResultsPageExists = false;
@@ -24,7 +24,6 @@ exports.get = function (req) {
     }
 
     /* ### Manipulate ### */
-
     let siteUrl = libPortal.pageUrl({ id: site._id });
 
     // query all news-articles
@@ -32,14 +31,18 @@ exports.get = function (req) {
         contentTypes: [app.name + ":news-article"],
         query: "_path LIKE '/content" + site._path + "/*'", // Only get tags from this site.
     });
-
+    
     // extract categories from query
     let rawCategories = [];
     result.hits.forEach(element => {
-        if (element.data.category !== null && element.data.category !== undefined)
-            rawCategories.push(element.data.category);
+        if (element.data.category !== null && element.data.category !== undefined) {
+            element.data.category = libUtil.data.forceArray(element.data.category);
+            element.data.category.forEach(category => {
+                rawCategories.push(libContent.get({ key: category }).displayName);
+            });
+        }
     });
-
+    
     // count occurences of categories
     let count = {};
     rawCategories.forEach(element => {

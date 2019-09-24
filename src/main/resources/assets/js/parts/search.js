@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
         window.location.href = input.getAttribute('data-home') + '/search-results' + '?search=' + input.value
     };
     
-    function getAndSendCaegory(event) {
+    function getAndSendCategory(event) {
         let category = this.getAttribute('value');
         let home = this.getAttribute('home');
         window.location.href = home + '/search-results' + '?category=' + category
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try { // category
         for (let i = 0; i < document.getElementsByClassName('category-list-item').length; i++) {
             let element = document.getElementsByClassName('category-list-item')[i];
-            element.addEventListener('click', getAndSendCaegory);        
+            element.addEventListener('click', getAndSendCategory);        
         }        
     } catch(err) {}
 
