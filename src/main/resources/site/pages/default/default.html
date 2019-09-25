@@ -35,8 +35,8 @@
     <div class="container-fluid p-0">
       <!-- logo -->
       <a class="navbar-brand" data-th-href="${homeUrl}">
-        <img data-th-if="${settings.headerLogo}"
-          data-th-src="${portal.imageUrl({'_id=' + settings.headerLogo, '_scale=max(200)'})}" alt="logo"
+        <img data-th-if="${settings.headerConfig.headerLogo}"
+          data-th-src="${portal.imageUrl({'_id=' + settings.headerConfig.headerLogo, '_scale=max(200)'})}" alt="logo"
           class="img-fluid not-too-fluid">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -75,9 +75,9 @@
           </li>
         </ul>
         <!-- ticket -->
-        <a data-th-if="${settings.ticketUrl}" class="ticket" data-th-href=${settings.ticketUrl}>
+        <a data-th-if="${settings.headerConfig.ticketUrl}" class="ticket" data-th-href=${settings.headerConfig.ticketUrl}>
           <img data-th-src="${portal.assetUrl({'_path=images/ticket.png'})}" alt="ticket">
-          <span data-th-text="${settings.ticketText}">Buy Ticket</span>
+          <span data-th-text="${settings.headerConfig.ticketText}">Buy Ticket</span>
         </a>
       </div>
     </div>
@@ -90,9 +90,9 @@
     =========================================-->
   <!--&& settings.breadscrumb.hideBanner == false-->
   <section class="page-title bg-title overlay-dark breadcrumbs"
-    data-th-if="${ settings.breadscrumb != false && !settings.breadcrumb.hideBanner && templateName != ''}"
+    data-th-if="${ settings.headerConfig.breadscrumb != false && !settings.headerConfig.breadcrumb.hideBanner && templateName != ''}"
     role="navigation"
-    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.breadcrumb.background, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'">
+    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.headerConfig.breadcrumb.background, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center breadcrumbsAlignment">
@@ -132,15 +132,15 @@
   <!--==============================================
     =            Call to Action Subscribe            =
     ===============================================-->
-  <section class="cta-subscribe bg-subscribe overlay-dark" data-th-if="${settings.newsletter.url}"
-    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.newsletter.image, '_scale=block(1920, 1644)'})} + ');'">
+  <section class="cta-subscribe bg-subscribe overlay-dark" data-th-if="${settings.footerConfig.newsletter.url}"
+    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.footerConfig.newsletter.image, '_scale=block(1920, 1644)'})} + ');'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 mr-auto">
           <!-- Subscribe Content -->
           <div class="content">
             <h3>Subscribe to Our <span class="alternate">Newsletter</span></h3>
-            <p data-th-text="${settings.newsletter.description}"></p>
+            <p data-th-text="${settings.footerConfig.newsletter.description}"></p>
           </div>
         </div>
         <div class="col-md-6 ml-auto align-self-center">
@@ -151,7 +151,7 @@
             </div>
             <div class="col-lg-4 col-md-12">
               <div class="subscribe-button">
-                <button type="submit" data-th-attr="data-url=|${settings.newsletter.url}|" class="btn btn-main-md"
+                <button type="submit" data-th-attr="data-url=|${settings.footerConfig.newsletter.url}|" class="btn btn-main-md"
                   id="subscribe-button">Subscribe</button>
               </div>
             </div>
@@ -165,19 +165,19 @@
   <!--================================
     =            Google Map            =
     =================================-->
-  <section class="map" data-th-if="${settings.googleMaps.apiKey}">
+  <section class="map" data-th-if="${settings.footerConfig.googleMaps.apiKey}">
     <!-- Google Map -->
     <div id="map">
       <iframe id="google-map-iframe" frameborder="0"
-        data-th-src="'https://www.google.com/maps/embed/v1/view?center=' + ${settings.googleMaps.latitude} + ',' + ${settings.googleMaps.longitude} + '&zoom=16&key=' + ${settings.googleMaps.apiKey}"
+        data-th-src="'https://www.google.com/maps/embed/v1/view?center=' + ${settings.footerConfig.googleMaps.latitude} + ',' + ${settings.footerConfig.googleMaps.longitude} + '&zoom=16&key=' + ${settings.footerConfig.googleMaps.apiKey}"
         allowfullscreen></iframe>
     </div>
     <div class="address-block">
       <h4 data-th-text="${siteName}"></h4>
       <ul class="address-list p-0 m-0">
-        <li><i class="fa fa-home"></i><span data-th-text="${settings.googleMaps.address}"></span></li>
-        <li><i class="fa fa-phone"></i><span data-th-text="${settings.googleMaps.phone}"></span></li>
-        <li><i class="fa fa-envelope"></i><span data-th-text="${settings.googleMaps.email}"></span></li>
+        <li><i class="fa fa-home"></i><span data-th-text="${settings.footerConfig.googleMaps.address}"></span></li>
+        <li><i class="fa fa-phone"></i><span data-th-text="${settings.footerConfig.googleMaps.phone}"></span></li>
+        <li><i class="fa fa-envelope"></i><span data-th-text="${settings.footerConfig.googleMaps.email}"></span></li>
       </ul>
     </div>
   </section>
@@ -193,26 +193,26 @@
           <div class="block text-center">
             <a class="navbar-brand" data-th-href="${homeUrl}">
               <div class="footer-logo">
-                <img data-th-if="${settings.footerLogo}"
-                  data-th-src="${portal.imageUrl({'_id=' + settings.footerLogo, '_scale=max(200)'})}" alt="logo"
+                <img data-th-if="${settings.footerConfig.footerLogo}"
+                  data-th-src="${portal.imageUrl({'_id=' + settings.footerConfig.footerLogo, '_scale=max(200)'})}" alt="logo"
                   class="img-fluid">
               </div>
             </a>
             <ul class="social-links-footer list-inline">
-              <li data-th-if="${settings.facebookUrl}" class="list-inline-item">
-                <a data-th-href="${settings.facebookUrl}"><i class="fa fa-facebook"></i></a>
+              <li data-th-if="${settings.footerConfig.facebookUrl}" class="list-inline-item">
+                <a data-th-href="${settings.footerConfig.facebookUrl}"><i class="fa fa-facebook"></i></a>
               </li>
-              <li data-th-if="${settings.twitterUrl}" class="list-inline-item">
-                <a data-th-href="${settings.twitterUrl}"><i class="fa fa-twitter"></i></a>
+              <li data-th-if="${settings.footerConfig.twitterUrl}" class="list-inline-item">
+                <a data-th-href="${settings.footerConfig.twitterUrl}"><i class="fa fa-twitter"></i></a>
               </li>
-              <li data-th-if="${settings.instagramUrl}" class="list-inline-item">
-                <a data-th-href="${settings.instagramUrl}"><i class="fa fa-instagram"></i></a>
+              <li data-th-if="${settings.footerConfig.instagramUrl}" class="list-inline-item">
+                <a data-th-href="${settings.footerConfig.instagramUrl}"><i class="fa fa-instagram"></i></a>
               </li>
-              <li data-th-if="${settings.rssUrl}" class="list-inline-item">
-                <a data-th-href="${settings.rssUrl}"><i class="fa fa-rss"></i></a>
+              <li data-th-if="${settings.footerConfig.rssUrl}" class="list-inline-item">
+                <a data-th-href="${settings.footerConfig.rssUrl}"><i class="fa fa-rss"></i></a>
               </li>
-              <li data-th-if="${settings.vimeoUrl}" class="list-inline-item">
-                <a data-th-href="${settings.vimeoUrl}"><i class="fa fa-vimeo"></i></a>
+              <li data-th-if="${settings.footerConfig.vimeoUrl}" class="list-inline-item">
+                <a data-th-href="${settings.footerConfig.vimeoUrl}"><i class="fa fa-vimeo"></i></a>
               </li>
             </ul>
           </div>
@@ -225,7 +225,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center">
-          <div class="copyright-text" data-th-utext="${portal.processHtml({'_value=' + settings.licence})}">
+          <div class="copyright-text" data-th-utext="${portal.processHtml({'_value=' + settings.footerConfig.licence})}">
           </div>
         </div>
         <div class="col-md-6">

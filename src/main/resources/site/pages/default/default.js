@@ -20,6 +20,8 @@ exports.get = function (req) {
     // Site
     let properName = app.name.replace(/\./g, '-');
     let siteConfig = site.x[properName].siteConfig;
+    let headerConfig = site.x[properName].header;
+    let footerConfig = site.x[properName].footer;
 
     // Get a breadcrumb menu for current content.
     let breadcrumbItems = libMenu.getBreadcrumbMenu({ params: { showHomepage: true } });
@@ -54,39 +56,79 @@ exports.get = function (req) {
         isFragment: isFragment,
         mainRegion: mainRegion,
         settings: {
-            licence: siteConfig.licence,
-            headerLogo: siteConfig.headerLogo,
-            footerLogo: siteConfig.footerLogo,
-            facebookUrl: siteConfig.facebookUrl,
-            twitterUrl: siteConfig.twitterUrl,
-            instagramUrl: siteConfig.instagramUrl,
-            rssUrl: siteConfig.rssUrl,
-            vimeoUrl: siteConfig.ticketUrl,
-            ticketUrl: siteConfig.ticketUrl,
-            ticketText: siteConfig.ticketText,
+            siteConfig: {
+                fromDate: siteConfig.fromDate,
+                toDate: siteConfig.toDate,
+                city: siteConfig.city,
+            },
+            headerConfig: {
+                headerLogo: headerConfig.headerLogo,
+                ticketUrl: headerConfig.ticketUrl,
+                ticketText: headerConfig.ticketText,
+                breadcrumb: {
+                    items: breadcrumbItems,
+                    background: headerConfig.breadcrumbsBackground,
+                    hideBanner: headerConfig.breadcrumbsHideBanner,
+                },
+            },
+            footerConfig: {
+                licence: footerConfig.licence,
+                footerLogo: footerConfig.footerLogo,
+                facebookUrl: footerConfig.facebookUrl,
+                twitterUrl: footerConfig.twitterUrl,
+                instagramUrl: footerConfig.instagramUrl,
+                rssUrl: footerConfig.rssUrl,
+                vimeoUrl: footerConfig.ticketUrl,
+                newsletter: {
+                    isNewsletter: footerConfig.isNewsletter,
+                    description: footerConfig.newsLetterDescription,
+                    url: footerConfig.newsLetterUrl,
+                    image: footerConfig.newsletterBackgroundImage
+                },
+                googleMaps: {
+                    apiKey: footerConfig.googleApi,
+                    latitude: footerConfig.latitude,
+                    longitude: footerConfig.longitude,
+                    address: footerConfig.address,
+                    phone: footerConfig.phone,
+                    email: footerConfig.email,
+                },
+            }
+        },
+        /* settings: {
+            licence: footerConfig.licence,
+            headerLogo: headerConfig.headerLogo,
+            footerLogo: footerConfig.footerLogo,
+            facebookUrl: footerConfig.facebookUrl,
+            twitterUrl: footerConfig.twitterUrl,
+            instagramUrl: footerConfig.instagramUrl,
+            rssUrl: footerConfig.rssUrl,
+            vimeoUrl: footerConfig.ticketUrl,
+            ticketUrl: headerConfig.ticketUrl,
+            ticketText: headerConfig.ticketText,
             fromDate: siteConfig.fromDate,
             toDate: siteConfig.toDate,
             city: siteConfig.city,
             newsletter: {
-                isNewsletter: siteConfig.isNewsletter,
-                description: siteConfig.newsLetterDescription,
-                url: siteConfig.newsLetterUrl,
-                image: siteConfig.newsletterBackgroundImage
+                isNewsletter: footerConfig.isNewsletter,
+                description: footerConfig.newsLetterDescription,
+                url: footerConfig.newsLetterUrl,
+                image: footerConfig.newsletterBackgroundImage
             },
             breadcrumb: {
                 items: breadcrumbItems,
-                background: siteConfig.breadcrumbsBackground,
-                hideBanner: siteConfig.breadcrumbsHideBanner,
+                background: headerConfig.breadcrumbsBackground,
+                hideBanner: headerConfig.breadcrumbsHideBanner,
             },
             googleMaps: {
-                apiKey: siteConfig.googleApi,
-                latitude: siteConfig.latitude,
-                longitude: siteConfig.longitude,
-                address: siteConfig.address,
-                phone: siteConfig.phone,
-                email: siteConfig.email,
+                apiKey: footerConfig.googleApi,
+                latitude: footerConfig.latitude,
+                longitude: footerConfig.longitude,
+                address: footerConfig.address,
+                phone: footerConfig.phone,
+                email: footerConfig.email,
             },
-        },
+        }, */
         templateName: templateName,
         homeUrl: libPortal.url({ path: site._path }),
         menuItems: menuItems,
