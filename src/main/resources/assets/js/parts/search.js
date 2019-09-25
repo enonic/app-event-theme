@@ -38,7 +38,12 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try { // tag
         for (let i = 0; i < document.getElementsByClassName('tag-list-item').length; i++) {
             let element = document.getElementsByClassName('tag-list-item')[i];
-            element.addEventListener('click', getAndSendTag);        
+            element.addEventListener('click', getAndSendTag);
+            element.addEventListener('keyup', function(event) {
+                if (event.keyCode === 13) { // Number 13 is the "Enter" key on the keyboard
+                    element.click();
+                }
+            }); 
         }        
     } catch(err) {}
 });

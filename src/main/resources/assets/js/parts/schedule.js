@@ -20,7 +20,6 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
                 element.classList.add("hidden");
             }            
         }
-
         event.preventDefault();
     };
     
@@ -28,7 +27,12 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try { // adding listeners to every day-button
         for (let i = 0; i < document.getElementsByClassName('day-buttons').length; i++) { // for all day buttons
             let element = document.getElementsByClassName('day-buttons')[i];
-            element.addEventListener('click', toggleActive);        
+            element.addEventListener('click', toggleActive);       
+            element.addEventListener('keyup', function(event) {        
+                if (event.keyCode === 13) { // Number 13 is the "Enter" key on the keyboard
+                    element.click();
+                }
+            }); 
         }
     } catch (err) {}
 });

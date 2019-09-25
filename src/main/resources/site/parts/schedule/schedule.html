@@ -14,8 +14,12 @@
                     <ul class="nav nav-pills text-center" data-th-each="day: ${days}">
                         <!-- For each day the event will be -->
                         <li class="nav-item">
-                            <a class="nav-link day-buttons" data-th-day="${day.day}"
-                                data-th-classappend="${day.day == 1 ? 'active' : ''}">
+                            <a 
+                                class="nav-link day-buttons" 
+                                data-th-day="${day.day}"
+                                data-th-classappend="${day.day == 1 ? 'active' : ''}"
+                                tabindex="0"
+                            >
                                 <span id="day-heading" data-th-text="|Day ${day.day}|"></span>
                                 <span data-th-text="${day.date}"></span>
                             </a>

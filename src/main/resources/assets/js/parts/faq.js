@@ -17,7 +17,6 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
                 questionElement.setAttribute('data-toggle', 'false');
             }
         }
-
         event.preventDefault();
     };
 
@@ -26,6 +25,11 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
         for (let i = 0; i < document.getElementsByClassName('faq-toggle-view-more').length; i++) { // for all question boxes
             let element = document.getElementsByClassName('faq-toggle-view-more')[i];
             element.addEventListener('click', toggleShowMore);
+            element.addEventListener('keyup', function(event) {
+                if (event.keyCode === 13) { // Number 13 is the "Enter" key on the keyboard
+                    element.click();
+                }
+            }); 
         }
     } catch (err) { }
 });

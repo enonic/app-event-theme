@@ -16,7 +16,12 @@
                             <!-- Question Box -->
                             <div class="card-header">
                                 <h5 class="mb-0">
-                                    <a data-toggle="false" data-th-attr="data-index=|${iterstat.index}|" class="faq-toggle-view-more">
+                                    <a 
+                                        data-toggle="false"
+                                        data-th-attr="data-index=|${iterstat.index}|"
+                                        class="faq-toggle-view-more"
+                                        tabindex="0"
+                                    >
                                         <div><span class="fa fa-plus-circle"></span></div>
                                         <div><span data-th-if=${faq.question} data-th-text="${faq.question}" data-th-remove="tag"></span></div>
                                     </a>
@@ -37,7 +42,12 @@
                             <!-- Question Box -->
                             <div class="card-header">
                                 <h5 class="mb-0">
-                                    <a data-toggle="false" data-th-attr="data-index=|${iterstat.index}|" class="faq-toggle-view-more">
+                                    <a
+                                        data-toggle="false"
+                                        data-th-attr="data-index=|${iterstat.index}|"
+                                        class="faq-toggle-view-more"
+                                        tabindex="0"
+                                    >
                                         <div><span class="fa fa-plus-circle"></span></div>
                                         <div><span data-th-text="${faq.question}" data-th-remove="tag"></span></div>
                                     </a>
