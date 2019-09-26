@@ -149,7 +149,7 @@ blockquote,
 label {
   font-size: 1rem;
   line-height: 26px;
-  color: #848484;
+  color: #595959;
   margin-bottom: 0;
 }
 
@@ -862,6 +862,7 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Montserrat", sans-serif;
   border-left: 1px solid #ffa366;
   padding-left: 24px;
+  font-weight: bold;
 }
 
 @media (max-width: 1024px) {
@@ -869,6 +870,7 @@ select.form-control:not([size]):not([multiple]) {
     padding-left: 0;
     font-size: 1rem;
     border-left: none;
+    font-weight: bold;
   }
 }
 
@@ -980,6 +982,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .subfooter .copyright-text p {
   font-family: "Montserrat", sans-serif;
+  color: #B8B8B8;
 }
 
 .subfooter .copyright-text p a {
@@ -1454,7 +1457,7 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Roboto", sans-serif;
   display: block;
   font-size: 1rem;
-  color: #848484;
+  color: #595959;
   font-weight: 400;
 }
 
@@ -1678,7 +1681,7 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Roboto", sans-serif;
   display: block;
   font-size: 14px;
-  color: #848484;
+  color: #595959;
   font-weight: 400;
 }
 
@@ -3142,7 +3145,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post.single .post-details .share-block .tag ul li a {
-  color: #848484;
+  color: #595959;
   font-size: 15px;
 }
 
@@ -3282,7 +3285,7 @@ ul.pagination li a {
   line-height: 50px;
   text-align: center;
   border-color: transparent;
-  color: #848484;
+  color: #595959;
   border: 1px solid #e5e5e5;
   border-radius: 0 !important;
 }
@@ -3652,7 +3655,7 @@ ul.pagination .active a {
 
 .faq .accordion-block #accordion .card .card-body,
 .faq .accordion-block #accordionTwo .card .card-body {
-  color: #848484;
+  color: #595959;
   padding: 15px 20px;
 }
 
