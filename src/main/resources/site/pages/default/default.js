@@ -48,7 +48,12 @@ exports.get = function (req) {
         else { breadcrumbItems = false; }
     } catch (err) { }
 
-    /* log.info('default.js JSON %s', JSON.stringify(menuItems, null, 4)); */
+    siteConfig.favicon = libPortal.imageUrl({
+        id: siteConfig.favicon,
+        scale: 'block(80, 80)',
+    });
+    
+    /* log.info('default.js JSON %s', JSON.stringify(siteConfig.favicon, null, 4)); */
 
     // Prepare the model that will be passed to the view
     let model = {
@@ -60,6 +65,7 @@ exports.get = function (req) {
                 fromDate: siteConfig.fromDate,
                 toDate: siteConfig.toDate,
                 city: siteConfig.city,
+                favicon: siteConfig.favicon,
             },
             headerConfig: {
                 headerLogo: headerConfig.headerLogo,
@@ -95,40 +101,6 @@ exports.get = function (req) {
                 },
             }
         },
-        /* settings: {
-            licence: footerConfig.licence,
-            headerLogo: headerConfig.headerLogo,
-            footerLogo: footerConfig.footerLogo,
-            facebookUrl: footerConfig.facebookUrl,
-            twitterUrl: footerConfig.twitterUrl,
-            instagramUrl: footerConfig.instagramUrl,
-            rssUrl: footerConfig.rssUrl,
-            vimeoUrl: footerConfig.ticketUrl,
-            ticketUrl: headerConfig.ticketUrl,
-            ticketText: headerConfig.ticketText,
-            fromDate: siteConfig.fromDate,
-            toDate: siteConfig.toDate,
-            city: siteConfig.city,
-            newsletter: {
-                isNewsletter: footerConfig.isNewsletter,
-                description: footerConfig.newsLetterDescription,
-                url: footerConfig.newsLetterUrl,
-                image: footerConfig.newsletterBackgroundImage
-            },
-            breadcrumb: {
-                items: breadcrumbItems,
-                background: headerConfig.breadcrumbsBackground,
-                hideBanner: headerConfig.breadcrumbsHideBanner,
-            },
-            googleMaps: {
-                apiKey: footerConfig.googleApi,
-                latitude: footerConfig.latitude,
-                longitude: footerConfig.longitude,
-                address: footerConfig.address,
-                phone: footerConfig.phone,
-                email: footerConfig.email,
-            },
-        }, */
         templateName: templateName,
         homeUrl: libPortal.url({ path: site._path }),
         menuItems: menuItems,
