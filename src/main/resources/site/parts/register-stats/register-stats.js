@@ -37,7 +37,7 @@ exports.get = function (req) {
 		seats: config.seats,
 		tickets: config.tickets,
 		days: diffDays,
-		backgroundImage: config.backgroundImage,
+		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }),
 	};
 
 	/* ### Return ### */

@@ -8,7 +8,7 @@
                             <img
                                 class="img-fluid img-fit"
                                 data-th-if="${newsArticle.data.image}"
-                                data-th-src="${portal.imageUrl({'_id=' + newsArticle.data.image, '_scale=block(730, 465)', '_format=jpeg'})}"
+								data-th-src="${newsArticle.data.image}"
                                 data-th-alt="${newsArticle.data.name}"
                             />                            
 						</div>
@@ -46,7 +46,7 @@
 								</ul>
 							</div>
 							<div class="post-details">
-                                <div class="description-details" data-th-utext="${portal.processHtml({'_value=' + newsArticle.data.description})}"></div>
+                                <div class="description-details" data-th-utext="${newsArticle.data.description}"></div>
 								<div class="share-block">
 									<div class="tag" data-th-if="${newsArticle.data.tag.size} gt 0">
 										<p>Tags:</p>

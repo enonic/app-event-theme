@@ -58,6 +58,7 @@ exports.get = function (req) {
 		}
 		libUtil.data.forceArray(result.hits).forEach(element => { // for each element get their respective working url's
 			element.url = libPortal.pageUrl({ id: element._id })
+			element.data.description = libPortal.processHtml({ value: element.data.description  });
 		});
 	}
 

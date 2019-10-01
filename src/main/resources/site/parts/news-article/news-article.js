@@ -73,6 +73,8 @@ exports.get = function (req) {
 		</p>`
 	}
 
+	content.data.image = libPortal.imageUrl({ id: content.data.image, scale: 'block(730, 465)' });
+	content.data.description = libPortal.processHtml({ value: content.data.description });
 	/* log.info('news-article.js JSON %s', JSON.stringify(content.data, null, 4)); */
 
 	/* ### Prepare ### */

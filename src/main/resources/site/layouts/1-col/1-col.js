@@ -30,7 +30,7 @@ exports.get = function(req) {
 		content: content,
 		regions: regions,
         component: component,
-		backgroundImage: config.backgroundImage,
+		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}),
 		fixedBackground: config.fixedBackground,
 	};
 

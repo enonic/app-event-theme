@@ -5,10 +5,9 @@
         <li class="recentcomments" data-th-each="comment : ${comments}">
             <a data-th-if="${comment.website}" data-th-href="${comment.website}" href="#" data-th-text="${comment.name}"
                 target="_blank" rel="external nofollow" class="url">Name</a>
-            <p data-th-if="${!comment.website}" data-th-text="${comment.name}"></p> <!-- on -->
+            <p data-th-if="${!comment.website}" data-th-text="${comment.name}"></p>
             <i class="fa fa-calendar" aria-hidden="true"></i>
-            <span data-th-if="${!comment.website}" data-th-text="${comment.date}"></span> <!-- on -->
-            <!-- <a href="#" data-th-href="${portal.pageUrl({'_path=' + comment.postPath })} + '#comments'" data-th-text="${comment.postTitle}">Post title</a> -->
+            <span data-th-if="${!comment.website}" data-th-text="${comment.date}"></span>            
             <div data-th-text="${comment.comment}"></div>            
         </li>
     </ul>

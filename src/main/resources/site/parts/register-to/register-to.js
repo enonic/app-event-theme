@@ -30,7 +30,7 @@ exports.get = function (req) {
 		description: config.description,
 		url: config.url,
 		ticketTypes: ticketTypes,
-		backgroundImage: config.backgroundImage,
+		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }),
 	};
 
 	let scriptUrl = libPortal.assetUrl({

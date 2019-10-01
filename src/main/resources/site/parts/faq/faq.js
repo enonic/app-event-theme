@@ -15,6 +15,10 @@ exports.get = function(req) {
 	
 	/* ### Manipulate ### */
 	
+	config.questions = libUtil.data.forceArray(config.questions);
+	config.questions.forEach(element => {
+		element.answer = libPortal.processHtml({ value: element.answer });
+	});
     /* log.info('faq.js JSON %s', JSON.stringify(config.questions, null, 4)); */
 
 	/* ### Prepare ### */

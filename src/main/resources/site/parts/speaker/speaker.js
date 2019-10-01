@@ -12,6 +12,9 @@ exports.get = function(req) {
     
 	/* ### Manipulate ### */
 	content.data.personalSkills = libUtil.data.forceArray(content.data.personalSkills);
+	content.data.image = libPortal.imageUrl({ id: content.data.image, scale: 'block(431, 453)' });
+	content.data.personalInformation = libPortal.processHtml({ value: content.data.personalInformation });
+	content.data.description = libPortal.processHtml({ value: content.data.description });
 
 	/* ### Prepare ### */
 	var model = {

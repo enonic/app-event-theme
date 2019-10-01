@@ -34,7 +34,7 @@ exports.get = function(req) {
         leftConfig: leftConfig,
 		rightConfig: rightConfig,
 		haveFullSpace: haveFullSpace,
-		backgroundImage: config.backgroundImage,
+		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}),
 		fixedBackground: config.fixedBackground,
 	};
 

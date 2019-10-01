@@ -1,6 +1,6 @@
 <section 
     class="sponsors section bg-sponsors overlay-white"
-    data-th-style=" ${backgroundImage} ? 'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1920, 928)', '_format=jpeg'})} + ');' :	''"
+    data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
 >
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                             <a data-th-href="${sponsor.url}" target="_blank">
                                 <div class="image-block text-center">
                                     <img 
-                                        data-th-src="${portal.imageUrl({'_id=' + sponsor.image, '_scale=max(140, 55)'})}"
+                                        data-th-src="${sponsor.image}"
                                         alt="sponsors-logo"
                                         class="img-fluid"
                                     >

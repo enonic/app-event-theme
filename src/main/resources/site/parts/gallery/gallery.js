@@ -16,11 +16,14 @@ exports.get = function(req) {
 	let galleries = [];
 	if (config.galleries != null && config.galleries != undefined) {
 		galleries = libUtil.data.forceArray(config.galleries);
-		galleries.forEach(element => {
-			element.images = libUtil.data.forceArray(element.images);
+		galleries.forEach(gallery => {
+			gallery.images = libUtil.data.forceArray(gallery.images);
+			gallery.images.forEach(function(image, index) {
+				gallery.images[index] = libPortal.imageUrl({ id: image, scale: 'max(315, 221)'});
+			});
 		});
 	}
-    /* log.info('gallery.js JSON %s', JSON.stringify(galleries, null, 4)); */
+    log.info('gallery.js JSON %s', JSON.stringify(galleries, null, 4));
 
     /* ### Prepare ### */
 	var model = {

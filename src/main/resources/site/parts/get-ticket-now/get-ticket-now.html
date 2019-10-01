@@ -1,7 +1,7 @@
 <section class="cta-ticket bg-ticket overlay-dark">
         <div
             class="bg-ticket"
-            data-th-style=" ${backgroundImage} ? 'background-image:url(' + ${portal.imageUrl({'_id=' + backgroundImage, '_scale=max(1920, 1667)', '_format=jpeg'})} + ');' :	''"
+            data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
         >
         <div class="container">
             <div class="row">
@@ -16,5 +16,5 @@
             </div>
         </div>
     </div>
-    <div><img data-th-src="${foregroundImage} ? ${portal.imageUrl({'_id=' + foregroundImage, '_scale=block(399, 492)', '_format=png'})} : ''" class="img-fluid image-block"></div>
+    <div><img data-th-src="${foregroundImage} ? ${foregroundImage} : ''" class="img-fluid image-block"></div>
 </section>

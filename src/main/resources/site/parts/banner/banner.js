@@ -41,12 +41,12 @@ exports.get = function (req) {
 		component: component,
 		haveCountDown: config.haveCountDown,
 		haveOverlay: config.haveOverlay,
-		title: "<h1>" + site.displayName + "</h1>",
+		title: libPortal.processHtml({ value: "<h1>" + site.displayName + "</h1>" }),
 		dateLabel: dateLabel,
 		dateFrom: months[fromDate.getMonth()].substring(0, 3) + " " + fromDate.getDate() + ", " + fromDate.getFullYear(),
 		location: siteConfig.city,
 		ticketUrl: siteConfig.ticketUrl,
-		backgroundImage: config.backgroundImage,
+		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}),
 	};
 
 	let scriptUrl = libPortal.assetUrl({

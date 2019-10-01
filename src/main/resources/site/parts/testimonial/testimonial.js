@@ -18,8 +18,8 @@ exports.get = function (req) {
         testimonials = libUtil.data.forceArray(config.testimonials);
         testimonials.forEach(element => {
             if (element.speaker != null && element.speaker != undefined) {
+                element.testimonial = libPortal.processHtml({ value: element.testimonial });
                 let speakerData = libContent.get({ key: element.speaker });
-                /* log.info('testimonial.js JSON %s', JSON.stringify(speakerData, null, 4)); */
                 element.speaker = {
                     image: libPortal.imageUrl({ id: speakerData.data.image, scale: 'block(65, 65)' }),
                     name: speakerData.displayName,

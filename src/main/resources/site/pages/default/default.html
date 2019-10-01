@@ -6,22 +6,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-th-text="${siteName}"></title> <!-- TODO: need the event name here -->
+  <title data-th-text="${siteName}"></title>
 
   <!-- PLUGINS CSS STYLE -->
   <!-- Bootstrap -->
-  <link data-th-href="${portal.assetUrl({'_path=plugins/bootstrap/css/bootstrap.min.css'})}" rel="stylesheet">
+  <link data-th-href="${headerMetadata.bootstrap}" rel="stylesheet">
   <!-- Themefisher Font -->
-  <!-- <link data-th-href="${portal.assetUrl({'_path=plugins/themefisher-font/style.css'})}" rel="stylesheet"> -->
+  <link data-th-href="${headerMetadata.themefisherFont}" rel="stylesheet">
   <!-- Font Awesome -->
-  <link data-th-href="${portal.assetUrl({'_path=plugins/font-awsome/css/font-awesome.min.css'})}" rel="stylesheet">
+  <link data-th-href="${headerMetadata.fontAwesome}" rel="stylesheet">
   <!-- Magnific Popup -->
-  <link data-th-href="${portal.assetUrl({'_path=plugins/magnific-popup/magnific-popup.css'})}" rel="stylesheet">
+  <link data-th-href="${headerMetadata.magnificPopup}" rel="stylesheet">
   <!-- Slick Carousel -->
-  <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick.css'})}" rel="stylesheet">
-  <link data-th-href="${portal.assetUrl({'_path=plugins/slick/slick-theme.css'})}" rel="stylesheet">
+  <link data-th-href="${headerMetadata.slickCarousel}" rel="stylesheet">
+  <link data-th-href="${headerMetadata.slickCarouselTheme}" rel="stylesheet">
   <!-- CUSTOM CSS -->
-  <link data-th-href="${portal.assetUrl({'_path=styles/bundle.css'})}" rel="stylesheet" />
+  <link data-th-href="${headerMetadata.customCSS}" rel="stylesheet" />
 
   <!-- FAVICON -->
   <link data-th-href="${settings.siteConfig.favicon}" rel="shortcut icon">
@@ -36,7 +36,7 @@
       <!-- logo -->
       <a class="navbar-brand" data-th-href="${homeUrl}">
         <img data-th-if="${settings.headerConfig.headerLogo}"
-          data-th-src="${portal.imageUrl({'_id=' + settings.headerConfig.headerLogo, '_scale=max(200)'})}" alt="logo"
+          data-th-src="${settings.headerConfig.headerLogo}" alt="logo"
           class="img-fluid not-too-fluid">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -76,7 +76,7 @@
         </ul>
         <!-- ticket -->
         <a data-th-if="${settings.headerConfig.ticketUrl}" class="ticket" data-th-href=${settings.headerConfig.ticketUrl}>
-          <img data-th-src="${portal.assetUrl({'_path=images/ticket.png'})}" alt="ticket">
+          <img data-th-src="${settings.headerConfig.ticketImage}" alt="ticket">
           <span data-th-text="${settings.headerConfig.ticketText}">Buy Ticket</span>
         </a>
       </div>
@@ -92,7 +92,7 @@
   <section class="page-title bg-title overlay-dark breadcrumbs"
     data-th-if="${ settings.headerConfig.breadscrumb != false && !settings.headerConfig.breadcrumb.hideBanner && templateName != ''}"
     role="navigation"
-    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.headerConfig.breadcrumb.background, '_scale=block(1550, 200)', '_format=jpeg'})} + ');'">
+    data-th-style="'background-image:url(' + ${settings.headerConfig.breadcrumb.background} + ');'">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center breadcrumbsAlignment">
@@ -125,7 +125,7 @@
 
   <!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
   <main data-th-if="${isFragment}" data-th-remove="tag">
-    <div data-portal-component="fragment" data-th-remove="tag" />
+    <div data-portal-component="fragment" data-th-remove="tag"></div>
   </main>
   <!--====  End of Region Section  ====-->
 
@@ -133,7 +133,7 @@
     =            Call to Action Subscribe            =
     ===============================================-->
   <section class="cta-subscribe bg-subscribe overlay-dark" data-th-if="${settings.footerConfig.newsletter.url}"
-    data-th-style="'background-image:url(' + ${portal.imageUrl({'_id=' + settings.footerConfig.newsletter.image, '_scale=block(1920, 1644)'})} + ');'">
+    data-th-style="'background-image:url(' + ${settings.footerConfig.newsletter.image} + ');'">
     <div class="container">
       <div class="row">
         <div class="col-md-6 mr-auto">
@@ -194,7 +194,7 @@
             <a class="navbar-brand" data-th-href="${homeUrl}">
               <div class="footer-logo">
                 <img data-th-if="${settings.footerConfig.footerLogo}"
-                  data-th-src="${portal.imageUrl({'_id=' + settings.footerConfig.footerLogo, '_scale=max(200)'})}" alt="logo"
+                  data-th-src="${settings.footerConfig.footerLogo}" alt="logo"
                   class="img-fluid">
               </div>
             </a>
@@ -225,7 +225,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 align-self-center">
-          <div class="copyright-text" data-th-utext="${portal.processHtml({'_value=' + settings.footerConfig.licence})}">
+          <div class="copyright-text" data-th-utext="${settings.footerConfig.licence}">
           </div>
         </div>
         <div class="col-md-6">

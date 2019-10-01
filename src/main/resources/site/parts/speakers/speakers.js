@@ -40,6 +40,7 @@ exports.get = function (req) {
         component: component,
         speakers: speakersDetails,
         backgroundImage: config.backgroundImage,
+        backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }),
         description: config.description,
     };
 

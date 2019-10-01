@@ -18,9 +18,16 @@ exports.get = function (req) {
         sponsors = libUtil.data.forceArray(config.sponsors);
         sponsors.forEach(element => {
             element.sponsors = libUtil.data.forceArray(element.sponsors);
+            element.sponsors.forEach(sponsorElement => {
+                sponsorElement.image = libPortal.imageUrl({
+                    id: sponsorElement.image,
+                    scale: 'block(140, 55)',
+                });
+            });
         });
-        /* log.info('sponsor.js JSON %s', JSON.stringify(sponsors, null, 4)); */
     }
+
+    /* log.info('sponsor.js JSON %s', JSON.stringify(sponsors, null, 4)); */
 
     /* ### Prepare ### */
     var model = {
@@ -28,7 +35,7 @@ exports.get = function (req) {
         component: component,
         description: config.description,
         becomeSponsorUrl: config.becomeSponsorUrl,
-        backgroundImage: config.backgroundImage,
+        backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'block(140, 55)'}),
         sponsorData: sponsors
     };
 

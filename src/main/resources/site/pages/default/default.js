@@ -47,11 +47,6 @@ exports.get = function (req) {
         else if (displayName && displayName != site.displayName) { templateName = displayName; }
         else { breadcrumbItems = false; }
     } catch (err) { }
-
-    siteConfig.favicon = libPortal.imageUrl({
-        id: siteConfig.favicon,
-        scale: 'block(80, 80)',
-    });
     
     /* log.info('default.js JSON %s', JSON.stringify(siteConfig.favicon, null, 4)); */
 
@@ -60,26 +55,36 @@ exports.get = function (req) {
         siteName: site.displayName,
         isFragment: isFragment,
         mainRegion: mainRegion,
+        headerMetadata: {
+            bootstrap: libPortal.assetUrl({ path: 'plugins/bootstrap/css/bootstrap.min.css' }),
+            themefisherFont: libPortal.assetUrl({ path: 'plugins/themefisher-font/style.css' }),
+            fontAwesome: libPortal.assetUrl({ path: 'plugins/font-awsome/css/font-awesome.min.css' }),
+            magnificPopup: libPortal.assetUrl({ path: 'plugins/magnific-popup/magnific-popup.css' }),
+            slickCarousel: libPortal.assetUrl({ path: 'plugins/slick/slick.css' }),
+            slickCarouselTheme: libPortal.assetUrl({ path: 'plugins/slick/slick-theme.css' }),
+            customCSS: libPortal.assetUrl({ path: 'styles/bundle.css' }),
+        },
         settings: {
             siteConfig: {
                 fromDate: siteConfig.fromDate,
                 toDate: siteConfig.toDate,
                 city: siteConfig.city,
-                favicon: siteConfig.favicon,
+                favicon: libPortal.imageUrl({ id: siteConfig.favicon, scale: 'block(80, 80)'}),
             },
             headerConfig: {
-                headerLogo: headerConfig.headerLogo,
+                headerLogo: libPortal.imageUrl({ id: headerConfig.headerLogo, scale: 'max(200)'}),
                 ticketUrl: headerConfig.ticketUrl,
                 ticketText: headerConfig.ticketText,
+                ticketImage: libPortal.assetUrl({ path: 'images/ticket.png' }),
                 breadcrumb: {
                     items: breadcrumbItems,
-                    background: headerConfig.breadcrumbsBackground,
+                    background: libPortal.imageUrl({ id: headerConfig.breadcrumbsBackground, scale: 'block(1550, 200)'}),
                     hideBanner: headerConfig.breadcrumbsHideBanner,
                 },
             },
             footerConfig: {
-                licence: footerConfig.licence,
-                footerLogo: footerConfig.footerLogo,
+                licence: libPortal.processHtml({ value: footerConfig.licence }),
+                footerLogo: libPortal.imageUrl({ id: footerConfig.footerLogo, scale: 'max(200)'}),
                 facebookUrl: footerConfig.facebookUrl,
                 twitterUrl: footerConfig.twitterUrl,
                 instagramUrl: footerConfig.instagramUrl,
@@ -89,7 +94,7 @@ exports.get = function (req) {
                     isNewsletter: footerConfig.isNewsletter,
                     description: footerConfig.newsLetterDescription,
                     url: footerConfig.newsLetterUrl,
-                    image: footerConfig.newsletterBackgroundImage
+                    image: libPortal.imageUrl({ id: footerConfig.newsletterBackgroundImage, scale: 'block(1920, 1644)'}),
                 },
                 googleMaps: {
                     apiKey: footerConfig.googleApi,

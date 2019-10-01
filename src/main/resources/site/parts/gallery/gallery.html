@@ -26,12 +26,12 @@
                             data-th-each="image: ${gallery.images}"
                         >
                             <div class="image">
-                                <img data-th-src="${portal.imageUrl({'_id=' + image, '_scale=max(315, 221)'})}" alt="gallery-image" class="img-fluid">
+                                <img data-th-src="${image}" alt="gallery-image" class="img-fluid">
                                 <!--/* <div class="primary-overlay">
                                     <a 
                                         class="image-popup"
                                         data-effect="mfp-with-zoom"
-                                        data-th-src="${portal.imageUrl({'_id=' + image, '_scale=max(878, 585)'})}"
+                                        data-th-src="${image}"
                                         href="images/gallery/gallery-popup-one.jpg"
                                     ><i class="fa fa-picture-o"></i></a>
                                 </div> */-->
