@@ -35,7 +35,7 @@ exports.get = function (req) {
         component: component,
         description: config.description,
         becomeSponsorUrl: config.becomeSponsorUrl,
-        backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'block(140, 55)'}),
+        backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'block(140, 55)'}) : null,
         sponsorData: sponsors
     };
 

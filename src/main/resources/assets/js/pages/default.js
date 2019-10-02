@@ -43,7 +43,7 @@ $(function () {
             elementMenu.style.visibility = 'visible';
             elementMenu.style.transform = 'none';
             elementMenu.setAttribute('data-toggle', 'true');
-            elementMenu.style['border-top'] = '3px solid #ff6600';
+            elementMenu.style['border-top'] = '2px solid #ff6600';
             angleUpIcon.style.display = 'inline-block';
             angleDownIcon.style.display = 'none';
         } else if (elementMenu.getAttribute('data-toggle') === 'true') {

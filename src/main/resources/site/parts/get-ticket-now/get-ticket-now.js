@@ -24,8 +24,8 @@ exports.get = function (req) {
         component: component,
         description: config.description,
         ticketUrl: siteConfig.ticketUrl,
-        backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1920, 1667)'}),
-        foregroundImage: libPortal.imageUrl({ id: config.foregroundImage, scale: 'block(399, 492)'}),
+        backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1920, 1667)'}) : null,
+        foregroundImage: config.foregroundImage? libPortal.imageUrl({ id: config.foregroundImage, scale: 'block(399, 492)'}) : null,
     };
 
     /* ### Return ### */

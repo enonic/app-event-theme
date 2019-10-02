@@ -32,15 +32,14 @@ exports.get = function (req) {
         });
     }
 
-    /* log.info('speakers.js JSON %s', JSON.stringify(speakersDetails, null, 4)); */
+    /* log.info('speakers.js JSON %s', JSON.stringify(config.backgroundImage, null, 4)); */
 
     /* ### Prepare ### */
     var model = {
         content: content,
         component: component,
         speakers: speakersDetails,
-        backgroundImage: config.backgroundImage,
-        backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }),
+        backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }) : null,
         description: config.description,
     };
 

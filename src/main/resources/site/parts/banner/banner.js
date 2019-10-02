@@ -46,7 +46,7 @@ exports.get = function (req) {
 		dateFrom: months[fromDate.getMonth()].substring(0, 3) + " " + fromDate.getDate() + ", " + fromDate.getFullYear(),
 		location: siteConfig.city,
 		ticketUrl: siteConfig.ticketUrl,
-		backgroundImage: libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}),
+		backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}) : null,
 	};
 
 	let scriptUrl = libPortal.assetUrl({

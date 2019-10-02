@@ -23,7 +23,8 @@ exports.get = function(req) {
 			});
 		});
 	}
-    log.info('gallery.js JSON %s', JSON.stringify(galleries, null, 4));
+	
+    /* log.info('gallery.js JSON %s', JSON.stringify(galleries, null, 4)); */
 
     /* ### Prepare ### */
 	var model = {
