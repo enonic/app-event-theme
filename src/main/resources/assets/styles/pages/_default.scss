@@ -1,6 +1,10 @@
 /*=== MEDIA QUERY ===*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700");
 
+.xp-region {
+  background-color: $colour-background-lighter;
+}
+
 .background-images {
   background-size: cover;
   color: white;
@@ -114,7 +118,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
-  color: #222222;
+  color: $colour-foreground;
   font-weight: 600;
 }
 
@@ -149,7 +153,7 @@ blockquote,
 label {
   font-size: 1rem;
   line-height: 26px;
-  color: #595959;
+  color: $colour-foreground-darker;
   margin-bottom: 0;
 }
 
@@ -173,7 +177,7 @@ ul.social-links li a {
 
 ul.social-links li a i {
   font-size: 20px;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .shadow,
@@ -390,7 +394,7 @@ button:hover {
 }
 
 .border-less {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $colour-background-lighter;
 }
 
 .section-title {
@@ -405,7 +409,7 @@ button:hover {
 
 .section-title.white h3,
 .section-title.white p {
-  color: #fff;
+  color: $colour-background;
 }
 
 .mt-20 {
@@ -474,7 +478,7 @@ button:hover {
   font-size: 40px;
   background: $colour-primary;
   border-radius: 100%;
-  color: #fff;
+  color: $colour-foreground;
   line-height: 125px;
   text-align: center;
 }
@@ -499,8 +503,8 @@ button:hover {
 }
 
 .form-control.white {
-  background: #fff;
-  color: #222222;
+  background: $colour-background;
+  color: $colour-foreground;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -575,16 +579,16 @@ select.form-control:not([size]):not([multiple]) {
   padding: 25px 45px;
   border-radius: 3px;
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   outline: none;
 }
 
 .btn-main:hover {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .btn-main:focus {
-  color: #fff;
+  color: $colour-foreground;
   box-shadow: none;
 }
 
@@ -592,27 +596,28 @@ select.form-control:not([size]):not([multiple]) {
   padding: 15px 40px;
   border-radius: 0;
   background: $colour-primary;
-  color: #fff;
+  color: $colour-background;
+  font-weight: bold;
   outline: none;
   font-size: 0.9375rem;
 }
 
 .btn-main-md:hover {
-  color: #fff;
-  background: #e65c00;
+  color: $colour-foreground;
+  background: darken($colour-primary, 30%);
 }
 
 .btn-main-md:focus {
-  color: #fff;
+  color: $colour-foreground;
   box-shadow: none;
 }
 
 .btn-transparent-md {
   padding: 15px 40px;
-  background: transparent;
+  background: $colour-background-lighter;
   outline: none;
   font-size: 0.9375rem;
-  color: #222222;
+  color: $colour-foreground-darker;
   border: 1px solid #e5e5e5;
   border-radius: 0;
 }
@@ -620,53 +625,53 @@ select.form-control:not([size]):not([multiple]) {
 .btn-transparent-md:hover {
   background: $colour-primary;
   border-color: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .btn-main-sm {
   padding: 15px 35px;
   border-radius: 3px;
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   outline: none;
   font-size: 14px;
 }
 
 .btn-main-sm:hover {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .btn-main-sm:focus {
-  color: #fff;
+  color: $colour-foreground;
   box-shadow: none;
 }
 
 .btn-white-md {
-  background: #fff;
-  color: #222222;
+  background: $colour-background-lighter;
+  color: $colour-foreground;
   padding: 15px 40px;
   border-radius: 0;
 }
 
 .btn-white-md:hover {
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .btn-rounded-icon {
   border-radius: 100px;
-  color: #fff;
-  border: 1px solid #fff;
+  color: $colour-foreground;
+  border: 1px solid $colour-foreground;
   padding: 13px 50px;
 }
 
 .main-nav {
-  background: #fff;
+  background: $colour-background;
 }
 
 .main-nav .navbar-brand {
   padding: 35px 40px 35px 50px;
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid $colour-background-darker;
 }
 
 @media (max-width: 1024px) {
@@ -689,15 +694,23 @@ select.form-control:not([size]):not([multiple]) {
 .main-nav .navbar-nav .nav-item .nav-link {
   position: relative;
   text-align: center;
-  color: #222222;
+  color: $colour-foreground;
   padding-left: 8px;
   padding-right: 20px;
   font-size: 1.06rem;
   font-family: "Montserrat", sans-serif;
 }
 
+.fa-angle-down {
+  color:$colour-foreground;
+}
+
+.fa-angle-up {
+  color:$colour-foreground;
+}
+
 .main-nav .navbar-nav .nav-item .nav-link span {
-  color: #222222;
+  color: $colour-foreground;
   margin-left: 20px;
 }
 
@@ -770,6 +783,7 @@ select.form-control:not([size]):not([multiple]) {
   left: auto;
   position: relative;
   text-align: center;
+  background-color: $colour-background-lighter;
 }
 
 @media (max-width: 767px) {
@@ -815,14 +829,15 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 15px;
   padding: 10px 0;
   transition: 0.3s ease;
+  color: $colour-foreground;
 }
 
 .main-nav .dropdown-slide .dropdown-menu .dropdown-item:not(:last-child) {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $colour-background-lighter;
 }
 
 .main-nav .dropdown-slide .dropdown-menu .dropdown-item:hover {
-  background: #fff;
+  background: $colour-background;
   color: $colour-primary;
 }
 
@@ -834,11 +849,9 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .main-nav .ticket {
-  background: $colour-primary;
+  background-color: $colour-primary;
   display: block;
   padding: 34px 32px;
-  position: relative;
-  top: 1px;
 }
 
 @media (max-width: 1024px) {
@@ -858,11 +871,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .main-nav .ticket span {
-  color: #fff;
+  color: $colour-background;
   font-size: 1.125rem;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
-  border-left: 1px solid #ffa366;
+  border-left: 1px solid lighten($colour-primary, 15%);
   padding-left: 24px;
   font-weight: bold;
 }
@@ -904,7 +917,7 @@ select.form-control:not([size]):not([multiple]) {
 .page-title h3,
 .page-title li,
 .page-title a {
-  color: #fff;
+  color: $colour-background;
 }
 
 .page-title .title h3 {
@@ -923,13 +936,13 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .page-title .breadcrumb .breadcrumb-item.active {
-  color: #fff;
+  color: $colour-background;
 }
 
 .page-title .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   content: "\f105";
   font-family: FontAwesome;
-  color: #fff;
+  color: $colour-background;
 }
 
 .footer-main {
@@ -961,11 +974,12 @@ select.form-control:not([size]):not([multiple]) {
   height: 50px;
   width: 50px;
   text-align: center;
-  background: #fff;
+  background: $colour-background;
   margin-top: 20px;
 }
 
 .footer-main .block ul.social-links-footer li a i {
+  color: $colour-foreground-lighter;
   line-height: 50px;
 }
 
@@ -974,7 +988,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .footer-main .block ul.social-links-footer li a:hover i {
-  color: #fff;
+  color: $colour-background;
 }
 
 .subfooter {
@@ -1008,7 +1022,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .subfooter .to-top i {
   font-size: 1.5rem;
-  color: #fff;
+  color: $colour-background;
   line-height: 45px;
 }
 
@@ -1029,7 +1043,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .cta-ticket .content-block h2 {
-  color: #fff;
+  color: $colour-background-lighter;
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 15px;
@@ -1060,9 +1074,12 @@ select.form-control:not([size]):not([multiple]) {
   padding: 70px 0;
 }
 
-.cta-subscribe .content h3,
+.cta-subscribe .content h3 {
+  color: $colour-background;
+}
+
 .cta-subscribe .content p {
-  color: #fff;
+  color: $colour-background-darker;  
 }
 
 .cta-subscribe .content h3 {
@@ -1120,7 +1137,7 @@ select.form-control:not([size]):not([multiple]) {
   text-align: center;
   position: relative;
   font-weight: bold;
-  color: #fff;
+  color: $colour-foreground;
   border: 2px solid #7c7491;
   margin-bottom: 8px;
   border-radius: 100%;
@@ -1138,7 +1155,7 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 1rem;
   text-transform: lowercase;
   font-weight: normal;
-  color: #fff;
+  color: $colour-foreground;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -1160,7 +1177,7 @@ select.form-control:not([size]):not([multiple]) {
 .banner .block h2 {
   text-transform: uppercase;
   font-size: 4.625rem;
-  color: #fff;
+  color: $colour-foreground;
   font-weight: 400;
   text-shadow: 3.5px 6.062px 0px rgba(0, 0, 0, 0.1);
   font-style: italic;
@@ -1173,7 +1190,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .banner .block h6 {
-  color: #fff;
+  color: $colour-foreground;
   font-weight: 400;
   margin-bottom: 50px;
 }
@@ -1267,7 +1284,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .about .content-block .description-one p {
-  color: #222222;
+  color: $colour-foreground;
   font-size: 1.0625rem;
 }
 
@@ -1304,12 +1321,12 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .speakers.white .speaker-item {
-  background: #fff;
+  background-color: $colour-foreground;
   border: 1px solid #e5e5e5;
 }
 
 .speakers .speaker-item {
-  background: #eae9ec;
+  background-color: $colour-background-darker;
   padding: 7px;
   margin-bottom: 30px;
 }
@@ -1380,21 +1397,21 @@ select.form-control:not([size]):not([multiple]) {
   height: 50px;
   width: 50px;
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid $colour-background;
 }
 
 .speakers .speaker-item .image .socials ul li a i {
   font-size: 0.9375rem;
-  color: #fff;
+  color: $colour-background;
   line-height: 50px;
 }
 
 .speakers .speaker-item .image .socials ul li a:hover {
-  background: #fff;
+  background: $colour-background;
 }
 
 .speakers .speaker-item .image .socials ul li a:hover i {
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .speakers .speaker-item .image:hover .primary-overlay {
@@ -1407,7 +1424,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .speakers .speaker-item .content h5 a {
   font-size: 22px;
-  color: #222222;
+  color: $colour-foreground-darker;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -1419,6 +1436,7 @@ select.form-control:not([size]):not([multiple]) {
 .speakers .speaker-item .content p {
   font-size: 0.875rem;
   margin-bottom: 5px;
+  color: $colour-foreground-darker;
 }
 
 .schedule .schedule-tab {
@@ -1459,18 +1477,18 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Roboto", sans-serif;
   display: block;
   font-size: 1rem;
-  color: #595959;
+  color: $colour-foreground-darker;
   font-weight: 400;
 }
 
 .schedule .schedule-tab ul li.nav-item a.active {
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   position: relative;
 }
 
 .schedule .schedule-tab ul li.nav-item a.active span {
-  color: #fff;
+  color: $colour-background;
 }
 
 .schedule .schedule-tab ul li.nav-item a.active:after {
@@ -1575,7 +1593,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule .schedule-contents .schedule-item li.headings div {
-  color: #fff;
+  color: $colour-foreground;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
@@ -1589,19 +1607,19 @@ select.form-control:not([size]):not([multiple]) {
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block {
   padding: 10px 40px;
-  background: #fff;
+  background: $colour-background-lighter;
   width: 100%;
   transition: 0.2s ease-in;
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block div {
-  color: #222222;
+  color: $colour-foreground;
   font-family: "Montserrat", sans-serif;
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block div i {
   font-size: 1.1875em;
-  color: #c7c8c9;
+  color: $colour-background-lighter;
 }
 
 .schedule .schedule-contents .schedule-item li.schedule-details .block div img {
@@ -1615,6 +1633,7 @@ select.form-control:not([size]):not([multiple]) {
 .schedule .schedule-contents .schedule-item li.schedule-details .block div span.name {
   margin-left: 20px;
   transition: 0.2s ease-in;
+  color: $colour-foreground;
 }
 
 @media (max-width: 480px) {
@@ -1670,7 +1689,7 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
-  color: #222222;
+  color: $colour-foreground;
   font-weight: 500;
   display: block;
   border-radius: 0;
@@ -1683,18 +1702,18 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Roboto", sans-serif;
   display: block;
   font-size: 14px;
-  color: #595959;
+  color: $colour-foreground-darker;
   font-weight: 400;
 }
 
 .schedule.two .schedule-tab ul li.nav-item a.active {
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   position: relative;
 }
 
 .schedule.two .schedule-tab ul li.nav-item a.active span {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .schedule.two .schedule-tab ul li.nav-item a.active:after {
@@ -1801,7 +1820,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .schedule.two .schedule-contents .schedule-item li.headings div {
-  color: #fff;
+  color: $colour-foreground;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
@@ -1813,7 +1832,7 @@ select.form-control:not([size]):not([multiple]) {
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block {
   text-align: center;
   padding: 0;
-  background: #fff;
+  background: $colour-foreground;
   width: 100%;
   transition: 0.2s ease-in;
 }
@@ -1821,13 +1840,12 @@ select.form-control:not([size]):not([multiple]) {
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block div {
   padding-top: 25px;
   padding-bottom: 25px;
-  color: #222222;
+  color: $colour-foreground;
   font-family: "Montserrat", sans-serif;
 }
 
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block div i {
-  font-size: 1.1875em;
-  color: #c7c8c9;
+  font-size: 1.1875em;  
 }
 
 .schedule.two .schedule-contents .schedule-item li.schedule-details .block div img {
@@ -1915,7 +1933,7 @@ select.form-control:not([size]):not([multiple]) {
   text-align: center;
   position: relative;
   font-weight: bold;
-  color: #fff;
+  color: $colour-foreground;
   border: 2px solid rgba(255, 255, 255, 0.35);
   background-clip: content-box;
   background: rgba(255, 255, 255, 0.26);
@@ -1934,7 +1952,7 @@ select.form-control:not([size]):not([multiple]) {
   font-size: 1rem;
   text-transform: lowercase;
   font-weight: normal;
-  color: #fff;
+  color: $colour-foreground;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -1965,7 +1983,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .ticket-feature .block-2 .service-item i,
 .ticket-feature .block-2 .service-item h5 {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .ticket-feature .block-2 .service-item i {
@@ -2003,16 +2021,16 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .registration .service-block [class*="col-"]:first-child {
-  border-right: 1px solid #f69351;
-  border-bottom: 1px solid #f69351;
+  border-right: 1px solid lighten($colour-primary, 10%);
+  border-bottom: 1px solid lighten($colour-primary, 10%);
 }
 
 .registration .service-block [class*="col-"]:nth-child(2) {
-  border-bottom: 1px solid #f69351;
+  border-bottom: 1px solid lighten($colour-primary, 10%);
 }
 
 .registration .service-block [class*="col-"]:nth-child(3) {
-  border-right: 1px solid #f69351;
+  border-right: 1px solid lighten($colour-primary, 10%);
 }
 
 .registration .service-block .service-item {
@@ -2022,7 +2040,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .registration .service-block .service-item i,
 .registration .service-block .service-item h5 {
-  color: #fff;
+  color: $colour-background-darker;
 }
 
 .registration .service-block .service-item i {
@@ -2052,7 +2070,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .registration .registration-block .block .title h3 {
-  color: #fff;
+  color: #ffffff;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -2063,7 +2081,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item {
-  border: 1px solid #e5e5e5;
+  border: 1px solid $colour-background-darker;
+  background-color: $colour-background-lighter;
 }
 
 @media (max-width: 991px) {
@@ -2074,15 +2093,15 @@ select.form-control:not([size]):not([multiple]) {
 
 .pricing .pricing-item .pricing-heading {
   padding: 20px 40px 30px 40px;
-  background: #fafafa;
-  border-bottom: 1px solid #e5e5e5;
+  background: $colour-background-lighter;
+  border-bottom: 1px solid $colour-background-darker;
 }
 
 .pricing .pricing-item .pricing-heading .title h6 {
   text-transform: uppercase;
   font-weight: 400;
   line-height: 50px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $colour-background-darker;
 }
 
 .pricing .pricing-item .pricing-heading .price {
@@ -2138,8 +2157,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item.featured .pricing-heading .title h6 {
-  color: #fff;
-  border-bottom: 1px solid #f69351;
+  color: $colour-foreground;
+  border-bottom: 1px solid lighten($colour-primary, 10%);
 }
 
 .pricing .pricing-item.featured .pricing-heading .price {
@@ -2147,7 +2166,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item.featured .pricing-heading .price h2 {
-  color: #fff;
+  color: $colour-background;
   font-size: 3.625rem;
   margin-bottom: 0px;
 }
@@ -2157,7 +2176,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .pricing .pricing-item.featured .pricing-heading .price p {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .pricing.two .pricing-item {
@@ -2231,7 +2250,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .sponsors .block .image-block {
   padding: 45px 0;
-  background: #fff;
+  background: $colour-background;
   width: 244px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -2277,7 +2296,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .map .address-block h4,
 .map .address-block li {
-  color: #fff;
+  color: $colour-foreground;
   margin-bottom: 20px;
 }
 
@@ -2347,12 +2366,12 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .map.new .register .block .title h3 {
-  color: #fff;
+  color: $colour-foreground;
   font-weight: 400;
 }
 
 .map.new .register .block .title p {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .map.new .register .block .form-control,
@@ -2466,7 +2485,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .video-promo .content-block h2 {
   font-size: 30px;
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .video-promo .content-block p {
@@ -2479,7 +2498,7 @@ select.form-control:not([size]):not([multiple]) {
   background: $colour-primary;
   display: inline-block;
   font-size: 40px;
-  color: #fff;
+  color: $colour-foreground;
   text-align: center;
   line-height: 125px;
   border-radius: 100%;
@@ -2547,8 +2566,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .single-speaker .block .image-block {
-  background: #fff;
-  border: 1px solid #e5e5e5;
+  background: $colour-background-lighter;
+  border: 1px solid $colour-background-darker;
   padding: 6px;
 }
 
@@ -2592,19 +2611,20 @@ select.form-control:not([size]):not([multiple]) {
   display: block;
   height: 40px;
   width: 40px;
-  background: #fff;
+  background: $colour-background;
   border: 1px solid #e5e5e5;
   text-align: center;
 }
 
 .single-speaker .block .content-block .social-profiles ul.social-list li a i {
   line-height: 40px;
+  color: $colour-foreground-lighter;
 }
 
 .single-speaker .block .content-block .social-profiles ul.social-list li a:hover {
   background: $colour-primary;
   border: 1px solid $colour-primary;
-  color: #fff;
+  color: $colour-background;
 }
 
 .single-speaker .block-2 {
@@ -2674,7 +2694,7 @@ select.form-control:not([size]):not([multiple]) {
   font-family: "Montserrat", sans-serif;
   float: right;
   margin-top: -20px;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .speakers-full-width {
@@ -2705,7 +2725,7 @@ select.form-control:not([size]):not([multiple]) {
 .speakers-full-width .speaker-slider .speaker-image .primary-overlay h5,
 .speakers-full-width .speaker-slider .speaker-image .primary-overlay p,
 .speakers-full-width .speaker-slider .speaker-image .primary-overlay i {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .speakers-full-width .speaker-slider .speaker-image .primary-overlay h5,
@@ -2766,7 +2786,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .speakers-full-width .speaker-slider .slick-prev,
 .speakers-full-width .speaker-slider .slick-next {
-  background: #fff;
+  background: $colour-foreground;
   width: 70px;
   height: 70px;
   border-radius: 100%;
@@ -2796,7 +2816,9 @@ select.form-control:not([size]):not([multiple]) {
   border: none;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   margin-right: 25px;
+  color: $colour-foreground-lighter;
 }
 
 .controls .control:focus {
@@ -2804,11 +2826,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .controls .control:hover {
-  color: $colour-primary;
+  color: darken($colour-primary, 20%);
 }
 
 .mixitup-control-active {
-  color: $colour-primary;
+  color: $colour-primary !important;
 }
 
 /* Container
@@ -2820,6 +2842,10 @@ select.form-control:not([size]):not([multiple]) {
 	  ---------------------------------------------------------------------- */
   /* 2 Columns */
   /* 3 Columns */
+}
+
+#gallery-displayer {
+  background-color: $colour-background-lighter;
 }
 
 .gallery-wrapper .gallery-item {
@@ -2858,7 +2884,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 55px;
   width: 55px;
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid $colour-foreground;
   border-radius: 100%;
   position: absolute;
   left: 50%;
@@ -2869,7 +2895,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .gallery-wrapper .gallery-item .image-block .image .primary-overlay a i {
-  color: #fff;
+  color: $colour-foreground;
   line-height: 55px;
   font-size: 1.25rem;
 }
@@ -2887,7 +2913,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .gallery-wrapper .mix {
-  background: #fff;
+  background: $colour-foreground;
   position: relative;
 }
 
@@ -2949,7 +2975,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 55px;
   width: 55px;
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid $colour-foreground;
   border-radius: 100%;
   position: absolute;
   left: 50%;
@@ -2960,7 +2986,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .gallery-full .image .primary-overlay a i {
-  color: #fff;
+  color: $colour-foreground;
   line-height: 55px;
   font-size: 1.25rem;
 }
@@ -3035,7 +3061,7 @@ select.form-control:not([size]):not([multiple]) {
 .news .blog-post .post-content .post-title h2 a {
   font-size: 1.25rem;
   font-weight: 400;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .news .blog-post .post-content .post-title h2 a:hover {
@@ -3143,11 +3169,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post.single .post-details .share-block .tag p {
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .news .blog-post.single .post-details .share-block .tag ul li a {
-  color: #595959;
+  color: $colour-foreground-darker;
   font-size: 15px;
 }
 
@@ -3195,7 +3221,7 @@ select.form-control:not([size]):not([multiple]) {
   height: 38px;
   width: 38px;
   text-align: center;
-  background: #fff;
+  background: $colour-foreground;
   border: 1px solid #e5e5e5;
 }
 
@@ -3209,7 +3235,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .news .blog-post.single .post-details .share-block .share ul.social-links-share li a:hover i {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .news .blog-post.single:hover {
@@ -3287,7 +3313,7 @@ ul.pagination li a {
   line-height: 50px;
   text-align: center;
   border-color: transparent;
-  color: #595959;
+  color: $colour-foreground-darker;
   border: 1px solid #e5e5e5;
   border-radius: 0 !important;
 }
@@ -3295,13 +3321,13 @@ ul.pagination li a {
 ul.pagination li a:hover,
 ul.pagination li a:focus {
   background-color: $colour-primary !important;
-  color: #fff !important;
+  color: $colour-foreground !important;
   border-color: $colour-primary !important;
 }
 
 ul.pagination .active a {
   background-color: $colour-primary !important;
-  color: #fff !important;
+  color: $colour-foreground !important;
   border-color: $colour-primary !important;
 }
 
@@ -3334,7 +3360,7 @@ ul.pagination .active a {
 
 .widget.search .input-group .input-group-addon {
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   border: none;
   border-radius: 0;
 }
@@ -3376,7 +3402,7 @@ ul.pagination .active a {
 
 .widget.tags ul li a:hover {
   background: $colour-primary;
-  color: #fff;
+  color: $colour-foreground;
   border-color: $colour-primary;
 }
 
@@ -3397,7 +3423,7 @@ ul.pagination .active a {
 
 .widget.latest-post .media .media-body h6 a {
   font-size: 15px;
-  color: #222222;
+  color: $colour-foreground;
   line-height: 1;
   font-weight: 400;
 }
@@ -3445,7 +3471,7 @@ ul.pagination .active a {
   font-weight: 400;
   position: relative;
   font-size: 20px;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .news-hr .news-post-hr .post-contents .post-title h6 a:after {
@@ -3481,7 +3507,7 @@ ul.pagination .active a {
 }
 
 .news-hr .news-post-hr .post-contents .date h4 {
-  color: #fff;
+  color: $colour-foreground;
   font-weight: 400;
 }
 
@@ -3498,7 +3524,7 @@ ul.pagination .active a {
 
 .news-hr .news-post-hr .post-contents .more a {
   font-family: "Montserrat", sans-serif;
-  color: #222222;
+  color: $colour-foreground;
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -3515,7 +3541,7 @@ ul.pagination .active a {
   height: 0;
   border-style: solid;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #fff transparent transparent;
+  border-color: transparent $colour-foreground transparent transparent;
 }
 
 @media (max-width: 767px) {
@@ -3534,7 +3560,7 @@ ul.pagination .active a {
 
 .testimonial .testimonial-item .comment {
   padding: 40px 30px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $colour-background-darker;
   margin-bottom: 20px;
   position: relative;
   transition: 0.3s ease;
@@ -3549,7 +3575,7 @@ ul.pagination .active a {
   height: 0;
   border-style: solid;
   border-width: 0 30px 27px 0;
-  border-color: transparent #e5e5e5 transparent transparent;
+  border-color: transparent $colour-background-darker transparent transparent;
   transition: 0.3s ease;
 }
 
@@ -3562,7 +3588,7 @@ ul.pagination .active a {
   height: 0;
   border-style: solid;
   border-width: 0 28px 27px 0;
-  border-color: transparent #fff transparent transparent;
+  border-color: transparent $colour-background-darker transparent transparent;
   transition: 0.3s ease;
 }
 
@@ -3572,7 +3598,7 @@ ul.pagination .active a {
 }
 
 .testimonial .testimonial-item .comment:hover p {
-  color: #fff;
+  color: $colour-foreground;
 }
 
 .testimonial .testimonial-item .comment:hover:before {
@@ -3602,7 +3628,7 @@ ul.pagination .active a {
 
 .testimonial .testimonial-item .media .media-body .name p {
   font-family: "Montserrat", sans-serif;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .testimonial .testimonial-item .media .media-body .profession p {
@@ -3627,7 +3653,7 @@ ul.pagination .active a {
 
 .error .block h3 span {
   font-style: italic;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .faq .accordion-block #accordion .card,
@@ -3638,26 +3664,26 @@ ul.pagination .active a {
 
 .faq .accordion-block #accordion .card .card-header,
 .faq .accordion-block #accordionTwo .card .card-header {
-  background: #fff;
+  background: $colour-background;
   padding: 0;
 }
 
 .faq .accordion-block #accordion .card .card-header h5 a,
 .faq .accordion-block #accordionTwo .card .card-header h5 a {
   font-weight: 400;
-  color: #222222;
+  color: $colour-foreground;
 }
 
 .faq .accordion-block #accordion .card .card-header h5 a span,
 .faq .accordion-block #accordionTwo .card .card-header h5 a span {
   padding: 20px;
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid $colour-background-darker;
   margin-right: 20px;
 }
 
 .faq .accordion-block #accordion .card .card-body,
 .faq .accordion-block #accordionTwo .card .card-body {
-  color: #595959;
+  color: $colour-foreground-darker;
   padding: 15px 20px;
 }
 

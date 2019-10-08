@@ -68,6 +68,9 @@ h2 {
 }
 
 #banner-countdown {
+  color: $colour-background-darker;
+  font-weight: 100;
+
   @include media("<medium") {
     font-size: 13px;
   }

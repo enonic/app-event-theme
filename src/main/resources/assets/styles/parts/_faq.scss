@@ -1,4 +1,9 @@
+.card-body {
+    background-color: $colour-background;
+}
+
 .answer-box- {
+    background-color: $colour-background;
     &show {
         display: flex;
         height: auto;

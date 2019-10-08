@@ -43,7 +43,8 @@ $(function () {
             elementMenu.style.visibility = 'visible';
             elementMenu.style.transform = 'none';
             elementMenu.setAttribute('data-toggle', 'true');
-            elementMenu.style['border-top'] = '2px solid #ff6600';
+            let styleObj = window.getComputedStyle(document.getElementsByClassName('ticket')[0], null);
+            elementMenu.style['border-top'] = '2px solid ' + styleObj['background-color'];
             angleUpIcon.style.display = 'inline-block';
             angleDownIcon.style.display = 'none';
         } else if (elementMenu.getAttribute('data-toggle') === 'true') {
