@@ -3,6 +3,7 @@
     data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
 	data-th-classappend="${backgroundImage} ? 'overlay-lighter' : ''"
 >
+<p data-th-text="${backgroundImage}" style="color:red;"></p>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -20,7 +21,7 @@
             >
 				<!-- Speaker -->
 				<div class="speaker-item">
-					<div class="image" id="speaker-image">
+					<div class="image" id="speaker-image" data-th-if="${speaker.image}">
 						<img 
                             data-th-src="${speaker.image}"
                             alt="speaker" 

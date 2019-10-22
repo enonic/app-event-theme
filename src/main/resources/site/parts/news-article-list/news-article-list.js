@@ -14,7 +14,7 @@ exports.get = function (req) {
     var config = component.config;
 
     /* ### Manipulate ### */
-    var newsDetails = []
+    var newsDetails = [];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     if (config.newsArticles !== null && config.newsArticles !== undefined) {
