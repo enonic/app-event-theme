@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try { // regular
         document.getElementById('search-icon').addEventListener('click', getAndSendQueryWord);
         document.getElementById('search-input').addEventListener('keyup', function(event) {        
-            if (event.keyCode === 13) { // Number 13 is the "Enter" key on the keyboard
+            if (event.key === 'Enter') {
                 event.preventDefault();
                 document.getElementById('search-icon').click();
             }
@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
             let element = document.getElementsByClassName('tag-list-item')[i];
             element.addEventListener('click', getAndSendTag);
             element.addEventListener('keyup', function(event) {
-                if (event.keyCode === 13) { // Number 13 is the "Enter" key on the keyboard
+                if (event.key === 'Enter') { // Number 13 is the "Enter" key on the keyboard
                     element.click();
                 }
             }); 

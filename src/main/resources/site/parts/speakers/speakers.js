@@ -33,8 +33,7 @@ exports.get = function (req) {
     }
 
     let exists = libContent.exists({key: config.backgroundImage});
-    log.info('speakers.js JSON %s', JSON.stringify(exists, null, 4)
-        );
+    // log.info('speakers.js JSON %s', JSON.stringify(exists, null, 4));
     /* let backgroundImage = libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }); */
     /* log.info('speakers.js JSON true %s', JSON.stringify(libContent.exist(backgroundImage), null, 4)); */
 
