@@ -1,0 +1,54 @@
+Event Theme
+Copyright 2019 and onwards Enonic AS.
+
+This product includes software developed at
+Enonic AS (http://www.enonic.com/).
+
+=======================================================================
+GNU Affero General Public License 3.0 or later
+=======================================================================
+The following components are provided under the GNU Affero General Public License 3.0 or later. See project link for details.
+
+    browserslist-config-enonic (https://github.com/enonic/enonic-npm-modules/packages/browserslist-config-enonic)
+    Enonic XP libraries (http://github.com/enonic/xp)
+
+=======================================================================
+The MIT License (MIT)
+=======================================================================
+The following components are provided under the MIT License (MIT). See project link for details.
+
+    @babel/core (https://github.com/babel/babel/tree/master/packages/babel-core)
+    @babel/preset-env (https://github.com/babel/babel-preset-env)
+    @babel/register (https://github.com/babel/babel/tree/master/packages/babel-register)
+    autoprefixer (https://github.com/postcss/autoprefixer)
+    babel-loader (https://github.com/babel/babel-loader)
+    browserlist (https://github.com/browserslist)
+    cross-env (https://github.com/kentcdodds/cross-env)
+    css-loader (https://github.com/webpack-contrib/css-loader)
+    css-mqpacker (https://github.com/hail2u/node-css-mqpacker)
+    cssnano (https://github.com/cssnano/cssnano)
+    file-loader (https://github.com/webpack-contrib/file-loader)
+    include-media (https://github.com/eduardoboucas/include-media)
+    less-loader (https://github.com/webpack-contrib/less-loader)
+    mini-css-extract-plugin (https://github.com/webpack-contrib/mini-css-extract-plugin)
+    node-sass (https://github.com/sass/node-sass)
+    postcss-loader (https://github.com/postcss/postcss-loader)
+    sass-loader (https://github.com/webpack-contrib/sass-loader)
+    style-loader (https://github.com/webpack-contrib/style-loader)
+    terser-webpack-plugin (https://github.com/webpack-contrib/terser-webpack-plugin)
+    Webpack (https://github.com/webpack/webpack)
+    webpack-cli (https://github.com/webpack/webpack-cli)
+
+========================================================================
+Apache License 2.0
+========================================================================
+The following components are provided under the Apache License 2.0. See project link for details.
+
+    Less (https://github.com/less/less.js)
+
+========================================================================
+Creative Commons — CC0 1.0 Universal
+========================================================================
+The following components are provided under the Creative Commons — CC0 1.0 Universal. See project link for details.
+
+    postcss-normalize (https://github.com/csstools/postcss-normalize)
