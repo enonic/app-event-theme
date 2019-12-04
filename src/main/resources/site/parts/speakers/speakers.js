@@ -32,19 +32,19 @@ exports.get = function (req) {
         });
     }
 
-    let exists = libContent.exists({key: config.backgroundImage});
-    // log.info('speakers.js JSON %s', JSON.stringify(exists, null, 4));
-    /* let backgroundImage = libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' }); */
-    /* log.info('speakers.js JSON true %s', JSON.stringify(libContent.exist(backgroundImage), null, 4)); */
+    let backgroundImage = null;
+    if (config.backgroundImage && libContent.exists({key: config.backgroundImage})) {
+        backgroundImage = libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)' });
+    }
 
-    /* log.info('speakers.js JSON %s', JSON.stringify(config.backgroundImage, null, 4)); */
+    /* log.info('%s', JSON.stringify(config.backgroundImage, null, 4)); */
 
     /* ### Prepare ### */
     let model = {
         content: content,
         component: component,
         speakers: speakersDetails,
-        backgroundImage: null,
+        backgroundImage: backgroundImage,
         description: config.description,
     };
 
