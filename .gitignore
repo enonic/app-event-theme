@@ -30,7 +30,7 @@ Temporary Items
 ### Gradle ###
 .gradle
 build/
-!build\libs\event theme-1.0.0.jar
+!build/libs/*
 
 # Ignore Gradle GUI config
 gradle-app.setting
