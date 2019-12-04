@@ -1,6 +1,6 @@
 ### This is the repository of app-event-theme.
 
-A [template](https://themefisher.com/products/eventre-event-conference-website-template/) based event information webpage. Create a homepage for any event.
+Create a homepage for any event. A [template](https://themefisher.com/products/eventre-event-conference-website-template/) based event information webpage. No significant changes were made to the template other than to adapt it to the Enonic technology.
 
 [Specifications](https://docs.google.com/document/d/1BYlj6XnQ9CNhgloIb36ump8tsKNouTdtBem6UQ0VRes/edit#).
 
