@@ -2,7 +2,7 @@ $(function () {
     function sendRegisterData(url) {
         $.ajax({
             method: 'POST',
-            url: '/_/service/app.event.theme/contact',
+            url: '/_/service/com.enonic.app.event.theme/contact', // TODO: url should be dynamic
             data: {
                 name: document.getElementById('contactName').value,
                 fromEmail: document.getElementById('contactEmail').value,

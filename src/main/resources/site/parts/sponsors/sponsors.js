@@ -21,7 +21,7 @@ exports.get = function (req) {
             element.sponsors.forEach(sponsorElement => {
                 sponsorElement.image = libPortal.imageUrl({
                     id: sponsorElement.image,
-                    scale: 'block(140, 55)',
+                    scale: 'max(300)',
                 });
             });
         });
@@ -35,7 +35,7 @@ exports.get = function (req) {
         component: component,
         description: config.description,
         becomeSponsorUrl: config.becomeSponsorUrl,
-        backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'block(140, 55)'}) : null,
+        backgroundImage: config.backgroundImage? libPortal.imageUrl({ id: config.backgroundImage, scale: 'max(1280)'}) : null,
         sponsorData: sponsors
     };
 

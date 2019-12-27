@@ -1,8 +1,0 @@
-schedule
-speakers
-news-articles
-contact
-more
-search-results
-resources
-_templates

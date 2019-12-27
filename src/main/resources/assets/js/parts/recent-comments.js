@@ -7,7 +7,7 @@ $(function () {
     function sendRegisterData() {
         $.ajax({
             method: 'POST',
-            url: '/_/service/app.event.theme/recent-comments',
+            url: '/_/service/com.enonic.app.event.theme/recent-comments', // TODO: url should be dynamic
             data: {
                 _path: document.getElementById('leave-a-comment').getAttribute('parent-path'),
                 _id: document.getElementById('leave-a-comment').getAttribute('parent-id'),

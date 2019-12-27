@@ -49,8 +49,6 @@ task npmInstallForce( type: NpmTask ) {
 }
 
 task cleanNode( type: org.gradle.api.tasks.Delete ) {
-    logger.warn("Test:")
-    logger.warn(this.project.findProperty( 'repoUser' ) )
     delete 'node_modules'
 }
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<content-type xmlns="urn:enonic:xp:model:1.0">
+<content-type>
   <display-name>Speaker</display-name>
+  <description>User generated comments on blog posts</description>
   <super-type>base:structured</super-type>
   <form>
     <field-set>
@@ -30,49 +31,49 @@
         <input type="TextLine" name="linkedinUrl">
           <label>Linkedin URL</label>
           <occurrences minimum="0" maximum="1"/>
-          <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          <config>
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp>
           </config>
         </input>
         <input type="TextLine" name="twitterUrl">
           <label>Twitter URL</label>
           <occurrences minimum="0" maximum="1"/>
-          <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          <config>
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp>
           </config>
         </input>
         <input type="TextLine" name="skypeUrl">
           <label>Skype URL</label>
           <occurrences minimum="0" maximum="1"/>
-          <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          <config>
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp>
           </config>
         </input>
         <input type="TextLine" name="pintrestUrl">
           <label>Pintrest URL</label>
           <occurrences minimum="0" maximum="1"/>
-          <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          <config>
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp>
           </config>
         </input>
         <input type="TextLine" name="facebookUrl">
           <label>Facebook URL</label>
           <occurrences minimum="0" maximum="1"/>
-          <config>            
-            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp> 
+          <config>
+            <regexp>^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$</regexp>
           </config>
         </input>
         <!--  -->
 
-        
+
 
       </items>
     </field-set>
     <field-set>
       <label>Personal Skills</label>
       <items>
-        <item-set name="personalSkills"> 
-          <label>a personal skill</label> 
+        <item-set name="personalSkills">
+          <label>a personal skill</label>
           <occurrences minimum="0" maximum="0"/>
           <help-text>Personal skills may be specified here.</help-text>
           <items>
@@ -84,10 +85,10 @@
               </config>
             </input>
             <input type="Long" name="proficiency">
-              <label>Proficiency (0-100)</label>              
+              <label>Proficiency (0-100)</label>
               <config>
-                <min>0</min> 
-                <max>100</max> 
+                <min>0</min>
+                <max>100</max>
               </config>
               <occurrences minimum="1" maximum="1"/>
             </input>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>app-event-theme</name>
-	<comment>Project app-event-theme created by Buildship.</comment>
+	<name>com.enonic.app.event.theme</name>
+	<comment>Project com.enonic.app.event.theme created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>

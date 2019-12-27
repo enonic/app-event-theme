@@ -3,7 +3,7 @@ $(function () {
         console.log('scubbi-dubb!');
         $.ajax({
             method: 'POST',
-            url: '/_/service/app.event.theme/register',
+            url: '/_/service/com.enonic.app.event.theme/register', // TODO: url should be dynamic
             data: {
                 name: document.getElementById('registerName').value,
                 fromEmail: document.getElementById('registerEmail').value,

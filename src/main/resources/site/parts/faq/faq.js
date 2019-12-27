@@ -5,27 +5,28 @@ var libUtil = require('/lib/util');
 
 var viewFile = resolve('faq.html');
 
-exports.get = function(req) {
+exports.get = function (req) {
 
 	/* ### Collect ### */
 	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
 	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.	
-    var config = component.config;
+	var config = component.config;
 
-	
+
 	/* ### Manipulate ### */
-	
+
 	config.questions = libUtil.data.forceArray(config.questions);
 	config.questions.forEach(element => {
-		element.answer = libPortal.processHtml({ value: element.answer });
+		if (element)
+			element.answer = libPortal.processHtml({ value: element.answer });
 	});
-    /* log.info('faq.js JSON %s', JSON.stringify(config.questions, null, 4)); */
+	/* log.info('%s', JSON.stringify(config.questions, null, 4)); */
 
 	/* ### Prepare ### */
 	var model = {
 		content: content,
-        component: component,
-        description: config.description,
+		component: component,
+		description: config.description,
 		faqs: libUtil.data.forceArray(config.questions)
 	};
 
@@ -37,9 +38,9 @@ exports.get = function(req) {
 	return {
 		body: libThymeleaf.render(viewFile, model),
 		pageContributions: {
-		  headEnd: [
-			`<script src='${scriptUrl}'></script>`
-		  ]
+			headEnd: [
+				`<script src='${scriptUrl}'></script>`
+			]
 		}
 	};
 };

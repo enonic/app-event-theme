@@ -1,6 +1,6 @@
 var libContent = require('/lib/xp/content');
 
-exports.post = function (req) { // /_/service/app.event.theme/contact  
+exports.post = function (req) { // /_/service/com.enonic.app.event.theme/contact  
   try { // Check if content already exists.
     let uniqueNumber = new Date();
     var result = libContent.create({

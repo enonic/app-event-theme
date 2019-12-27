@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content-type xmlns="urn:enonic:xp:model:1.0">
     <display-name>Landing page</display-name>
+    <description>Standard page to display content</description>
     <display-name-expression></display-name-expression>
     <super-type>base:structured</super-type>
     <is-abstract>false</is-abstract>

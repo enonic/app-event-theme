@@ -1,6 +1,6 @@
 const libMail = require('/lib/xp/mail');
 
-exports.post = function(req) { // /_/service/app.event.theme/contact
+exports.post = function(req) { // /_/service/com.enonic.app.event.theme/contact
   /* log.info('contact.js JSON %s', JSON.stringify(req.params), null, 4); */
 
   var flag1 = libMail.send({

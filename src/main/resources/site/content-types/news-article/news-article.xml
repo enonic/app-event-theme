@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content-type>
   <display-name>News Article</display-name>
+  <description>A news article with custom content</description>
   <super-type>base:structured</super-type>
   <form>
     <field-set>

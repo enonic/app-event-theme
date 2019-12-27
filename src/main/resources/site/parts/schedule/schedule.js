@@ -27,7 +27,7 @@ exports.get = function (req) {
     let fromDate = new Date(siteConfig.fromDate);
     let toDate = new Date(siteConfig.toDate);
     let oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-    let diffDays = Math.round(Math.abs((fromDate.getTime() - toDate.getTime()) / (oneDay)));
+    let diffDays = Math.round(Math.abs((fromDate.getTime() - toDate.getTime()) / (oneDay))) + 1;
     let numDays = [];
 
     // talks
@@ -40,8 +40,8 @@ exports.get = function (req) {
                     element.image = libPortal.imageUrl({ id: speaker.data.image, scale: 'block(65, 65)' });
                     element.name = speaker.displayName;
                     element.url = libPortal.pageUrl({ id: speaker._id });
-                    // element.day = parseInt(element.day);
-                    if (numDays <= diffDays && element.day > numDays)
+                    
+                    if (element.day > numDays.length)
                         numDays.push(parseInt(element.day));
                 }
             }
