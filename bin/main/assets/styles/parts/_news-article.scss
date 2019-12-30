@@ -1,0 +1,25 @@
+.date-format {
+  color: white;
+  margin-bottom: 0px;
+  z-index: 2;
+  @include media("<medium") {
+    span { font-size: 12px; }
+    h4 { font-size: 22px; }
+  }
+}
+
+.img-fit {
+  width: 100%;
+}
+
+.description-details img {
+  max-width: 670px;
+}
+
+.news-article-tags {
+  cursor: pointer;
+}
+
+.post-details {
+  text-align: left;
+}

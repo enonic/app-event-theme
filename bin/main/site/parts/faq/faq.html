@@ -1,0 +1,67 @@
+<section class="section faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>Our <span class="alternate">FAQ</span></h3>
+                    <p data-th-text="${description}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"> <!-- 1st column -->
+                <div class="accordion-block">
+                    <div id="accordion">
+                        <div class="card" data-th-each="faq, iterstat : ${faqs}" data-th-if="${iterstat.index %2 == 0}"> <!-- evens -->
+                            <!-- Question Box -->
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <a 
+                                        data-toggle="false"
+                                        data-th-attr="data-index=|${iterstat.index}|"
+                                        class="faq-toggle-view-more"
+                                        tabindex="0"
+                                    >
+                                        <div><span class="fa fa-plus-circle"></span></div>
+                                        <div><span data-th-if=${faq.question} data-th-text="${faq.question}" data-th-remove="tag"></span></div>
+                                    </a>
+                                </h5>
+                            </div>
+                            <!-- Answer Box -->
+                            <div data-th-id="|faq-${iterstat.index}|" class="collapse show answer-box-hidden">
+                                <div class="card-body" data-th-utext="${faq.answer}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>            
+			<div class="col-md-6"> <!-- 2nd column -->
+                <div class="accordion-block">
+                    <div id="accordionTwo">
+                        <div class="card" data-th-each="faq, iterstat : ${faqs}" data-th-if="${iterstat.index %2 == 1}"> <!-- odds -->
+                            <!-- Question Box -->
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <a
+                                        data-toggle="false"
+                                        data-th-attr="data-index=|${iterstat.index}|"
+                                        class="faq-toggle-view-more"
+                                        tabindex="0"
+                                    >
+                                        <div><span class="fa fa-plus-circle"></span></div>
+                                        <div><span data-th-text="${faq.question}" data-th-remove="tag"></span></div>
+                                    </a>
+                                </h5>
+                            </div>
+                            <!-- Answer Box -->
+                            <div data-th-id="|faq-${iterstat.index}|" class="collapse show answer-box-hidden">
+                                <div class="card-body" data-th-utext="${faq.answer}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    

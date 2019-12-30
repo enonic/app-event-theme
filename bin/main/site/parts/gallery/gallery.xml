@@ -1,0 +1,24 @@
+<part>
+	<display-name>Gallery</display-name>
+	<description>Place galleries of images here</description>
+	<form>
+		<input type="TextLine" name="description">
+          <label>Description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <item-set name="galleries">
+            <label>a gallery</label> 
+            <occurrences minimum="0" maximum="0"/>
+            <items>
+                <input type="TextLine" name="name">
+                    <label>Gallery name</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="ImageSelector" name="images">
+                    <label>Images</label>
+                    <occurrences minimum="1" maximum="0"/>
+                </input>
+            </items>
+        </item-set>
+    </form>
+</part>

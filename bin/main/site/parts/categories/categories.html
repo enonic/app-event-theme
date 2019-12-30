@@ -1,0 +1,26 @@
+<div 
+    class="widget category"
+    data-th-if="${categories!=null and !categories.isEmpty()}"
+>
+    <!-- Widget Header -->
+    <h5 class="widget-header">Categories</h5>
+    <ul class="category-list m-0 p-0">
+        <li 
+            class="category-list-items"
+            data-th-each="category: ${categories}"
+        >
+            <a 
+                data-th-text="${category[0]}"
+                data-th-value="${category[0]}"
+                data-th-home="${siteUrl}"
+                data-th-class="${searchResultsPageExists} ? 'category-list-item' : ''"
+            ></a>
+            <a 
+                data-th-text="'(' + ${category[1] + ')'}"
+                data-th-value="${category[0]}"
+                data-th-home="${siteUrl}"
+                data-th-class="${searchResultsPageExists} ? 'category-list-item' : ''"
+            ></a>
+        </li>
+    </ul>
+</div>

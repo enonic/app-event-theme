@@ -1,0 +1,50 @@
+<section
+	class="section speakers bg-speaker"
+	data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
+	data-th-classappend="${backgroundImage} ? 'overlay-lighter' : ''">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Section Title -->
+				<div class="section-title">
+					<h3 data-th-id="${backgroundImage} ? 'title-override' : ''">Who is <span
+							class="alternate">Speaking?</span></h3>
+					<p id="speaker-list-description" data-th-text="${description}"></p>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="speaker-list-items">
+			<div
+				class="col-lg-3 col-md-4 col-sm-6"
+				data-th-each="speaker : ${speakers}">
+				<!-- Speaker -->
+				<div class="speaker-item">
+					<div class="image" id="speaker-image" data-th-if="${speaker.image}">
+						<img
+							data-th-src="${speaker.image}"
+							alt="speaker"
+							class="img-fluid">
+						<div class="primary-overlay"></div>
+						<div class="socials">
+							<ul class="list-inline">
+								<li data-th-if="${speaker.facebookUrl}" class="list-inline-item"><a
+										data-th-href="${speaker.facebookUrl}"><i class="fa fa-facebook"></i></a></li>
+								<li data-th-if="${speaker.twitterUrl}" class="list-inline-item"><a
+										data-th-href="${speaker.twitterUrl}"><i class="fa fa-twitter"></i></a></li>
+								<li data-th-if="${speaker.linkedinUrl}" class="list-inline-item"><a
+										data-th-href="${speaker.linkedinUrl}"><i class="fa fa-linkedin"></i></a></li>
+								<li data-th-if="${speaker.pintrestUrl}" class="list-inline-item"><a
+										data-th-href="${speaker.pintrestUrl}"><i class="fa fa-pinterest"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="content text-center">
+						<h5><a data-th-href="${speaker.url}" data-th-text="${speaker.name}"></a></h5>
+						<!-- TODO: Link to the speakers page -->
+						<p data-th-text="${speaker.title}"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,13 @@
+.stat-block {
+  @include media("<medium") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#service-item-heading {
+  @include media("<medium") {
+    font-size: 1.6rem;
+  }
+}

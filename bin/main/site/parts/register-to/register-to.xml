@@ -1,0 +1,29 @@
+<part>
+	<display-name>Register To</display-name>
+	<description>Register to event</description>
+	<form>
+		<input type="TextLine" name="description">
+			<label>Description</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+		<input type="TextLine" name="url">
+			<label>Register Email</label>
+			<occurrences minimum="1" maximum="1"/>
+			<help-text>Please specify an email address to which a register goes too</help-text>
+		</input>
+		<input type="ImageSelector" name="backgroundImage">
+			<label>Background Image</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+		<item-set name="ticketTypes">|
+			<label>a ticket type</label>
+			<items>
+				<input type="TextLine" name="ticketType">
+					<label>Ticket type</label>
+					<occurrences minimum="1" maximum="1"/>
+				</input>
+			</items>
+			<occurrences minimum="0" maximum="0"/>
+		</item-set>
+	</form>
+</part>

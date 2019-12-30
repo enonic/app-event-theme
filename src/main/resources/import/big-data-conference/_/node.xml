@@ -1,0 +1,753 @@
+<node>
+    <id>4825f720-5484-427a-ba84-780a854a80f8</id>
+    <childOrder>_manualordervalue DESC, _ts DESC</childOrder>
+    <nodeType>content</nodeType>
+    <timestamp>2019-12-30T12:26:09.790Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
+    <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+    </permissions>
+    <data>
+        <boolean name="valid">true</boolean>
+        <string name="displayName">Big Data Conference</string>
+        <string name="type">portal:site</string>
+        <string name="owner">user:system:su</string>
+        <dateTime name="modifiedTime">2019-12-30T12:26:09.758Z</dateTime>
+        <string name="modifier">user:system:su</string>
+        <string name="creator">user:system:su</string>
+        <dateTime name="createdTime">2019-12-20T08:03:32.417Z</dateTime>
+        <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
+            <dateTime isNull="true" name="from"/>
+            <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">IN_PROGRESS</string>
+            <property-set name="checks"/>
+        </property-set>
+        <property-set name="data">
+            <string name="description">This is a demo</string>
+            <property-set name="siteConfig">
+                <string name="applicationKey">com.enonic.app.event.theme</string>
+                <property-set name="config"/>
+            </property-set>
+        </property-set>
+        <property-set name="x">
+            <property-set name="com-enonic-app-event-theme">
+                <property-set name="footer">
+                    <string isNull="true" name="newsLetterDescription"/>
+                    <string name="newsLetterUrl">null@null.null</string>
+                    <reference name="newsletterBackgroundImage">490dae2a-980d-4e2c-99bc-1f1cdd14fb56</reference>
+                    <string isNull="true" name="googleApi"/>
+                    <double name="latitude">58.97</double>
+                    <double name="longitude">5.7331</double>
+                    <string isNull="true" name="address"/>
+                    <string isNull="true" name="phone"/>
+                    <string isNull="true" name="email"/>
+                    <reference name="footerLogo">23b76791-47f2-476d-8f73-4356d0d148c7</reference>
+                    <string name="facebookUrl">https://www.google.com</string>
+                    <string name="twitterUrl">https://www.google.com</string>
+                    <string name="instagramUrl">https://www.google.com</string>
+                    <string name="rssUrl">https://www.google.com</string>
+                    <string name="vimeoUrl">https://www.google.com</string>
+                    <string name="licence">&lt;p&gt;Copyright © Enonic AS. All Rights Reserved.&amp;nbsp;&lt;a href="https://enonic.com/privacy-policy"&gt;Privacy Policy&lt;/a&gt;.&amp;nbsp;&lt;a href="https://enonic.com/cookie-policy"&gt;Cookie Policy&lt;/a&gt;.&lt;/p&gt;
+</string>
+                </property-set>
+                <property-set name="header">
+                    <reference name="headerLogo">e262086d-8797-4a00-b9a6-4e231136004d</reference>
+                    <string name="ticketUrl">https://www.google.com</string>
+                    <string name="ticketText">BUY TICKET</string>
+                    <boolean name="breadcrumbsHideBanner">false</boolean>
+                    <reference name="breadcrumbsBackground">ca76fa21-8c0a-4bc6-abd1-d044c9ecfd4b</reference>
+                </property-set>
+                <property-set name="menu-item">
+                    <boolean name="menuItem">false</boolean>
+                    <string isNull="true" name="menuName"/>
+                </property-set>
+                <property-set name="siteConfig">
+                    <localDate name="fromDate">2029-12-20Z</localDate>
+                    <localDate name="toDate">2029-12-22Z</localDate>
+                    <string name="city">Stavanger</string>
+                    <reference name="favicon">b9c518f4-e91d-4eeb-81f9-e8b219703824</reference>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.app.event.theme:default</string>
+                <boolean name="customized">true</boolean>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="default"/>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:banner</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="banner">
+                            <boolean name="haveCountDown">true</boolean>
+                            <boolean name="haveOverlay">true</boolean>
+                            <reference name="backgroundImage">2d7f3776-eaf3-4045-958a-2bd8861fd75f</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/1</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.event.theme:2-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="2-col">
+                            <string name="columnConfig">30-70</string>
+                            <boolean name="haveFullSpace">false</boolean>
+                            <boolean name="fixedBackground">false</boolean>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">image</string>
+            <string name="path">/main/1/left/0</string>
+            <property-set name="image">
+                <reference name="id">6aa3e953-a109-4ecd-b58f-f7e3adf22c61</reference>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/right/0</string>
+            <property-set name="text">
+                <string name="value">&lt;h3&gt;About The&amp;nbsp;&lt;em&gt;Conference&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt ut labore et dolore magna aliq enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.&amp;nbsp;[speaker speakers="b927c67b-c6af-4efa-9bca-29304b492f39"/]&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/2</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:speaker-list</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="speaker-list">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <reference name="speakers">39e70e8e-fa04-4fea-ad22-0cd6182f745f</reference>
+                            <reference name="speakers">b927c67b-c6af-4efa-9bca-29304b492f39</reference>
+                            <reference name="speakers">79913742-a53f-4ea8-91e3-4e82a17d982b</reference>
+                            <reference name="speakers">3a751f70-3670-4eeb-aad0-465277ff3453</reference>
+                            <reference name="speakers">b695a190-bc29-4b1a-8f89-3a87ca19858d</reference>
+                            <reference name="speakers">cb7fc8bb-2308-400f-9151-a1432534a87b</reference>
+                            <reference name="backgroundImage">ba0e5b42-91a0-40f7-8822-283e41ade16d</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">fragment</string>
+            <string name="path">/main/3</string>
+            <property-set name="fragment">
+                <reference name="id">353ab1c5-f816-41d1-958f-cbafe60194b2</reference>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/4</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.event.theme:2-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="2-col">
+                            <string name="columnConfig">50-50</string>
+                            <boolean name="haveFullSpace">true</boolean>
+                            <boolean name="fixedBackground">false</boolean>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/4/left/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:register-stats</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="register-stats">
+                            <string name="seats">125</string>
+                            <string name="tickets">135</string>
+                            <reference name="backgroundImage">8b2809f9-3a50-4fa9-b1b3-97bb13bd2adc</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/4/right/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:register-to</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="register-to">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <string isNull="true" name="url"/>
+                            <reference name="backgroundImage">2c690ff9-4080-4d77-a071-2e11ebfb1d45</reference>
+                            <property-set name="ticketTypes">
+                                <string name="ticketType">Bronze</string>
+                            </property-set>
+                            <property-set name="ticketTypes">
+                                <string name="ticketType">Silver</string>
+                            </property-set>
+                            <property-set name="ticketTypes">
+                                <string name="ticketType">Gold</string>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/5</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:get-ticket</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="get-ticket">
+                            <property-set name="tickets">
+                                <string name="ticketType">Bronze</string>
+                                <property-set name="details">
+                                    <string name="detail">BYOD</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <boolean name="isAvailable">false</boolean>
+                                    <string name="detail">Free Coffee</string>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">Free Wifi</string>
+                                    <boolean name="isAvailable">false</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">The cake is not a lie</string>
+                                    <boolean name="isAvailable">false</boolean>
+                                </property-set>
+                                <string name="ticketPrice">600,-</string>
+                                <string name="ticketUrl">https://www.google.com</string>
+                                <boolean name="isFeatured">false</boolean>
+                            </property-set>
+                            <property-set name="tickets">
+                                <string name="ticketType">Silver</string>
+                                <string name="ticketPrice">800,-</string>
+                                <string name="ticketUrl">https://www.google.com</string>
+                                <boolean name="isFeatured">true</boolean>
+                                <property-set name="details">
+                                    <string name="detail">BYOD</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">Free Coffee</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">Free Wifi</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">The cake is not a lie</string>
+                                    <boolean name="isAvailable">false</boolean>
+                                </property-set>
+                            </property-set>
+                            <property-set name="tickets">
+                                <string name="ticketType">Gold</string>
+                                <string name="ticketPrice">1400,-</string>
+                                <string name="ticketUrl">https://www.google.com</string>
+                                <boolean name="isFeatured">false</boolean>
+                                <property-set name="details">
+                                    <string name="detail">BYOD</string>
+                                    <boolean name="isAvailable">false</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">Free Coffee</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">Free Wifi</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                                <property-set name="details">
+                                    <string name="detail">The cake is not a lie</string>
+                                    <boolean name="isAvailable">true</boolean>
+                                </property-set>
+                            </property-set>
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/6</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:get-ticket-now</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="get-ticket-now">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <reference name="backgroundImage">afafb9c1-7c89-49c6-ba7a-4b5ad9edd5a0</reference>
+                            <reference name="foregroundImage">aad35c04-840a-414a-931c-a1626c148dba</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/7</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:sponsors</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="sponsors">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <string name="becomeSponsorUrl">https://www.google.com</string>
+                            <reference name="backgroundImage">055776e2-d910-4e1c-82f4-1ef4f8113840</reference>
+                            <property-set name="sponsors">
+                                <string name="type">Platinum Sponsors</string>
+                                <property-set name="sponsors">
+                                    <reference name="image">439f3c7e-a1f9-4786-892f-d0486a118d52</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                                <property-set name="sponsors">
+                                    <reference name="image">a3c3ce10-0de2-4bed-aa69-71e0902e6647</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                                <property-set name="sponsors">
+                                    <reference name="image">db065596-7cb9-4702-82a1-203265c6d32f</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                            </property-set>
+                            <property-set name="sponsors">
+                                <string name="type">Gold Sponsors</string>
+                                <property-set name="sponsors">
+                                    <reference name="image">005cba79-d012-42f2-a31c-c5a0ac006a7a</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                                <property-set name="sponsors">
+                                    <reference name="image">25e07386-b39c-40cc-a213-4760a5be0543</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                                <property-set name="sponsors">
+                                    <reference name="image">e31ea937-0bc3-46a6-82ba-cd08f254b093</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                                <property-set name="sponsors">
+                                    <reference name="image">2e7dad94-20a6-4820-8116-19bd8d04b4db</reference>
+                                    <string name="url">https://www.google.com</string>
+                                </property-set>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/8</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:news-article-list</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="news-article-list">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <reference name="newsArticles">ebc186cf-1ab6-4372-82c8-4f806230fbb3</reference>
+                            <reference name="newsArticles">79eca343-af50-4bfa-ba19-769777c51c8f</reference>
+                            <reference name="newsArticles">7dc4e725-c444-4420-bb43-dad8fe02abb9</reference>
+                            <reference name="newsArticles">7e0e6b0b-2e95-46ca-a017-5b7715df3ffe</reference>
+                            <reference name="newsArticles">02db0723-2916-4089-8d84-160f038d5187</reference>
+                            <reference name="newsArticles">d564f708-5afa-48ec-be87-cf590077afb7</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>document_index_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.sponsors.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.speaker-list.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.register-to.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.register-stats.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.news-article-list.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.get-ticket.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.get-ticket-now.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.banner.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.config.com-enonic-app-event-theme.2-col.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>x.com-enonic-app-event-theme.footer.licence</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+        <allTextIndexConfig/>
+    </indexConfigs>
+</node>

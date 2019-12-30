@@ -1,0 +1,5 @@
+.sponsor-list {
+  @include media(">=medium") {
+    padding-right: 5px;
+  }
+}

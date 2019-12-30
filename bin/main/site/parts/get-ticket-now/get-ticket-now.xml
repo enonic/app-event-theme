@@ -1,0 +1,18 @@
+<part>	
+	<display-name>Get ticket now</display-name>
+	<description>A banner which promotes acquisition of ticket</description>
+	<form>
+		<input type="TextLine" name="description">
+          <label>Description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="ImageSelector" name="backgroundImage">
+          <label>Background image</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+        <input type="ImageSelector" name="foregroundImage">
+          <label>Foreground image</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+	</form>
+</part>

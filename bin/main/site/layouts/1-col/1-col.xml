@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout>
+  <display-name>1 column</display-name>
+  <description>A one column layout</description>
+  <form>
+    <input type="ImageSelector" name="backgroundImage">
+      <label>Background Image</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="CheckBox" name="fixedBackground">
+      <label>Fixed background</label>
+      <help-text>Stops scroling of the background image</help-text>
+      <config>
+        <alignment>right</alignment>
+      </config>
+    </input>
+  </form>
+  <regions>
+    <region name="main"/>
+  </regions>
+</layout>
