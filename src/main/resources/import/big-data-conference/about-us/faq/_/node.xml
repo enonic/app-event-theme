@@ -1,0 +1,399 @@
+<node>
+    <id>a9188e02-5fce-40a4-9e84-6a5e1b044d94</id>
+    <childOrder>modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <timestamp>2019-12-27T11:00:37.687Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
+    <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+    </permissions>
+    <data>
+        <boolean name="valid">true</boolean>
+        <string name="displayName">FAQ</string>
+        <string name="type">com.enonic.app.event.theme:landing-page</string>
+        <string name="owner">user:system:su</string>
+        <dateTime name="modifiedTime">2019-12-27T11:00:37.686Z</dateTime>
+        <string name="modifier">user:system:su</string>
+        <string name="creator">user:system:su</string>
+        <dateTime name="createdTime">2019-12-27T09:49:02.057Z</dateTime>
+        <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
+            <dateTime isNull="true" name="from"/>
+            <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">IN_PROGRESS</string>
+            <property-set name="checks"/>
+        </property-set>
+        <property-set name="data"/>
+        <property-set name="x">
+            <property-set name="com-enonic-app-event-theme">
+                <property-set name="menu-item">
+                    <boolean name="menuItem">true</boolean>
+                    <string isNull="true" name="menuName"/>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.app.event.theme:default</string>
+                <boolean name="customized">true</boolean>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="default"/>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:faq</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="faq">
+                            <string name="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore</string>
+                            <property-set name="questions">
+                                <string name="question">Lorem ipsum?</string>
+                                <string name="answer">&lt;p&gt;Suspendisse non nisl sit amet velit hendrerit rutrum. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.&lt;/p&gt;
+
+&lt;p&gt;Morbi vestibulum volutpat enim. Donec id justo. Nam pretium turpis et arcu.&lt;/p&gt;
+</string>
+                            </property-set>
+                            <property-set name="questions">
+                                <string name="question">Duis arcu?</string>
+                                <string name="answer">&lt;p&gt;Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.&lt;/p&gt;
+
+&lt;p&gt;Etiam ut purus mattis mauris sodales aliquam.&lt;/p&gt;
+
+&lt;p&gt;In ac felis quis tortor malesuada pretium.&lt;/p&gt;
+
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;
+
+&lt;p&gt;Donec sodales sagittis magna.&lt;/p&gt;
+</string>
+                            </property-set>
+                            <property-set name="questions">
+                                <string name="question">Vestibulum dapibus nunc?</string>
+                                <string name="answer">&lt;p&gt;Donec vitae sapien ut libero venenatis faucibus. Nulla consequat massa quis enim. Vestibulum rutrum, mi nec elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel mi. Sed a libero. Aenean massa.&lt;/p&gt;
+
+&lt;p&gt;Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Vestibulum ullamcorper mauris at ligula. Curabitur turpis. Aliquam eu nunc. Phasellus consectetuer vestibulum elit.&lt;/p&gt;
+</string>
+                            </property-set>
+                            <property-set name="questions">
+                                <string name="question">Aliquam erat volutpat?</string>
+                                <string name="answer">&lt;p&gt;Donec venenatis vulputate lorem. Maecenas egestas arcu quis ligula mattis placerat. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;Fusce fermentum odio nec arcu. Nulla facilisi.&lt;/p&gt;
+
+&lt;p&gt;Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Fusce ac felis sit amet ligula pharetra condimentum. Vestibulum fringilla pede sit amet augue.&lt;/p&gt;
+
+&lt;p&gt;Nullam quis ante. Maecenas nec odio et ante tincidunt tempus. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui.&lt;/p&gt;
+</string>
+                            </property-set>
+                            <property-set name="questions">
+                                <string name="question">Nullam tincidunt adipiscing?</string>
+                                <string name="answer">&lt;p&gt;Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Duis vel nibh at velit scelerisque suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;
+
+&lt;p&gt;In ut quam vitae odio lacinia tincidunt. Maecenas vestibulum mollis diam. Vivamus elementum semper nisi.&lt;/p&gt;
+
+&lt;p&gt;Curabitur turpis. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Cras non dolor.&lt;/p&gt;
+</string>
+                            </property-set>
+                            <property-set name="questions">
+                                <string name="question">Donec quam felis?</string>
+                                <string name="answer">&lt;p&gt;Ut non enim eleifend felis pretium feugiat. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Donec id justo. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Phasellus consectetuer vestibulum elit.&lt;/p&gt;
+
+&lt;p&gt;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin pretium, leo ac pellentesque mollis, felis nunc ultrices eros, sed gravida augue augue mollis justo. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.&lt;/p&gt;
+
+&lt;p&gt;Vivamus elementum semper nisi. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Curabitur at lacus ac velit ornare lobortis. Phasellus blandit leo ut odio. Etiam sit amet orci eget eros faucibus tincidunt.&lt;/p&gt;
+</string>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>document_index_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.faq.questions.answer</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-event-theme.faq.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+        <allTextIndexConfig/>
+    </indexConfigs>
+</node>

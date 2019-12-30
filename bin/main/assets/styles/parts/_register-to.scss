@@ -1,0 +1,10 @@
+.registration-block {
+    position: relative;
+    height: 100%;
+    height: 550px;
+    padding: 120px 10%;
+
+    @include media("<medium") {
+      height: 760px;
+    }
+  }

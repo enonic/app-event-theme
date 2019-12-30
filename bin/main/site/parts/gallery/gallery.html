@@ -1,0 +1,45 @@
+<section class="section gallery">
+    <div class="container">
+        <p class="gallery-description" data-th-text="${description}"></p>
+        <div class="row">
+            <div class="col-12">
+                <div class="controls">
+                    <button
+                        data-th-each="gallery, iterstat: ${galleries}"
+                        class="control"
+                        data-th-classappend="${iterstat.count == 1 ? 'mixitup-control-active' : ''}"
+                        type="button"
+                        data-th-filter="${gallery.name}"
+                        data-th-text="${gallery.name}"
+                    ></button>
+                </div>
+                <div class="gallery-wrapper">
+                    <div 
+                        class="gallery-item mix"
+                        id="gallery-displayer"
+                        data-th-each="gallery, iterstat: ${galleries}"
+                        data-th-filter="${gallery.name}"
+                        data-th-style="${iterstat.index == 0 ? '': 'display:none'}"
+                    >
+                        <div
+                            class="image-block"
+                            data-th-each="image: ${gallery.images}"
+                        >
+                            <div class="image">
+                                <img data-th-src="${image}" alt="gallery-image" class="img-fluid">
+                                <!--/* <div class="primary-overlay">
+                                    <a 
+                                        class="image-popup"
+                                        data-effect="mfp-with-zoom"
+                                        data-th-src="${image}"
+                                        href="images/gallery/gallery-popup-one.jpg"
+                                    ><i class="fa fa-picture-o"></i></a>
+                                </div> */-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

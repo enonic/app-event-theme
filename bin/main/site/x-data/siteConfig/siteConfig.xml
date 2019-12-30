@@ -1,0 +1,25 @@
+<x-data>
+    <display-name>Site Configurations</display-name>
+    <form>
+        <field-set>
+            <items>
+                <input type="Date" name="fromDate">
+                    <label>From</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="Date" name="toDate">
+                    <label>To</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input type="TextLine" name="city">
+                    <label>City</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input type="ImageSelector" name="favicon">
+                    <label>Favicon</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+            </items>
+        </field-set>
+    </form>
+</x-data>

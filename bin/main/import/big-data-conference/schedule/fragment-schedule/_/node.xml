@@ -1,0 +1,375 @@
+<node>
+    <id>353ab1c5-f816-41d1-958f-cbafe60194b2</id>
+    <childOrder>modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <timestamp>2019-12-20T09:47:12.566Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
+    <permissions>
+        <principal key="role:cms.cm.app">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+    </permissions>
+    <data>
+        <boolean name="valid">true</boolean>
+        <string name="displayName">Schedule</string>
+        <string name="type">portal:fragment</string>
+        <string name="owner">user:system:su</string>
+        <dateTime name="modifiedTime">2019-12-20T09:47:12.564Z</dateTime>
+        <string name="modifier">user:system:su</string>
+        <string name="creator">user:system:su</string>
+        <dateTime name="createdTime">2019-12-20T09:13:07.840Z</dateTime>
+        <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
+            <dateTime isNull="true" name="from"/>
+            <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">IN_PROGRESS</string>
+            <property-set name="checks"/>
+        </property-set>
+        <property-set name="data"/>
+        <property-set name="x">
+            <property-set name="com-enonic-app-event-theme">
+                <property-set name="menu-item">
+                    <boolean name="menuItem">false</boolean>
+                    <string isNull="true" name="menuName"/>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.event.theme:schedule</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-event-theme">
+                        <property-set name="schedule">
+                            <property-set name="talks">
+                                <string name="day">1</string>
+                                <localTime name="time">08:15:00.000Z</localTime>
+                                <reference name="speaker">cb7fc8bb-2308-400f-9151-a1432534a87b</reference>
+                                <string name="subject">Introduction</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">1</string>
+                                <localTime name="time">09:15:00.000Z</localTime>
+                                <reference name="speaker">79913742-a53f-4ea8-91e3-4e82a17d982b</reference>
+                                <string name="subject">The power of Hadoop</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">1</string>
+                                <localTime name="time">10:00:00.000Z</localTime>
+                                <string name="subject">Lunch</string>
+                                <string name="venue">u-234</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">1</string>
+                                <localTime name="time">11:15:00.000Z</localTime>
+                                <reference name="speaker">39e70e8e-fa04-4fea-ad22-0cd6182f745f</reference>
+                                <string name="subject">Big Data and Consensus</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">1</string>
+                                <localTime name="time">12:15:00.000Z</localTime>
+                                <reference name="speaker">b695a190-bc29-4b1a-8f89-3a87ca19858d</reference>
+                                <string name="subject">Sentiment Analysis</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">2</string>
+                                <localTime name="time">08:15:00.000Z</localTime>
+                                <reference name="speaker">3a751f70-3670-4eeb-aad0-465277ff3453</reference>
+                                <string name="subject">Metadata management</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">2</string>
+                                <localTime name="time">09:15:00.000Z</localTime>
+                                <reference name="speaker">b927c67b-c6af-4efa-9bca-29304b492f39</reference>
+                                <string name="subject">Security and privacy issues related to Healthcare infomation exchange</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">2</string>
+                                <localTime name="time">10:00:00.000Z</localTime>
+                                <string name="subject">Lunch</string>
+                                <string name="venue">u-234</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">2</string>
+                                <localTime name="time">11:15:00.000Z</localTime>
+                                <reference name="speaker">39e70e8e-fa04-4fea-ad22-0cd6182f745f</reference>
+                                <string name="subject">Does big data require coding?</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <property-set name="talks">
+                                <string name="day">3</string>
+                                <localTime name="time">09:00:00.000Z</localTime>
+                                <reference name="speaker">39e70e8e-fa04-4fea-ad22-0cd6182f745f</reference>
+                                <string name="subject">Farewell</string>
+                                <string name="venue">u-238</string>
+                            </property-set>
+                            <string isNull="true" name="description"/>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>document_index_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+        <allTextIndexConfig/>
+    </indexConfigs>
+</node>

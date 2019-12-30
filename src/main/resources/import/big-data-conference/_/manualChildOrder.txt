@@ -1,0 +1,7 @@
+speakers
+news
+schedule
+about-us
+search-results
+resources
+_templates
