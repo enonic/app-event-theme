@@ -1,9 +1,0 @@
-<div class="search-results">
-    <h3 data-th-text="|Your search on '${searchWord}' gave ${resultLength} hit(s)|"></h3>   <!--  TODO: set max width on this..., URI %20 on spaces -->
-    <!-- <p data-th-text="${result}" data-th-each="result : ${results}"></p> -->
-    <div class="search-result" data-th-each="result, iterstat: ${results}">
-        <a id="search-results-a" data-th-if="${result.displayName}" data-th-text="|(${iterstat.index + 1}) ${result.displayName}|" data-th-href="${result.url}"></a> <!-- TODO: Linken fungerer ikke -->
-        <div data-th-if="${result.data.description}" data-th-utext="${result.data.description}"></div>
-    </div>
-    <a id="search-results-home" data-th-href="${home}" class="btn btn-main-md">Go to home</a>
-</div>

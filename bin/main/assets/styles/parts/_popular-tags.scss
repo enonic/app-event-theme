@@ -1,9 +1,0 @@
-.list-inline {
-  @include media("<medium") {
-    padding: 0px 15px;
-  }
-}
-
-#tag-pointer {
-    cursor: pointer;
-}
