@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- SITE TITTLE -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title data-th-text="${siteName}"></title>
+
+        <!-- PLUGINS CSS STYLE -->
+        <!-- Bootstrap -->
+        <link data-th-href="${headerMetadata.bootstrap}" rel="stylesheet">
+        <!-- Themefisher Font -->
+        <link data-th-href="${headerMetadata.themefisherFont}" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link data-th-href="${headerMetadata.fontAwesome}" rel="stylesheet">
+        <!-- Magnific Popup -->
+        <link data-th-href="${headerMetadata.magnificPopup}" rel="stylesheet">
+        <!-- Slick Carousel -->
+        <link data-th-href="${headerMetadata.slickCarousel}" rel="stylesheet">
+        <link data-th-href="${headerMetadata.slickCarouselTheme}" rel="stylesheet">
+        <!-- CUSTOM CSS -->
+        <link data-th-href="${headerMetadata.customCSS}" rel="stylesheet" />
+
+        <!-- FAVICON -->
+        <link data-th-href="${headerMetadata.favicon}" rel="shortcut icon">
+    </head>
+    <body>
+        <section class="section error">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 m-auto center-error">
+                        <div class="block text-center">
+                            <img data-th-src="${imageError}" alt="error">
+                            <h3>Oops!... <span data-th-text="${errorCode}" data-th-remove="tag"></span></h3>
+                            <a data-th-href="${home}" class="btn btn-main-md">Go to home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

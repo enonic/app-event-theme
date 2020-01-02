@@ -1,0 +1,21 @@
+<div 
+	class="background-images banner bg-banner-one"
+	data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
+	data-th-classappend="${haveOverlay} ? 'overlay' : ''"
+>
+	<div class="bannerText">
+		<p
+			data-th-if="${haveCountDown}"
+			data-th-attr="from-date=|${dateFrom}|"
+			id="banner-countdown"
+		></p>
+		<div data-th-utext="${title}" class="bannerTitle"></div>
+		<div class="info">
+			<p class="left" data-th-if="${dateLabel}" data-th-text="${dateLabel}"></p>
+			<p class="right" data-th-if="${location}" data-th-text="${location}"></p>
+		</div>
+		<div>
+			<a data-th-if="${ticketUrl}" data-th-href="${ticketUrl}" class="banner-btn btn btn-white-md">get ticket now</a>
+		</div>
+	</div>		
+</div>

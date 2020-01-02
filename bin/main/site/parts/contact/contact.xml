@@ -1,0 +1,14 @@
+<part>	
+	<display-name>Contact</display-name>
+	<description>A contact form where users may get in touch</description>
+	<form>
+		<input type="TextLine" name="description">
+          <label>Description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="TextLine" name="url">
+            <label>Contact Email</label>
+            <occurrences minimum="1" maximum="1"/>
+        </input>
+	</form>
+</part>

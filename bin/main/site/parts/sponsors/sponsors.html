@@ -1,0 +1,46 @@
+<section 
+    class="sponsors section bg-sponsors overlay-white"
+    data-th-style="${backgroundImage} ? 'background-image:url(' + ${backgroundImage} + ');' : ''"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>Our <span class="alternate">Sponsors</span></h3>
+                    <p data-th-text="${description}"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" data-th-each="sponsorType: ${sponsorData}">
+                <!-- Title -->
+                <div class="sponsor-title text-center">
+                    <h5 data-th-text="${sponsorType.type}"></h5>
+                </div>
+                <div class="block text-center">
+                    <!-- Sponsors image list -->
+                    <ul class="list-inline sponsors-list">
+                        <li class="list-inline-item sponsor-list" data-th-each="sponsor: ${sponsorType.sponsors}">
+                            <a data-th-href="${sponsor.url}" target="_blank">
+                                <div class="image-block text-center">
+                                    <img 
+                                        data-th-src="${sponsor.image}"
+                                        alt="sponsors-logo"
+                                        class="img-fluid"
+                                    >
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sponsor-btn text-center col-12">
+                <a
+                    data-th-if="${becomeSponsorUrl}"
+                    data-th-href="${becomeSponsorUrl}"
+                    class="btn btn-main-md"
+                >Become a sponsor</a>
+            </div>
+        </div>
+    </div>
+</section>

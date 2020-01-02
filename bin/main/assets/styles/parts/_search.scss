@@ -1,0 +1,13 @@
+.search-width {
+  padding-top: 50px;
+  max-width: 50%;
+  margin: auto;
+  @include media("<medium") {
+    padding: 0px 15px;
+  }
+}
+
+#search-input {  
+  color: $colour-foreground;
+  background-color: $colour-background;
+}

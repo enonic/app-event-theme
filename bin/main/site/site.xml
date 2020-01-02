@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <form>    
+	  <!-- Mixin of the type "inline" goes here -->
+  </form>
+  <!-- Mixin of the type "x-data" goes here -->  
+  <x-data name="menu-item"/>
+  <x-data name="siteConfig" allowContentTypes="portal:site"/>
+  <x-data name="header" allowContentTypes="portal:site"/>
+  <x-data name="footer" allowContentTypes="portal:site"/>
+  <!-- Used for Fragments to work in XP Content Studio preview -->
+  <mappings>
+    <mapping controller="/site/pages/default/default.js">
+      <match>type:'portal:fragment'</match>
+    </mapping>
+  </mappings>
+</site>

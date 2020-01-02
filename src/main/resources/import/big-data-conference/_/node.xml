@@ -2,7 +2,7 @@
     <id>4825f720-5484-427a-ba84-780a854a80f8</id>
     <childOrder>_manualordervalue DESC, _ts DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-12-30T09:09:51.089Z</timestamp>
+    <timestamp>2019-12-30T12:26:09.790Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.cm.app">
@@ -41,7 +41,7 @@
         <string name="displayName">Big Data Conference</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-12-30T09:09:51.087Z</dateTime>
+        <dateTime name="modifiedTime">2019-12-30T12:26:09.758Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2019-12-20T08:03:32.417Z</dateTime>
@@ -161,7 +161,7 @@
 
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco.&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt ut labore et dolore magna aliq enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmtempor incididunt ut labore et dolore magna aliq enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.&amp;nbsp;[speaker speakers="b927c67b-c6af-4efa-9bca-29304b492f39"/]&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 

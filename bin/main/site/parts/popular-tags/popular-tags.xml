@@ -1,0 +1,14 @@
+<part>
+	<display-name>Popular Tags</display-name>
+	<description>Lists most popular tags</description>
+	<form>
+        <input type="TextLine" name="numTags"> <!-- Regular expression will not work unless type is TextLine -->
+            <label>Maximum number of tags</label>
+            <occurrences minimum="1" maximum="1"/>
+            <default>5</default>
+            <config>
+                <regexp>^[1-9]\d*$</regexp>
+            </config>
+        </input>
+	</form>
+</part>
