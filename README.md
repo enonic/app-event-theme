@@ -2,6 +2,8 @@
 
 Create a homepage for any event. A [template](https://themefisher.com/products/eventre-event-conference-website-template/) based event information webpage. No significant changes were made to the template other than to adapt it to the Enonic technology.
 
+Find it on the [market](https://market.enonic.com/vendors/enonic/event-theme).
+
 [Specifications](https://docs.google.com/document/d/1BYlj6XnQ9CNhgloIb36ump8tsKNouTdtBem6UQ0VRes/edit#).
 
 Licence: [Creative Common Attribution 3.0 License](https://themefisher.com/license/).
