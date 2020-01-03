@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part>
+    <display-name>Speaker List</display-name>
+    <description>Display a list of speakers</description>
+    <form>
+        <input type="TextLine" name="description">
+            <label>Description</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="ContentSelector" name="speakers">
+            <label>Speaker</label>
+            <occurrences minimum="0" maximum="0"/>
+            <config>
+                <allowContentType>speaker</allowContentType>
+            </config>
+        </input>
+        <input type="ImageSelector" name="backgroundImage">
+            <label>Background Image</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+    </form>
+</part>
