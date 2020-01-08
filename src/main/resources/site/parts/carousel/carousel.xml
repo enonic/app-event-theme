@@ -1,0 +1,24 @@
+<part>
+	<display-name>Slideshow / Carousel</display-name>
+	<description>A gallery of images and text that acts like a slideshow / carousel</description>
+	<form>
+		<input type="TextLine" name="description">
+          <label>Description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <item-set name="elements">
+            <label>an image</label> 
+            <occurrences minimum="0" maximum="0"/>
+            <items>
+                <input type="TextLine" name="text">
+                    <label>Image Text</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input type="ImageSelector" name="picture">
+                    <label>Image</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+            </items>
+        </item-set>
+    </form>
+</part>

@@ -21,6 +21,7 @@ require('./parts/contact.js');
 require('./parts/gallery.js');
 require('./parts/banner.js');
 require('./parts/recent-comments.js');
+require('./parts/carousel.js');
 
 // pages
 require('./pages/default.js');

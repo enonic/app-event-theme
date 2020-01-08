@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) => { // activate the script 
     try {
         for (let i = 0; i < document.getElementsByClassName('control').length; i++) { // for all gallery control buttons
             let element = document.getElementsByClassName('control')[i];
-            element.addEventListener('click', toggleGallery);        
+            element.addEventListener('click', currentSlide(0)); /* TODO: this needs to be dynamic! */
         }
     } catch(err) {}
 });

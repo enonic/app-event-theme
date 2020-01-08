@@ -1,0 +1,25 @@
+<div class="carousel-body">
+    <h1>Carousel test</h1>
+    <p data-th-text="${description}"></p>
+
+    <div class="carousel-container">
+        <div
+            class="mySlides carousel-fade"
+            data-th-each="element, iterstat: ${elements}">
+            <div class="numbertext" data-th-text="|${iterstat.count} / ${#lists.size(elements)}|"></div>
+            <img data-th-src="${element.picture}" style="width:100%">
+            <div class="text" data-th-text="${element.text}"></div>
+        </div>
+
+        <a class="carousel-prev">&#10094;</a>
+        <a class="carousel-next">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="carousel-dot" onclick="currentSlide(1)"></span>
+        <span class="carousel-dot" onclick="currentSlide(2)"></span>
+        <span class="carousel-dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
