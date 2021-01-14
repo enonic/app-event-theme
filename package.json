@@ -12,7 +12,7 @@
     "dist": "cross-env NODE_ENV=production webpack --hide-modules"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.0",
     "autoprefixer": "^9.6.0",
